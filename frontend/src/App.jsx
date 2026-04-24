@@ -5,7 +5,7 @@ import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
 import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
 import Elements from './pages/Elements.jsx';
 import ElementDetail from './pages/ElementDetail.jsx';
-import About from './pages/About.jsx';
+import About from './pages/About/index.jsx';
 import AboutMike from './pages/AboutMike.jsx';
 import AboutPhillip from './pages/AboutPhillip.jsx';
 import Contact from './pages/Contact.jsx';
