@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './pages/Home.jsx';
-import CampBoys from './pages/CampBoys.jsx';
-import CampGirls from './pages/CampGirls.jsx';
+import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
+import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
 import Elements from './pages/Elements.jsx';
 import ElementDetail from './pages/ElementDetail.jsx';
 import About from './pages/About.jsx';
@@ -16,8 +16,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/camp/boys" element={<CampBoys />} />
-          <Route path="/camp/girls" element={<CampGirls />} />
+          <Route path="/camp/boys" element={<BoysCamp />} />
+          <Route path="/camp/girls" element={<GirlsCamp />} />
           <Route path="/elements" element={<Elements />} />
           <Route path="/elements/:slug" element={<ElementDetail />} />
           <Route path="/about" element={<About />} />
