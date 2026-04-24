@@ -1,15 +1,45 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { REGISTER_LINK_PROPS } from '../../config.js';
 import logo from '../../assets/logo.svg';
 
-const NAV_LINKS = [
-  { to: '/camp', label: 'Camp' },
+const TWO_CAMPS_ID = 'two-camps';
+
+const ROUTE_LINKS = [
   { to: '/elements', label: 'Elements' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ];
+
+function CampNavLink({ onClick, mobile = false }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const baseClass =
+    (mobile
+      ? 'font-body text-base uppercase tracking-widest py-2 '
+      : 'font-body text-sm uppercase tracking-widest transition-colors ') +
+    'text-text hover:text-accent';
+
+  const handleClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById(TWO_CAMPS_ID);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      onClick?.();
+    } else {
+      e.preventDefault();
+      onClick?.();
+      navigate('/', { state: { scrollTo: TWO_CAMPS_ID } });
+    }
+  };
+
+  return (
+    <a href={`/#${TWO_CAMPS_ID}`} onClick={handleClick} className={baseClass}>
+      Camp
+    </a>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +66,8 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
+          <CampNavLink />
+          {ROUTE_LINKS.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
@@ -70,7 +101,8 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-bg">
           <div className="flex flex-col gap-1 px-6 py-4">
-            {NAV_LINKS.map((link) => (
+            <CampNavLink mobile onClick={() => setMobileOpen(false)} />
+            {ROUTE_LINKS.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}

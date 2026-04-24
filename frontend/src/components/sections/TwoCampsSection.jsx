@@ -83,7 +83,10 @@ function CampCard({ camp, banner, detailHref }) {
 
 export default function TwoCampsSection() {
   return (
-    <section className="bg-bg py-24 lg:py-32 border-t border-border">
+    <section
+      id="two-camps"
+      className="bg-bg py-24 lg:py-32 border-t border-border scroll-mt-20"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="max-w-2xl mb-14 lg:mb-20">
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './pages/Home.jsx';
-import Camp from './pages/Camp.jsx';
 import CampBoys from './pages/CampBoys.jsx';
 import CampGirls from './pages/CampGirls.jsx';
 import Elements from './pages/Elements.jsx';
@@ -17,7 +16,6 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/camp" element={<Camp />} />
           <Route path="/camp/boys" element={<CampBoys />} />
           <Route path="/camp/girls" element={<CampGirls />} />
           <Route path="/elements" element={<Elements />} />
