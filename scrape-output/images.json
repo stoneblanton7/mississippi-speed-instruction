@@ -1,0 +1,60 @@
+{
+  "brand": {
+    "logo": "https://mississippispeed.com/wp-content/uploads/2024/06/MSI_Cheetah_Logo_MSI-CHEETAH-1.svg",
+    "logo_white": "https://mississippispeed.com/wp-content/uploads/2024/07/msi-logo-white.png",
+    "hare_icon": "",
+    "thirty_years_icon": "https://mississippispeed.com/wp-content/uploads/2024/07/30-years-icon.png",
+    "thirty_years_hero": "https://mississippispeed.com/wp-content/uploads/2024/11/30-Years-of-Speed-1.jpg"
+  },
+  "skill_icons": {
+    "acceleration": "https://mississippispeed.com/wp-content/uploads/2024/08/648327435-ico-acceleration.png",
+    "balance_body_control": "https://mississippispeed.com/wp-content/uploads/2024/08/648327438-ico-balance-and-body-control.png",
+    "change_of_direction": "https://mississippispeed.com/wp-content/uploads/2024/08/648327440-ico-change-of-direction.png",
+    "core_strength": "https://mississippispeed.com/wp-content/uploads/2024/08/648327447-ico-core-strength.png",
+    "flexibility": "https://mississippispeed.com/wp-content/uploads/2024/08/648327450-ico-flexibility.png",
+    "foot_quickness": "https://mississippispeed.com/wp-content/uploads/2024/08/Foot-Quickness.png",
+    "jumping": "https://mississippispeed.com/wp-content/uploads/2024/08/648327453-ico-jumping.png",
+    "lateral_speed": "https://mississippispeed.com/wp-content/uploads/2024/08/648327457-ico-lateral-speed.png",
+    "top_speed": "https://mississippispeed.com/wp-content/uploads/2024/08/648327459-ico-top-speed.png",
+    "visual_acuity": "https://mississippispeed.com/wp-content/uploads/2024/08/648327460-ico-visual-acuity.png"
+  },
+  "sport_meters": {
+    "baseball": {
+      "2": "https://mississippispeed.com/wp-content/uploads/2024/08/Baseball-2.png",
+      "3": "https://mississippispeed.com/wp-content/uploads/2024/08/Baseball-3.png",
+      "4": "https://mississippispeed.com/wp-content/uploads/2024/08/Baseball-4.png",
+      "5": "https://mississippispeed.com/wp-content/uploads/2024/08/Baseball-5.png"
+    },
+    "basketball": {
+      "1": "https://mississippispeed.com/wp-content/uploads/2024/08/Basketball-1.png",
+      "4": "https://mississippispeed.com/wp-content/uploads/2024/08/Basketball-4.png",
+      "5": "https://mississippispeed.com/wp-content/uploads/2024/08/Basketball-5.png"
+    },
+    "football": {
+      "4": "https://mississippispeed.com/wp-content/uploads/2024/08/Football-4.png",
+      "5": "https://mississippispeed.com/wp-content/uploads/2024/08/Football-5.png"
+    },
+    "soccer": {
+      "4": "https://mississippispeed.com/wp-content/uploads/2024/08/Soccer-4.png",
+      "5": "https://mississippispeed.com/wp-content/uploads/2024/08/Soccer-5.png"
+    },
+    "volleyball": {
+      "1": "https://mississippispeed.com/wp-content/uploads/2024/08/Volleyball-1.png",
+      "2": "https://mississippispeed.com/wp-content/uploads/2024/08/Volleyball-2.png",
+      "3": "https://mississippispeed.com/wp-content/uploads/2024/08/Volleyball-3.png",
+      "4": "https://mississippispeed.com/wp-content/uploads/2024/08/Volleyball-4.png",
+      "5": "https://mississippispeed.com/wp-content/uploads/2024/08/Volleyball-5.png"
+    }
+  },
+  "portraits": {
+    "mike_frascogna": "https://mississippispeed.com/wp-content/uploads/2024/11/About-Mike-Frascogna-scaled.jpg",
+    "phillip_short": "https://mississippispeed.com/wp-content/uploads/2024/11/About-Philip-Short-scaled.jpg"
+  },
+  "camp_photos": [
+    "https://mississippispeed.com/wp-content/uploads/2025/04/camp-photo_1_img.jpg",
+    "https://mississippispeed.com/wp-content/uploads/2025/04/camp-photo_2_img.jpg",
+    "https://mississippispeed.com/wp-content/uploads/2025/04/camp-photo_3_img.jpg",
+    "https://mississippispeed.com/wp-content/uploads/2025/04/summer-speed-camp-img-1024x1024.jpg"
+  ],
+  "other": []
+}

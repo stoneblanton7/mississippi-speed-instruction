@@ -1,0 +1,25 @@
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Firecrawl raw outputs (large, can be regenerated)
+# (kept — scrape-output/ IS committed per workflow)

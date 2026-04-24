@@ -1,0 +1,176 @@
+{
+  "home_hero": {
+    "title": "MSI Web Header",
+    "vimeo_id": "1071529794",
+    "vimeo_url": "https://player.vimeo.com/video/1071529794",
+    "page_source": "home"
+  },
+  "home_featured": [
+    {
+      "title": "Coach Epsy Acceleration Drill",
+      "vimeo_id": "1054590195",
+      "vimeo_url": "https://player.vimeo.com/video/1054590195",
+      "coach": "Epsy",
+      "category": "acceleration"
+    },
+    {
+      "title": "Coach NS tether Drill",
+      "vimeo_id": "1065590680",
+      "vimeo_url": "https://player.vimeo.com/video/1065590680",
+      "coach": "NS",
+      "category": "acceleration"
+    },
+    {
+      "title": "Coach PS Wall drill",
+      "vimeo_id": "1065590471",
+      "vimeo_url": "https://player.vimeo.com/video/1065590471",
+      "coach": "PS",
+      "category": "top-speed"
+    }
+  ],
+  "mike_bio_videos": [
+    {
+      "title": "M3 Bio",
+      "vimeo_id": "1029090078",
+      "vimeo_url": "https://player.vimeo.com/video/1029090078",
+      "type": "bio"
+    },
+    {
+      "title": "Coach Epsy Acceleration Drill",
+      "vimeo_id": "1054590195",
+      "vimeo_url": "https://player.vimeo.com/video/1054590195",
+      "type": "drill"
+    },
+    {
+      "title": "Coach NS tether Drill",
+      "vimeo_id": "1065590680",
+      "vimeo_url": "https://player.vimeo.com/video/1065590680",
+      "type": "drill"
+    },
+    {
+      "title": "Coach PS Wall drill",
+      "vimeo_id": "1065590471",
+      "vimeo_url": "https://player.vimeo.com/video/1065590471",
+      "type": "drill"
+    },
+    {
+      "title": "Coach SB change in direction Drill",
+      "vimeo_id": "1065590323",
+      "vimeo_url": "https://player.vimeo.com/video/1065590323",
+      "type": "drill"
+    },
+    {
+      "title": "Ladder Drills - 1 & 2 Foot Runs",
+      "vimeo_id": "1065590864",
+      "vimeo_url": "https://player.vimeo.com/video/1065590864",
+      "type": "drill"
+    },
+    {
+      "title": "Coach M4 Ball Drop Drill",
+      "vimeo_id": "1065591042",
+      "vimeo_url": "https://player.vimeo.com/video/1065591042",
+      "type": "drill"
+    }
+  ],
+  "phillip_bio_videos": [
+    {
+      "title": "Philip Short Bio Video",
+      "vimeo_id": "1027326776",
+      "vimeo_url": "https://player.vimeo.com/video/1027326776",
+      "type": "bio"
+    },
+    {
+      "title": "Drop Back Drills",
+      "vimeo_id": "1036431560",
+      "vimeo_url": "https://player.vimeo.com/video/1036431560",
+      "type": "drill"
+    },
+    {
+      "title": "Medicine Ball Drill",
+      "vimeo_id": "1036422233",
+      "vimeo_url": "https://player.vimeo.com/video/1036422233",
+      "type": "drill"
+    },
+    {
+      "title": "Disassociate Drill",
+      "vimeo_id": "1022931423",
+      "vimeo_url": "https://player.vimeo.com/video/1022931423",
+      "type": "drill"
+    },
+    {
+      "title": "Football Grip",
+      "vimeo_id": "1022932056",
+      "vimeo_url": "https://player.vimeo.com/video/1022932056",
+      "type": "drill"
+    },
+    {
+      "title": "1234 Drill",
+      "vimeo_id": "1022932565",
+      "vimeo_url": "https://player.vimeo.com/video/1022932565",
+      "type": "drill"
+    }
+  ],
+  "skill_videos": [
+    {
+      "skill": "acceleration",
+      "title": "Skill Overview: Acceleration",
+      "vimeo_id": "998320024",
+      "vimeo_url": "https://player.vimeo.com/video/998320024"
+    },
+    {
+      "skill": "balance-body-control",
+      "title": "Skill Overview: Balance Body Control",
+      "vimeo_id": "998320201",
+      "vimeo_url": "https://player.vimeo.com/video/998320201"
+    },
+    {
+      "skill": "change-of-direction",
+      "title": "Skill Overview: Change Of Direction",
+      "vimeo_id": "998320225",
+      "vimeo_url": "https://player.vimeo.com/video/998320225"
+    },
+    {
+      "skill": "core-strength",
+      "title": "Skill Overview: Core Strength",
+      "vimeo_id": "998320246",
+      "vimeo_url": "https://player.vimeo.com/video/998320246"
+    },
+    {
+      "skill": "flexibility",
+      "title": "Skill Overview: Flexibility",
+      "vimeo_id": "998320282",
+      "vimeo_url": "https://player.vimeo.com/video/998320282"
+    },
+    {
+      "skill": "foot-quickness",
+      "title": "Skill Overview: Foot Quickness",
+      "vimeo_id": "998320323",
+      "vimeo_url": "https://player.vimeo.com/video/998320323"
+    },
+    {
+      "skill": "jumping",
+      "title": "Skill Overview: Jumping",
+      "vimeo_id": "998320362",
+      "vimeo_url": "https://player.vimeo.com/video/998320362"
+    },
+    {
+      "skill": "lateral-speed",
+      "title": "Skill Overview: Lateral Speed",
+      "vimeo_id": "998320393",
+      "vimeo_url": "https://player.vimeo.com/video/998320393"
+    },
+    {
+      "skill": "top-speed",
+      "title": "Skill Overview: Top Speed",
+      "vimeo_id": "998320416",
+      "vimeo_url": "https://player.vimeo.com/video/998320416"
+    },
+    {
+      "skill": "visual-acuity",
+      "title": "Skill Overview: Visual Acuity",
+      "vimeo_id": "998320452",
+      "vimeo_url": "https://player.vimeo.com/video/998320452"
+    }
+  ],
+  "camp_videos": []
+}

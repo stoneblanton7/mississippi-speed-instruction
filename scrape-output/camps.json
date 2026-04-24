@@ -1,0 +1,36 @@
+{
+  "_note": "Authoritative summer 2026 camp data provided by Shane on behalf of Mike, 2026-04-24. Supersedes the stale 2024 single-camp data on the live mississippispeed.com.",
+  "camps": [
+    {
+      "id": "boys-2026",
+      "name": "Boys Summer Speed Camp",
+      "gender": "Boys",
+      "age_range": "7-14",
+      "date": "June 9-11, 2026",
+      "time": "4:00-5:45 PM",
+      "location": "Madison Ridgeland Academy",
+      "sports": "All",
+      "limit": 50,
+      "cost_usd": 115,
+      "description": "A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!",
+      "registration_url": "https://portal.campnetwork.com/Register/Register.php?camp_id=398473",
+      "banner_image": "brand-assets/camp-boys-banner.png"
+    },
+    {
+      "id": "girls-2026",
+      "name": "Girls Summer Speed Camp",
+      "gender": "Girls",
+      "age_range": "7-14",
+      "date": "June 23-25, 2026",
+      "time": "4:00-5:45 PM",
+      "location": "Madison Ridgeland Academy",
+      "sports": "All",
+      "limit": 50,
+      "cost_usd": 115,
+      "description": "A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!",
+      "registration_url": "https://portal.campnetwork.com/Register/Register.php?camp_id=398473",
+      "banner_image": "brand-assets/camp-girls-banner.png"
+    }
+  ],
+  "marketing_assets_note": "Initial banners (camp-boys-banner.png, camp-girls-banner.png) sourced from Stone's Downloads on 2026-04-24. May be replaced with updated art before launch."
+}
