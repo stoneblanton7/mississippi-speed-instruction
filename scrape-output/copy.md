@@ -56,7 +56,7 @@ _Updated 2026-04-24 with real summer 2026 camp details from Shane (per Mike). Th
 - **Sports:** All
 - **Limit:** 50 spots
 - **Cost:** $115
-- **Description:** A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!
+- **Description:** A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Phillip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!
 - **CTA:** Register Now -> https://portal.campnetwork.com/Register/Register.php?camp_id=398473
 - **Banner image:** `brand-assets/camp-boys-banner.png`
 
@@ -70,7 +70,7 @@ _Updated 2026-04-24 with real summer 2026 camp details from Shane (per Mike). Th
 - **Sports:** All
 - **Limit:** 50 spots
 - **Cost:** $115
-- **Description:** A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!
+- **Description:** A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Phillip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!
 - **CTA:** Register Now -> https://portal.campnetwork.com/Register/Register.php?camp_id=398473 _(both camps share this URL per Shane)_
 - **Banner image:** `brand-assets/camp-girls-banner.png`
 
@@ -101,24 +101,26 @@ Frascogna stepped away from the speed industry in 2005 to focus on the practice 
 - Coach M4 Ball Drop Drill (drill)
 
 
-## Philip Short Bio
+## Phillip Short Bio
 
-_(Note: live site spells the first name 'Philip' with one L — preserved verbatim. Original prompt referred to 'Phillip')_
+_(Spelling correction per Stone 2026-04-24: live site has a typo — it spells the name "Philip" with one L. The correct spelling is **"Phillip" with two Ls** and the rebuild uses the correct spelling. The bio paragraphs below have been corrected.)_
 
 ### Headline
-Philip Short — Quarterback Specialist
+Phillip Short — Quarterback Specialist
 
 ### Full Bio Copy
 
-Philip Short is a highly skilled quarterback specialist with a proven track record as both a player and a mentor. A graduate of Madison-Ridgeland Academy, Short was a standout on the football field, helping lead the team to victory in the 2019 State Championship. During that championship game, he set a Mississippi (MS) state record with a jaw dropping 593 passing yards, earning him the title of MS High School Player of the Year.
+Phillip Short is a highly skilled quarterback specialist with a proven track record as both a player and a mentor. A graduate of Madison-Ridgeland Academy, Short was a standout on the football field, helping lead the team to victory in the 2019 State Championship. During that championship game, he set a Mississippi (MS) state record with a jaw dropping 593 passing yards, earning him the title of MS High School Player of the Year.
 
-After high school, Short attended Mississippi Gulf Coast Community College, where he continued to excel as a quarterback. His outstanding performance earned him 1st-Team JUCO All-American honors, paving the way for him to sign with Jackson State University. At JSU, he completed his college career and earned a Bachelor's degree in Finance. Short is currently furthering his education by pursuing a Masters of Business Administration (MBA) at Mississippi College, combining his passion for sports with a strong foundation in business and leadership.
+After high school, Phillip attended Mississippi Gulf Coast Community College, where he continued to excel as a quarterback. His outstanding performance earned him 1st-Team JUCO All-American honors, paving the way for him to sign with Jackson State University. At JSU, he completed his college career and earned a Bachelor's degree in Finance. Phillip is currently furthering his education by pursuing a Masters of Business Administration (MBA) at Mississippi College, combining his passion for sports with a strong foundation in business and leadership.
 
-Today, Short is focused on training and developing the next generation of quarterbacks, as well as speed enhancement with athletes from all sports. Based in the Jackson Metro area, he works with young athletes to enhance their skills, specializing in quarterback mechanics, decision-making, and leadership on and off the field. Short's method combines traditional drills with advanced video analysis and sports psychology, tailoring training plans to fit each athlete's unique strengths and areas for growth. His expertise and dedication have made him a trusted coach for aspiring quarterbacks looking to reach their full potential.
+Today, Phillip is focused on training and developing the next generation of quarterbacks, as well as speed enhancement with athletes from all sports. Based in the Jackson Metro area, he works with young athletes to enhance their skills, specializing in quarterback mechanics, decision-making, and leadership on and off the field. Phillip's method combines traditional drills with advanced video analysis and sports psychology, tailoring training plans to fit each athlete's unique strengths and areas for growth. His expertise and dedication have made him a trusted coach for aspiring quarterbacks looking to reach their full potential.
 
-### Videos on Philip's page
+### Videos on Phillip's page
 
-- Philip Short Bio Video (bio)
+_(Note: original Vimeo video titles use the live-site "Philip" spelling — left untouched in this list because they are the actual Vimeo titles. The rebuild can re-label these on the page without renaming the Vimeo asset.)_
+
+- Philip Short Bio Video (bio) — original Vimeo title
 - Drop Back Drills (drill)
 - Medicine Ball Drill (drill)
 - Disassociate Drill (drill)
@@ -259,7 +261,7 @@ _All 10 skill pages on the live site use Lorem ipsum placeholder copy for both t
 ## Footer
 
 - **Quick Links:** Classes, Contact
-- **About:** Mike Frascogna III, Philip Short
+- **About:** Mike Frascogna III, Phillip Short
 - **Brand marks:** MSI white logo + 30 Years icon
 - **Social:** Facebook (https://www.facebook.com/profile.php?id=61564652301436), Instagram (https://www.instagram.com/mississippispeed/)
 - **No copyright line is present on the live site.**
