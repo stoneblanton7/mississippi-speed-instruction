@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  --color-bg: #0A0A0A;
+  --color-surface: #141414;
+  --color-surface-elevated: #1F1F1F;
+
+  --color-accent: #C6F73E;
+  --color-accent-hover: #D4F95E;
+  --color-accent-pressed: #9BC52F;
+  --color-accent-soft: rgba(198, 247, 62, 0.08);
+
+  --color-text: #FFFFFF;
+  --color-text-muted: #B8B8B8;
+  --color-text-dim: #6F6F6F;
+  --color-text-ghost: rgba(255, 255, 255, 0.08);
+  --color-text-inverted: #0A0A0A;
+
+  --color-border: #262626;
+  --color-border-strong: #404046;
+
+  --color-overlay-top: rgba(10, 10, 10, 0.6);
+  --color-overlay-bottom: rgba(10, 10, 10, 0.9);
+
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-text-inverted);
+}
