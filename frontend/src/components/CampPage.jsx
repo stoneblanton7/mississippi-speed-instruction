@@ -11,7 +11,7 @@ import imgDay from '../assets/kids-camp (1).png';
 function FactTile({ label, value, mono = true }) {
   return (
     <div className="border-l-2 border-border pl-6 py-4">
-      <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
+      <p className="font-mono text-[10px] text-text-muted uppercase tracking-widest">
         {label}
       </p>
       <p
