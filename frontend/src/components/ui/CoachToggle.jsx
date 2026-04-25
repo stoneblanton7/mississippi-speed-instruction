@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const TABS = [
   { to: '/about/mike-frascogna', label: 'Mike Frascogna III', match: 'mike-frascogna' },
-  { to: '/about/phillip-short', label: 'Phillip Short', match: 'phillip-short' },
+  { to: '/about/philip-short', label: 'Philip Short', match: 'philip-short' },
 ];
 
 export default function CoachToggle() {

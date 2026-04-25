@@ -19,16 +19,14 @@ Source: Shane on behalf of Mike, 2026-04-24 — see `scrape-output/camps.json`. 
 ## Name spelling
 
 - **Mike Frascogna III** — founder. Always include "III" in his bio headline; URL slug omits it (`/about/mike-frascogna`) for cleanliness.
-- **Phillip Short** — quarterback specialist coach. **Two Ls.** Live mississippispeed.com has typo "Philip" (one L); we use the correct two-L spelling everywhere on-site. The two existing Vimeo asset titles (`Philip Short Bio Video`) keep the one-L spelling because they're the actual asset titles on Mike's Vimeo account; we re-label them on-page if needed without renaming the source.
-
-Phase 6 grep audit: `grep -rn "Philip[^l]" frontend/src/` returns zero hits.
+- **Philip Short** — quarterback specialist coach. **One L.** Earlier guidance said two Ls and called the live-site spelling a typo; Stone reversed that — one L is now correct everywhere (display copy, slugs, folder names, component names, asset filenames, Vimeo titles). Audit: `grep -rin "phillip" frontend/src/` returns zero hits.
 
 ## Route map (intentionally diverges from live site)
 
 | Route                          | Live site equivalent          |
 |--------------------------------|-------------------------------|
 | `/about/mike-frascogna`        | `/mike-frascogna-iii/`        |
-| `/about/phillip-short`         | `/philip-short/`              |
+| `/about/philip-short`          | `/philip-short/`              |
 | `/elements/<slug>`             | `/skill/<slug>/`              |
 | `/camp/boys`, `/camp/girls`    | (only `/classes/` existed)    |
 

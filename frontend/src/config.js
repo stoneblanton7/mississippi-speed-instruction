@@ -23,7 +23,7 @@ export const CAMPS = {
     spots: 50,
     cost: 115,
     description:
-      'A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Phillip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!',
+      'A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!',
   },
   girls: {
     id: 'girls-2026',
@@ -37,7 +37,7 @@ export const CAMPS = {
     spots: 50,
     cost: 115,
     description:
-      'A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Phillip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!',
+      'A fun three (3) day introduction to speed agility and quickness training 4:00-5:45 at Madison Ridgeland Academy! The program is designed by Mike Frascogna and the camp will be led by Coach Philip Short and other MSI instructors. High speed drills and competition will teach athletes correct movement form in areas such as acceleration, top speed, lateral speed, foot quickness, jumping, change of direction, and visual acuity. Great for athletes competing in any team sport!',
   },
 };
 
@@ -64,7 +64,7 @@ export const VIMEO = {
   homeHeroHash: '4e88b51a6d',
   homeFeatured: ['1054590195', '1065590680', '1065590471'],
   mikeBio: '1029090078',
-  phillipBio: '1027326776',
+  philipBio: '1027326776',
 };
 
 // Mike's Vimeo videos are set to "private with hashed link" — every embed
@@ -79,7 +79,7 @@ export const VIMEO_HASHES = {
   '1065590323': '3ba2662b12', // Coach SB Change of Direction
   '1065590864': '24ab264780', // Ladder Drills 1 & 2 Foot Runs
   '1065591042': 'bc47d2ad5f', // Coach M4 Ball Drop Drill
-  '1027326776': '1582d8b85d', // Phillip Short Bio
+  '1027326776': '1582d8b85d', // Philip Short Bio
   '1036431560': 'c1fb32e0ca', // Drop Back Drills
   '1036422233': '6f153be04e', // Medicine Ball Drill
   '1022931423': '65a233cc40', // Disassociate Drill

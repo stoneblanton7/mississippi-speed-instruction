@@ -12,7 +12,7 @@ const CAMP_ITEMS = [
 
 const ABOUT_ITEMS = [
   { label: 'Mike Frascogna III', path: '/about/mike-frascogna' },
-  { label: 'Phillip Short', path: '/about/phillip-short' },
+  { label: 'Philip Short', path: '/about/philip-short' },
 ];
 
 const ROUTE_LINKS = [

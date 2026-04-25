@@ -40,7 +40,7 @@ mike-website/
 │   ├── images.json        # Image catalog with sport meter values
 │   └── brand-assets/      # 32 image files
 ├── scripts/               # Firecrawl scrape + extract scripts
-├── MSI-AMENDMENT.md       # Build-time corrections (camp data, Phillip spelling, etc.)
+├── MSI-AMENDMENT.md       # Build-time corrections (camp data, Philip spelling, etc.)
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .gitignore             # .env, node_modules, dist already excluded
@@ -82,13 +82,13 @@ mike-website/
 | `/elements/:slug`            | Element detail| stub       |
 | `/about`                     | About landing | stub       |
 | `/about/mike-frascogna`      | Mike's bio    | stub       |
-| `/about/phillip-short`       | Phillip's bio | stub       |
+| `/about/philip-short`        | Philip's bio  | stub       |
 | `/contact`                   | Contact       | stub       |
 
 ## What NOT To Break
 - `MSI-AMENDMENT.md` is the tiebreaker when brief / live site / scrape-output disagree.
 - All Register CTAs use `REGISTER_LINK_PROPS` from `config.js` so the URL stays single-source. Don't hardcode the URL elsewhere.
-- Phillip Short — **two Ls** in display copy. The Vimeo asset titles still read "Philip" (one L) on the asset; we re-label on-page without renaming the source. Phase 6 grep audit: `grep -rn "Philip[^l]" frontend/src/` → zero hits.
+- Philip Short — **one L** in all display copy, slugs, file paths, and component names. Earlier guidance said two Ls; that was reversed per Stone's instruction. Vimeo asset titles also use one L. Audit: `grep -rin "phillip" frontend/src/` → zero hits.
 - Lime budget on the home page: ≤ 15 instances of accent color total.
 
 ## Key Data Files

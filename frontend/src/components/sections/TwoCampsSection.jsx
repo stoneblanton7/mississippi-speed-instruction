@@ -102,7 +102,7 @@ export default function TwoCampsSection() {
             Three days each.
           </h2>
           <p className="font-body text-text-muted text-lg mt-6">
-            Same program, designed by Mike Frascogna and led by Coach Phillip Short.
+            Same program, designed by Mike Frascogna and led by Coach Philip Short.
             Boys and girls run separate weeks at Madison Ridgeland Academy.
           </p>
         </div>

@@ -7,7 +7,7 @@ import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
 import Elements from './pages/Elements/index.jsx';
 import ElementDetail from './pages/Elements/[ElementSlug]/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
-import AboutPhillip from './pages/About/PhillipShort/index.jsx';
+import AboutPhilip from './pages/About/PhilipShort/index.jsx';
 import Contact from './pages/Contact/index.jsx';
 import Film from './pages/Film/index.jsx';
 
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/elements/:slug" element={<ElementDetail />} />
           <Route path="/about" element={<Navigate to="/about/mike-frascogna" replace />} />
           <Route path="/about/mike-frascogna" element={<AboutMike />} />
-          <Route path="/about/phillip-short" element={<AboutPhillip />} />
+          <Route path="/about/philip-short" element={<AboutPhilip />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

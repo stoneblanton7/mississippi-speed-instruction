@@ -43,8 +43,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/about/phillip-short" className="hover:text-accent transition-colors">
-                Phillip Short
+              <Link to="/about/philip-short" className="hover:text-accent transition-colors">
+                Philip Short
               </Link>
             </li>
           </ul>

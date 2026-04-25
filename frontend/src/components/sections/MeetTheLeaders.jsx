@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import leaderMike from '../../assets/leader-mike.png';
-import leaderPhillip from '../../assets/leader-phillip.png';
+import leaderPhilip from '../../assets/leader-philip.png';
 
 function LeaderHalf({ to, src, alt, role, name }) {
   return (
@@ -57,11 +57,11 @@ export default function MeetTheLeaders() {
             name="Mike Frascogna III"
           />
           <LeaderHalf
-            to="/about/phillip-short"
-            src={leaderPhillip}
-            alt="Phillip Short, MSI Lead Instructor"
+            to="/about/philip-short"
+            src={leaderPhilip}
+            alt="Philip Short, MSI Lead Instructor"
             role="Lead Instructor"
-            name="Phillip Short"
+            name="Philip Short"
           />
         </div>
       </div>

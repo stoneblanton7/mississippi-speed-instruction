@@ -130,7 +130,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                 </li>
                 <li className="flex gap-3">
                   <span aria-hidden="true" className="text-accent shrink-0">●</span>
-                  Direct coaching from Phillip Short and the MSI team
+                  Direct coaching from Philip Short and the MSI team
                 </li>
                 <li className="flex gap-3">
                   <span aria-hidden="true" className="text-accent shrink-0">●</span>
@@ -191,7 +191,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                 The program is{' '}
                 <span className="text-text font-semibold">designed by Mike Frascogna</span>{' '}
                 and the camp is led by{' '}
-                <span className="text-text font-semibold">Coach Phillip Short</span>{' '}
+                <span className="text-text font-semibold">Coach Philip Short</span>{' '}
                 and other MSI instructors.
               </p>
             </div>
