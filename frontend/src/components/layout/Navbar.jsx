@@ -42,9 +42,9 @@ export default function Navbar() {
 
   return (
     <header className={navClass}>
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-2" aria-label="MSI home">
-          <img src={logo} alt="Mississippi Speed Instruction" className="h-8 w-auto" />
+          <img src={logo} alt="Mississippi Speed Instruction" className="h-14 md:h-16 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
