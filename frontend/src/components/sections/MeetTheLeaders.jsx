@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Reveal from '../ui/Reveal.jsx';
 import leaderMike from '../../assets/leader-mike.png';
 import leaderPhillip from '../../assets/leader-phillip.png';
 
@@ -33,36 +34,42 @@ export default function MeetTheLeaders() {
   return (
     <section className="bg-bg py-24 lg:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-14 lg:mb-16 max-w-3xl">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            The Coaches
-          </p>
-          <h2
-            className="font-heading text-text uppercase mt-4 leading-[1.0]"
-            style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
-          >
-            Meet the Leaders.
-          </h2>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed">
-            Two coaches. Three decades of speed. Click to learn more about each.
-          </p>
-        </div>
+        <Reveal>
+          <div className="mb-14 lg:mb-16 max-w-3xl">
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+              The Coaches
+            </p>
+            <h2
+              className="font-heading text-text uppercase mt-4 leading-[1.0]"
+              style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
+            >
+              Meet the Leaders.
+            </h2>
+            <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed">
+              Two coaches. Three decades of speed. Click to learn more about each.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-2 gap-0 max-h-[600px] overflow-hidden">
-          <LeaderHalf
-            to="/about/mike-frascogna"
-            src={leaderMike}
-            alt="Mike Frascogna III, MSI Founder"
-            role="Founder"
-            name="Mike Frascogna III"
-          />
-          <LeaderHalf
-            to="/about/phillip-short"
-            src={leaderPhillip}
-            alt="Phillip Short, MSI Lead Instructor"
-            role="Lead Instructor"
-            name="Phillip Short"
-          />
+          <Reveal>
+            <LeaderHalf
+              to="/about/mike-frascogna"
+              src={leaderMike}
+              alt="Mike Frascogna III, MSI Founder"
+              role="Founder"
+              name="Mike Frascogna III"
+            />
+          </Reveal>
+          <Reveal delay={150}>
+            <LeaderHalf
+              to="/about/phillip-short"
+              src={leaderPhillip}
+              alt="Phillip Short, MSI Lead Instructor"
+              role="Lead Instructor"
+              name="Phillip Short"
+            />
+          </Reveal>
         </div>
       </div>
     </section>

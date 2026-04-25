@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
 import Button from '../ui/Button.jsx';
+import Reveal from '../ui/Reveal.jsx';
 import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
 import imgBoys from '../../assets/kids-camp (2).png';
 import imgGirls from '../../assets/kids-camp 6.jpg';
@@ -12,11 +12,7 @@ const CARDS = [
 
 function CampCard({ camp, detailHref, image }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+    <article
       className="relative overflow-hidden rounded-sm h-[520px] md:h-[640px] group"
     >
       <img
@@ -81,7 +77,7 @@ function CampCard({ camp, detailHref, image }) {
           </Button>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
@@ -92,24 +88,28 @@ export default function TwoCampsSection() {
       className="bg-bg py-24 lg:py-32 border-t border-border scroll-mt-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="max-w-2xl mb-14 lg:mb-20">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Summer 2026
-          </p>
-          <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
-            Two camps.
-            <br />
-            Three days each.
-          </h2>
-          <p className="font-body text-text-muted text-lg mt-6">
-            Same program, designed by Mike Frascogna and led by Coach Phillip Short.
-            Boys and girls run separate weeks at Madison Ridgeland Academy.
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl mb-14 lg:mb-20">
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+              Summer 2026
+            </p>
+            <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
+              Two camps.
+              <br />
+              Three days each.
+            </h2>
+            <p className="font-body text-text-muted text-lg mt-6">
+              Same program, designed by Mike Frascogna and led by Coach Phillip Short.
+              Boys and girls run separate weeks at Madison Ridgeland Academy.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid gap-6 lg:gap-10 md:grid-cols-2">
-          {CARDS.map((c) => (
-            <CampCard key={c.camp.id} {...c} />
+          {CARDS.map((c, i) => (
+            <Reveal key={c.camp.id} delay={i * 150}>
+              <CampCard {...c} />
+            </Reveal>
           ))}
         </div>
       </div>

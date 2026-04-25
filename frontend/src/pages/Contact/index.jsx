@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Facebook, Instagram, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
+import Reveal from '../../components/ui/Reveal.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
 import { SOCIAL } from '../../config.js';
 
@@ -56,27 +57,30 @@ export default function Contact() {
           className="absolute inset-0 pointer-events-none opacity-25 gradient-final-glow"
         />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Get in touch
-          </p>
-          <h1
-            className="font-heading uppercase mt-6 leading-[1.0]"
-            style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
-          >
-            <span className="block">Questions?</span>
-            <span className="block">Let's talk.</span>
-          </h1>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl leading-relaxed">
-            Drop us a line — we respond within one business day.
-          </p>
+          <Reveal>
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+              Get in touch
+            </p>
+            <h1
+              className="font-heading uppercase mt-6 leading-[1.0]"
+              style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
+            >
+              <span className="block">Questions?</span>
+              <span className="block">Let's talk.</span>
+            </h1>
+            <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl leading-relaxed">
+              Drop us a line — we respond within one business day.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className="bg-bg py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
+          <Reveal className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="lg:col-span-7 flex flex-col gap-5"
+            className="flex flex-col gap-5"
             aria-label="Contact MSI"
           >
             <div>
@@ -138,8 +142,10 @@ export default function Contact() {
               </Button>
             </div>
           </form>
+          </Reveal>
 
-          <aside className="lg:col-span-5 flex flex-col gap-6">
+          <Reveal delay={200} className="lg:col-span-5">
+          <aside className="flex flex-col gap-6">
             <div className="bg-surface border border-border p-8">
               <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
                 Find us
@@ -186,6 +192,7 @@ export default function Contact() {
               </div>
             </div>
           </aside>
+          </Reveal>
         </div>
       </section>
 

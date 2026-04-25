@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Reveal from '../../components/ui/Reveal.jsx';
 import { VIDEOS } from '../../api/data/videos.js';
 import { buildVimeoSrc } from '../../config.js';
 import { useVimeoThumbnail } from '../../hooks/useVimeoThumbnail.js';
@@ -78,26 +79,28 @@ export default function Film() {
           className="absolute inset-0 pointer-events-none opacity-25 gradient-final-glow"
         />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            The Film Room
-          </p>
-          <h1
-            className="font-heading uppercase mt-6 leading-[1.0]"
-            style={{ fontSize: 'clamp(48px, 9vw, 144px)' }}
-          >
-            Every drill.
-            <br />
-            Every element.
-          </h1>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
-            Watch how MSI builds speed. Pick a video below.
-          </p>
+          <Reveal>
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+              The Film Room
+            </p>
+            <h1
+              className="font-heading uppercase mt-6 leading-[1.0]"
+              style={{ fontSize: 'clamp(48px, 9vw, 144px)' }}
+            >
+              Every drill.
+              <br />
+              Every element.
+            </h1>
+            <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
+              Watch how MSI builds speed. Pick a video below.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className="bg-bg py-16 lg:py-24 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+          <Reveal delay={200} className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
             <div className="lg:col-span-2">
               <div className="aspect-video bg-surface border border-border rounded overflow-hidden mb-6">
                 <iframe
@@ -161,7 +164,7 @@ export default function Film() {
                 )}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>
