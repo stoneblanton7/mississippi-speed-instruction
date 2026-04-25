@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Button from './ui/Button.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
+import imgIncluded from '../assets/kids-camp 7.png';
 
 function FactTile({ label, value, mono = true }) {
   return (
@@ -63,49 +64,60 @@ export default function CampPage({ camp, banner }) {
 
       <section className="bg-bg py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Included
-          </p>
-          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-            What's included.
-          </h2>
-          <div className="mt-8 max-w-3xl space-y-5 font-body text-text-muted text-lg lg:text-xl leading-relaxed">
-            <p>
-              Every camper gets the same coaching that's trained Mississippi
-              athletes for thirty years — sized down for the {camp.ageRange} age
-              group and built to feel like a great three days, not a tryout.
-            </p>
-            <p>
-              The camp covers all ten elements of speed across the three days —
-              acceleration, change of direction, foot quickness, lateral
-              movement, and the rest — with drills designed to be genuinely fun.
-              Kids leave faster, more coordinated, and (in our experience)
-              asking when they can come back.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+                Included
+              </p>
+              <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
+                What's included.
+              </h2>
+              <div className="mt-8 space-y-5 font-body text-text-muted text-lg lg:text-xl leading-relaxed">
+                <p>
+                  Every camper gets the same coaching that's trained Mississippi
+                  athletes for thirty years — sized down for the {camp.ageRange} age
+                  group and built to feel like a great three days, not a tryout.
+                </p>
+                <p>
+                  The camp covers all ten elements of speed across the three days —
+                  acceleration, change of direction, foot quickness, lateral
+                  movement, and the rest — with drills designed to be genuinely fun.
+                  Kids leave faster, more coordinated, and (in our experience)
+                  asking when they can come back.
+                </p>
+              </div>
+              <ul className="mt-10 grid grid-cols-1 gap-y-3 font-body text-text text-base lg:text-lg">
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="text-accent shrink-0">●</span>
+                  Three days of in-person, small-group instruction
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="text-accent shrink-0">●</span>
+                  All ten elements of speed taught across the camp
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="text-accent shrink-0">●</span>
+                  Direct coaching from Phillip Short and the MSI team
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="text-accent shrink-0">●</span>
+                  Daily team competition that puts the work into action
+                </li>
+                <li className="flex gap-3">
+                  <span aria-hidden="true" className="text-accent shrink-0">●</span>
+                  Capped at {camp.spots} athletes so every kid gets attention
+                </li>
+              </ul>
+            </div>
+            <div className="overflow-hidden rounded-sm bg-surface aspect-[4/5] lg:aspect-[3/4] group">
+              <img
+                src={imgIncluded}
+                alt="MSI coach with athletes during training"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+            </div>
           </div>
-          <ul className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-3xl font-body text-text text-base lg:text-lg">
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="text-accent shrink-0">●</span>
-              Three days of in-person, small-group instruction
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="text-accent shrink-0">●</span>
-              All ten elements of speed taught across the camp
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="text-accent shrink-0">●</span>
-              Direct coaching from Phillip Short and the MSI team
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="text-accent shrink-0">●</span>
-              Daily team competition that puts the work into action
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="text-accent shrink-0">●</span>
-              Capped at {camp.spots} athletes so every kid gets attention
-            </li>
-          </ul>
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+          <div className="mt-16 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <FactTile label="Dates" value={camp.dates} />
             <FactTile label="Time" value={camp.time} />
             <FactTile label="Location" value={camp.location} mono={false} />
