@@ -95,4 +95,38 @@ body {
       linear-gradient(0deg, var(--color-bg) 0%, transparent 30%),
       linear-gradient(0deg, transparent 70%, var(--color-bg) 100%);
   }
+
+  .glow-accent {
+    box-shadow: 0 0 24px rgba(198, 247, 62, 0.4);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 60s linear infinite;
+}
+
+.animate-spin-slow.paused,
+.animate-spin-reverse.paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-spin-reverse {
+    animation: none;
+  }
 }
