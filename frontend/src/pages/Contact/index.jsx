@@ -63,11 +63,10 @@ export default function Contact() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
           >
-            Questions?
-            <br />
-            Let's talk.
+            <span className="block">Questions?</span>
+            <span className="block">Let's talk.</span>
           </h1>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl leading-relaxed">
             Drop us a line — we respond within one business day.
           </p>
         </div>
