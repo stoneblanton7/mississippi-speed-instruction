@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Play } from 'lucide-react';
 import VideoModal from './ui/VideoModal.jsx';
 import CoachToggle from './ui/CoachToggle.jsx';
+import HoverWord from './ui/HoverWord.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { useVimeoThumbnail } from '../hooks/useVimeoThumbnail.js';
 
@@ -87,7 +88,12 @@ export default function BioPage({
               className="font-heading uppercase mt-4 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
-              {name}
+              {name.split(' ').map((word, i, arr) => (
+                <span key={i}>
+                  <HoverWord>{word}</HoverWord>
+                  {i < arr.length - 1 ? ' ' : ''}
+                </span>
+              ))}
             </h1>
             <p className="font-body text-text text-xl lg:text-2xl mt-6">{role}</p>
           </div>
@@ -115,7 +121,12 @@ export default function BioPage({
                     className="font-heading uppercase leading-[1.0] text-text"
                     style={{ fontSize: 'clamp(28px, 3.5vw, 56px)' }}
                   >
-                    {pullquote}
+                    {pullquote.split(' ').map((word, i, arr) => (
+                      <span key={i}>
+                        <HoverWord>{word}</HoverWord>
+                        {i < arr.length - 1 ? ' ' : ''}
+                      </span>
+                    ))}
                   </p>
                 </blockquote>
               )}
@@ -131,7 +142,7 @@ export default function BioPage({
               {videoSectionTitle}
             </p>
             <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-              The film.
+              <HoverWord>The</HoverWord> <HoverWord>film.</HoverWord>
             </h2>
             <p className="font-body text-text-muted text-lg mt-6 max-w-2xl">
               {videos.length} reels — bio and drills. Click any tile to play.

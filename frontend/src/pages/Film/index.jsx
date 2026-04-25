@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { VIDEOS } from '../../api/data/videos.js';
 import { buildVimeoSrc } from '../../config.js';
 import { useVimeoThumbnail } from '../../hooks/useVimeoThumbnail.js';
+import HoverWord from '../../components/ui/HoverWord.jsx';
 
 const FILTERS = [
   { value: 'all', label: 'All' },
@@ -85,9 +86,9 @@ export default function Film() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(48px, 9vw, 144px)' }}
           >
-            Every drill.
+            <HoverWord>Every</HoverWord> <HoverWord>drill.</HoverWord>
             <br />
-            Every <span className="text-accent">element.</span>
+            <HoverWord>Every</HoverWord> <HoverWord>element.</HoverWord>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
             Watch how MSI builds speed. Pick a video below.

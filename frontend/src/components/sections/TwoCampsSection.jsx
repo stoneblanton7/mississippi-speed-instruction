@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Button from '../ui/Button.jsx';
+import HoverWord from '../ui/HoverWord.jsx';
 import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
 import boysBanner from '../../assets/camp-boys-banner.png';
 import girlsBanner from '../../assets/camp-girls-banner.png';
@@ -93,9 +94,9 @@ export default function TwoCampsSection() {
             Summer 2026
           </p>
           <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
-            Two camps.
+            <HoverWord>Two</HoverWord> <HoverWord>camps.</HoverWord>
             <br />
-            Three days <span className="text-accent">each.</span>
+            <HoverWord>Three</HoverWord> <HoverWord>days</HoverWord> <HoverWord>each.</HoverWord>
           </h2>
           <p className="font-body text-text-muted text-lg mt-6">
             Same program, designed by Mike Frascogna and led by Coach Phillip Short.

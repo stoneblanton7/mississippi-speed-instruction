@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Facebook, Instagram, Mail, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
+import HoverWord from '../../components/ui/HoverWord.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
 import { SOCIAL } from '../../config.js';
 
@@ -63,8 +64,12 @@ export default function Contact() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
           >
-            <span className="block">Questions?</span>
-            <span className="block">Let's <span className="text-accent">talk.</span></span>
+            <span className="block">
+              <HoverWord>Questions?</HoverWord>
+            </span>
+            <span className="block">
+              <HoverWord>Let's</HoverWord> <HoverWord>talk.</HoverWord>
+            </span>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl leading-relaxed">
             Drop us a line — we respond within one business day.

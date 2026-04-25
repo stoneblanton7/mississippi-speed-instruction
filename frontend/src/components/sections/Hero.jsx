@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 import Button from '../ui/Button.jsx';
+import HoverWord from '../ui/HoverWord.jsx';
 import {
   VIMEO,
   REGISTER_LINK_PROPS,
@@ -72,9 +73,9 @@ export default function Hero() {
             className="font-heading text-text leading-[1.0] uppercase mb-8"
             style={{ fontSize: 'clamp(48px, 9vw, 128px)' }}
           >
-            Faster Athletes
+            <HoverWord>Faster</HoverWord> <HoverWord>Athletes</HoverWord>
             <br />
-            Start <span className="text-accent">Here.</span>
+            <HoverWord>Start</HoverWord> <HoverWord>Here.</HoverWord>
           </motion.h1>
 
           <motion.p

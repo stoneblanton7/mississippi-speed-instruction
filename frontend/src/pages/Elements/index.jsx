@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
+import HoverWord from '../../components/ui/HoverWord.jsx';
 import { ELEMENTS } from '../../api/data/elements.js';
 
 function ElementCard({ element, index }) {
@@ -58,9 +59,9 @@ export default function ElementsIndex() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(64px, 12vw, 180px)' }}
           >
-            Ten Elements
+            <HoverWord>Ten</HoverWord> <HoverWord>Elements</HoverWord>
             <br />
-            of <span className="text-accent">Speed.</span>
+            <HoverWord>of</HoverWord> <HoverWord>Speed.</HoverWord>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
             Every drill at MSI maps to one of ten measurable elements. Click into any element

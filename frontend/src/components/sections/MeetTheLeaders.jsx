@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import HoverWord from '../ui/HoverWord.jsx';
 import leaderMike from '../../assets/leader-mike.png';
 import leaderPhillip from '../../assets/leader-phillip.png';
 
@@ -41,7 +42,7 @@ export default function MeetTheLeaders() {
             className="font-heading text-text uppercase mt-4 leading-[1.0]"
             style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
           >
-            Meet the <span className="text-accent">Leaders.</span>
+            <HoverWord>Meet</HoverWord> <HoverWord>the</HoverWord> <HoverWord>Leaders.</HoverWord>
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed">
             Two coaches. Three decades of speed. Click to learn more about each.
