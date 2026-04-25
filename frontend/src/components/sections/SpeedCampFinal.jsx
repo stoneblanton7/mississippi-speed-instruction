@@ -33,7 +33,7 @@ export default function SpeedCampFinal() {
             <br />
             Camp.
           </h2>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl mx-auto">
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl mx-auto">
             Three days. Ten elements. One faster athlete. Pick the camp that matches your
             athlete and lock the spot.
           </p>
