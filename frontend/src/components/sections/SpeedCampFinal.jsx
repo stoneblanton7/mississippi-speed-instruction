@@ -26,7 +26,7 @@ export default function SpeedCampFinal() {
             Summer 2026 · Madison Ridgeland Academy
           </p>
           <h2
-            className="font-heading uppercase mt-6 leading-[0.85]"
+            className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(80px, 16vw, 240px)' }}
           >
             Speed

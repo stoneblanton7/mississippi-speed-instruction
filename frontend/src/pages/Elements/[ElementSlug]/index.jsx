@@ -110,7 +110,7 @@ export default function ElementDetail() {
             className="mt-10 mx-auto h-40 lg:h-52 w-auto"
           />
           <h1
-            className="font-heading uppercase mt-8 leading-[0.85]"
+            className="font-heading uppercase mt-8 leading-[1.0]"
             style={{ fontSize: 'clamp(72px, 14vw, 220px)' }}
           >
             {element.name}
@@ -139,7 +139,7 @@ export default function ElementDetail() {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             Skill Overview
           </p>
-          <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[1.0]">
             See it on the field.
           </h2>
           <div className="mt-10 aspect-video bg-bg border border-border overflow-hidden">
@@ -163,7 +163,7 @@ export default function ElementDetail() {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             Importance by Sport
           </p>
-          <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[1.0]">
             How it shows up on game day.
           </h2>
           <ul className="mt-12 divide-y divide-border">
@@ -194,7 +194,7 @@ export default function ElementDetail() {
             <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
               Watch the Drills
             </p>
-            <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[0.9]">
+            <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[1.0]">
               How MSI coaches teach it.
             </h2>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

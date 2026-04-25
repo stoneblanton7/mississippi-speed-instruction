@@ -60,7 +60,7 @@ export default function Contact() {
             Get in touch
           </p>
           <h1
-            className="font-heading uppercase mt-6 leading-[0.85]"
+            className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
           >
             Questions?

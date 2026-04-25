@@ -92,7 +92,7 @@ export default function TwoCampsSection() {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             Summer 2026
           </p>
-          <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
             Two camps.
             <br />
             Three days each.

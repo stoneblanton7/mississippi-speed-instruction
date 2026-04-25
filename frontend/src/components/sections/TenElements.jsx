@@ -24,7 +24,7 @@ function StaticGrid() {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             The Methodology
           </p>
-          <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
             Ten Elements
             <br />
             of Speed
@@ -91,7 +91,7 @@ export default function TenElements() {
             <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
               The Methodology
             </p>
-            <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[0.9]">
+            <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
               Ten Elements
               <br />
               of Speed
@@ -138,7 +138,7 @@ export default function TenElements() {
                     className="h-24 w-24 lg:h-32 lg:w-32 object-contain shrink-0"
                   />
                   <h3
-                    className="font-heading uppercase leading-[0.85]"
+                    className="font-heading uppercase leading-[1.0]"
                     style={{ fontSize: 'clamp(56px, 7vw, 120px)' }}
                   >
                     {el.name}

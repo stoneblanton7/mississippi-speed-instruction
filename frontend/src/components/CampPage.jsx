@@ -38,7 +38,7 @@ export default function CampPage({ camp, banner }) {
             {eyebrowYear} · Madison Ridgeland Academy
           </p>
           <h1
-            className="font-heading uppercase mt-6 leading-[0.85]"
+            className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(64px, 12vw, 160px)' }}
           >
             {camp.name}
@@ -69,7 +69,7 @@ export default function CampPage({ camp, banner }) {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             The Spec
           </p>
-          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
             What you're signing up for.
           </h2>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
@@ -88,7 +88,7 @@ export default function CampPage({ camp, banner }) {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             The Camp
           </p>
-          <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
             How three days actually go.
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 leading-relaxed">
@@ -112,7 +112,7 @@ export default function CampPage({ camp, banner }) {
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             The Curriculum
           </p>
-          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[0.9]">
+          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
             What your athlete will train.
           </h2>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
@@ -166,7 +166,7 @@ export default function CampPage({ camp, banner }) {
               Lock the spot
             </p>
             <h2
-              className="font-heading uppercase mt-6 leading-[0.85]"
+              className="font-heading uppercase mt-6 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
               Register for

@@ -37,7 +37,7 @@ function StatReveal({ stat, scrollYProgress }) {
       className="text-center max-w-2xl mx-auto px-6"
     >
       <p
-        className="font-heading uppercase leading-[0.85]"
+        className="font-heading uppercase leading-[1.0]"
         style={{ fontSize: 'clamp(64px, 10vw, 160px)' }}
       >
         {stat.value}
@@ -86,7 +86,7 @@ export default function About() {
               Founder · 1993
             </p>
             <h1
-              className="font-heading uppercase mt-4 leading-[0.85]"
+              className="font-heading uppercase mt-4 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
               Mike
@@ -175,7 +175,7 @@ export default function About() {
               Lead Camp Instructor
             </p>
             <h2
-              className="font-heading uppercase mt-4 leading-[0.85]"
+              className="font-heading uppercase mt-4 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
               Phillip
@@ -238,7 +238,7 @@ export default function About() {
             The Program Today
           </p>
           <h2
-            className="font-heading uppercase mt-6 leading-[0.85]"
+            className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(48px, 7vw, 96px)' }}
           >
             One team.

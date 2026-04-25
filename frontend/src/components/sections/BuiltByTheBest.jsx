@@ -46,7 +46,7 @@ export default function BuiltByTheBest() {
             className="lg:col-span-7"
           >
             <h2
-              className="font-heading uppercase leading-[0.9]"
+              className="font-heading uppercase leading-[1.0]"
               style={{ fontSize: 'clamp(48px, 6vw, 96px)' }}
             >
               Thirty years

@@ -75,7 +75,7 @@ export default function BioPage({
               {eyebrow}
             </p>
             <h1
-              className="font-heading uppercase mt-4 leading-[0.85]"
+              className="font-heading uppercase mt-4 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
               {name}
@@ -102,7 +102,7 @@ export default function BioPage({
               {pullquote && i === pullquoteAfter && (
                 <blockquote className="my-12 lg:my-16 border-l-2 border-accent pl-6 lg:pl-10">
                   <p
-                    className="font-heading uppercase leading-[0.95] text-text"
+                    className="font-heading uppercase leading-[1.0] text-text"
                     style={{ fontSize: 'clamp(28px, 3.5vw, 56px)' }}
                   >
                     {pullquote}
@@ -120,7 +120,7 @@ export default function BioPage({
             <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
               {videoSectionTitle}
             </p>
-            <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[0.9]">
+            <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
               The film.
             </h2>
             <p className="font-body text-text-muted text-lg mt-6 max-w-2xl">
