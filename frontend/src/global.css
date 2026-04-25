@@ -134,3 +134,13 @@ body {
     animation: none;
   }
 }
+
+/* Eliminate sub-pixel jitter on large display headings during scroll.
+   Promotes Anton display headings to a GPU compositing layer so the browser
+   reuses the rendered texture during scroll instead of repainting. */
+.font-heading {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
