@@ -2,8 +2,10 @@
   "home_hero": {
     "title": "MSI Web Header",
     "vimeo_id": "1071529794",
-    "vimeo_url": "https://player.vimeo.com/video/1071529794",
-    "page_source": "home"
+    "vimeo_hash": "4e88b51a6d",
+    "vimeo_url": "https://player.vimeo.com/video/1071529794?h=4e88b51a6d",
+    "page_source": "home",
+    "_note": "Privacy hash required — video is set to 'private with hashed link' on Mike's Vimeo. Embeds without h= return Sorry, we're having a little trouble. Other videos may need similar hashes; verify per-page if embeds fail."
   },
   "home_featured": [
     {

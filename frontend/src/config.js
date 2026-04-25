@@ -61,6 +61,7 @@ export const ELEMENTS = [
 
 export const VIMEO = {
   homeHero: '1071529794',
+  homeHeroHash: '4e88b51a6d',
   homeFeatured: ['1054590195', '1065590680', '1065590471'],
   mikeBio: '1029090078',
   phillipBio: '1027326776',
