@@ -1,46 +1,25 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import NavDropdown from './NavDropdown.jsx';
 import { REGISTER_LINK_PROPS } from '../../config.js';
 import logo from '../../assets/logo.svg';
 
-const TWO_CAMPS_ID = 'two-camps';
+const CAMP_ITEMS = [
+  { label: 'Boys Camp', path: '/camp/boys' },
+  { label: 'Girls Camp', path: '/camp/girls' },
+];
+
+const ABOUT_ITEMS = [
+  { label: 'Mike Frascogna III', path: '/about/mike-frascogna' },
+  { label: 'Phillip Short', path: '/about/phillip-short' },
+];
 
 const ROUTE_LINKS = [
   { to: '/film', label: 'Videos' },
   { to: '/elements', label: 'Elements' },
-  { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ];
-
-function CampNavLink({ onClick, mobile = false }) {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const baseClass =
-    (mobile
-      ? 'font-body text-base uppercase tracking-widest py-2 '
-      : 'font-body text-sm uppercase tracking-widest transition-colors ') +
-    'text-text hover:text-accent';
-
-  const handleClick = (e) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      const el = document.getElementById(TWO_CAMPS_ID);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      onClick?.();
-    } else {
-      e.preventDefault();
-      onClick?.();
-      navigate('/', { state: { scrollTo: TWO_CAMPS_ID } });
-    }
-  };
-
-  return (
-    <a href={`/#${TWO_CAMPS_ID}`} onClick={handleClick} className={baseClass}>
-      Camp
-    </a>
-  );
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,6 +38,8 @@ export default function Navbar() {
       ? 'bg-overlay-bottom backdrop-blur border-b border-border'
       : 'bg-transparent');
 
+  const closeMobile = () => setMobileOpen(false);
+
   return (
     <header className={navClass}>
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
@@ -67,19 +48,35 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <CampNavLink />
-          {ROUTE_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                'font-body text-sm uppercase tracking-widest transition-colors ' +
-                (isActive ? 'text-accent' : 'text-text hover:text-accent')
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          <NavDropdown label="Camp" items={CAMP_ITEMS} />
+          <NavLink
+            to="/film"
+            className={({ isActive }) =>
+              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              (isActive ? 'text-accent' : 'text-text hover:text-accent')
+            }
+          >
+            Videos
+          </NavLink>
+          <NavLink
+            to="/elements"
+            className={({ isActive }) =>
+              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              (isActive ? 'text-accent' : 'text-text hover:text-accent')
+            }
+          >
+            Elements
+          </NavLink>
+          <NavDropdown label="About" items={ABOUT_ITEMS} />
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              (isActive ? 'text-accent' : 'text-text hover:text-accent')
+            }
+          >
+            Contact
+          </NavLink>
           <a
             {...REGISTER_LINK_PROPS}
             className="bg-accent text-text-inverted font-body text-sm font-semibold uppercase tracking-widest px-5 py-2.5 rounded-lg transition-colors hover:bg-accent-hover"
@@ -101,24 +98,42 @@ export default function Navbar() {
 
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-bg">
-          <div className="flex flex-col gap-1 px-6 py-4">
-            <CampNavLink mobile onClick={() => setMobileOpen(false)} />
-            {ROUTE_LINKS.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={({ isActive }) =>
-                  'font-body text-base uppercase tracking-widest py-2 ' +
-                  (isActive ? 'text-accent' : 'text-text')
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+          <div className="flex flex-col gap-4 px-6 py-5">
+            <MobileGroup label="Camp" items={CAMP_ITEMS} onItemClick={closeMobile} />
+            <NavLink
+              to="/film"
+              onClick={closeMobile}
+              className={({ isActive }) =>
+                'font-body text-base uppercase tracking-widest py-2 ' +
+                (isActive ? 'text-accent' : 'text-text')
+              }
+            >
+              Videos
+            </NavLink>
+            <NavLink
+              to="/elements"
+              onClick={closeMobile}
+              className={({ isActive }) =>
+                'font-body text-base uppercase tracking-widest py-2 ' +
+                (isActive ? 'text-accent' : 'text-text')
+              }
+            >
+              Elements
+            </NavLink>
+            <MobileGroup label="About" items={ABOUT_ITEMS} onItemClick={closeMobile} />
+            <NavLink
+              to="/contact"
+              onClick={closeMobile}
+              className={({ isActive }) =>
+                'font-body text-base uppercase tracking-widest py-2 ' +
+                (isActive ? 'text-accent' : 'text-text')
+              }
+            >
+              Contact
+            </NavLink>
             <a
               {...REGISTER_LINK_PROPS}
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMobile}
               className="mt-3 bg-accent text-text-inverted font-body text-sm font-semibold uppercase tracking-widest px-5 py-3 rounded-lg text-center"
             >
               Register
@@ -127,5 +142,28 @@ export default function Navbar() {
         </div>
       )}
     </header>
+  );
+}
+
+function MobileGroup({ label, items, onItemClick }) {
+  return (
+    <div className="border-l-2 border-border pl-4">
+      <p className="font-body text-text text-base uppercase tracking-widest mb-2">
+        {label}
+      </p>
+      {items.map((item) => (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          onClick={onItemClick}
+          className={({ isActive }) =>
+            'block py-2 font-body text-sm uppercase tracking-widest ' +
+            (isActive ? 'text-accent' : 'text-text-muted hover:text-accent')
+          }
+        >
+          {item.label}
+        </NavLink>
+      ))}
+    </div>
   );
 }
