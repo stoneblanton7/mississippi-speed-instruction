@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import Button from '../ui/Button.jsx';
-import HoverWord from '../ui/HoverWord.jsx';
 import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
 
 export default function SpeedCampFinal() {
@@ -30,9 +29,9 @@ export default function SpeedCampFinal() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(80px, 16vw, 240px)' }}
           >
-            <HoverWord>Speed</HoverWord>
+            Speed
             <br />
-            <HoverWord>Camp.</HoverWord>
+            Camp.
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl mx-auto">
             Three days. Ten elements. One faster athlete. Pick the camp that matches your

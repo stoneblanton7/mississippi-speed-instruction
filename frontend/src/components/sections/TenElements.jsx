@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import HoverWord from '../ui/HoverWord.jsx';
 
 import iconAcceleration from '../../assets/skill-icon-acceleration.png';
 import iconBalance from '../../assets/skill-icon-balance-body-control.png';
@@ -70,7 +69,7 @@ export default function TenElements() {
             className="font-heading text-text uppercase mt-4 leading-[1.0]"
             style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
           >
-            <HoverWord>Ten</HoverWord> <HoverWord>Elements.</HoverWord> <HoverWord>One</HoverWord> <HoverWord>Athlete.</HoverWord>
+            Ten Elements. One Athlete.
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed max-w-2xl">
             Every drill, every session, every camp comes back to these ten

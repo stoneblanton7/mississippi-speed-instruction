@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Button from './ui/Button.jsx';
-import HoverWord from './ui/HoverWord.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
 
@@ -42,12 +41,7 @@ export default function CampPage({ camp, banner }) {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(64px, 12vw, 160px)' }}
           >
-            {camp.name.split(' ').map((word, i, arr) => (
-              <span key={i}>
-                <HoverWord>{word}</HoverWord>
-                {i < arr.length - 1 ? ' ' : ''}
-              </span>
-            ))}
+            {camp.name}
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl">
             Three days. Ten elements. One faster athlete.
@@ -76,7 +70,7 @@ export default function CampPage({ camp, banner }) {
             The Spec
           </p>
           <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-            <HoverWord>What</HoverWord> <HoverWord>you're</HoverWord> <HoverWord>signing</HoverWord> <HoverWord>up</HoverWord> <HoverWord>for.</HoverWord>
+            What you're signing up for.
           </h2>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <FactTile label="Dates" value={camp.dates} />
@@ -95,7 +89,7 @@ export default function CampPage({ camp, banner }) {
             The Camp
           </p>
           <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
-            <HoverWord>How</HoverWord> <HoverWord>three</HoverWord> <HoverWord>days</HoverWord> <HoverWord>actually</HoverWord> <HoverWord>go.</HoverWord>
+            How three days actually go.
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 leading-relaxed">
             A fun three (3) day introduction to speed agility and quickness training, 4:00–5:45
@@ -119,7 +113,7 @@ export default function CampPage({ camp, banner }) {
             The Curriculum
           </p>
           <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-            <HoverWord>What</HoverWord> <HoverWord>your</HoverWord> <HoverWord>athlete</HoverWord> <HoverWord>will</HoverWord> <HoverWord>train.</HoverWord>
+            What your athlete will train.
           </h2>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
             {ELEMENTS.map((el, i) => (
@@ -175,17 +169,9 @@ export default function CampPage({ camp, banner }) {
               className="font-heading uppercase mt-6 leading-[1.0]"
               style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
             >
-              <HoverWord>Register</HoverWord> <HoverWord>for</HoverWord>
+              Register for
               <br />
-              {camp.name.split(' ').map((word, i, arr) => (
-                <span key={i}>
-                  <HoverWord>
-                    {word}
-                    {i === arr.length - 1 ? '.' : ''}
-                  </HoverWord>
-                  {i < arr.length - 1 ? ' ' : ''}
-                </span>
-              ))}
+              {camp.name}.
             </h2>
             <p className="font-body text-text-muted text-lg lg:text-xl mt-8">
               Only {camp.spots} spots. Three days. ${camp.cost}.
