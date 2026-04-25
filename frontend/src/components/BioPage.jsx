@@ -4,8 +4,10 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Play } from 'lucide-react';
 import VideoModal from './ui/VideoModal.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
+import { useVimeoThumbnail } from '../hooks/useVimeoThumbnail.js';
 
 function VideoTile({ video, index, onPlay }) {
+  const thumbnail = useVimeoThumbnail(video.vimeo_id, video.vimeo_hash);
   return (
     <motion.button
       type="button"
@@ -17,12 +19,14 @@ function VideoTile({ video, index, onPlay }) {
       aria-label={`Play ${video.title}`}
       className="group relative aspect-video bg-surface border border-border overflow-hidden text-left flex"
     >
-      <img
-        src={`https://vumbnail.com/${video.vimeo_id}.jpg`}
-        alt=""
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover opacity-55 group-hover:opacity-75 transition-opacity duration-500"
-      />
+      {thumbnail && (
+        <img
+          src={thumbnail}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-55 group-hover:opacity-75 transition-opacity duration-500"
+        />
+      )}
       <div className="absolute inset-0 pointer-events-none gradient-card-bottom" />
       <div className="relative z-10 flex flex-col justify-between p-5 w-full">
         <span className="font-mono text-[10px] text-text-dim uppercase tracking-widest self-start">

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import VideoModal from '../ui/VideoModal.jsx';
 import { VIMEO } from '../../config.js';
+import { useVimeoThumbnail } from '../../hooks/useVimeoThumbnail.js';
 
 const REELS = [
   {
@@ -27,6 +28,7 @@ const REELS = [
 ];
 
 function ReelCard({ reel, onPlay, index }) {
+  const thumbnail = useVimeoThumbnail(reel.id);
   return (
     <motion.button
       type="button"
@@ -38,12 +40,14 @@ function ReelCard({ reel, onPlay, index }) {
       aria-label={`Play ${reel.title}, ${reel.duration}`}
       className="group relative aspect-[4/5] bg-surface border border-border overflow-hidden text-left flex flex-col"
     >
-      <img
-        src={`https://vumbnail.com/${reel.id}.jpg`}
-        alt=""
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover opacity-50 group-hover:opacity-65 transition-opacity duration-500"
-      />
+      {thumbnail && (
+        <img
+          src={thumbnail}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-50 group-hover:opacity-65 transition-opacity duration-500"
+        />
+      )}
       <div className="absolute inset-0 pointer-events-none gradient-card-bottom" />
 
       <div className="relative z-10 flex-1 flex items-start justify-between p-6">

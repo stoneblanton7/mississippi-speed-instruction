@@ -6,6 +6,7 @@ import VideoModal from '../../../components/ui/VideoModal.jsx';
 import SpeedCampFinal from '../../../components/sections/SpeedCampFinal.jsx';
 import { ELEMENTS, ELEMENTS_BY_SLUG, SPORTS } from '../../../api/data/elements.js';
 import { buildVimeoSrc } from '../../../config.js';
+import { useVimeoThumbnail } from '../../../hooks/useVimeoThumbnail.js';
 
 const RELATED_DRILLS = {
   acceleration: [
@@ -47,6 +48,7 @@ function MeterDots({ level }) {
 }
 
 function VideoTile({ video, onPlay }) {
+  const thumbnail = useVimeoThumbnail(video.vimeo_id, video.vimeo_hash);
   return (
     <button
       type="button"
@@ -54,12 +56,14 @@ function VideoTile({ video, onPlay }) {
       aria-label={`Play ${video.title}`}
       className="group relative aspect-video bg-surface border border-border overflow-hidden text-left flex"
     >
-      <img
-        src={`https://vumbnail.com/${video.vimeo_id}.jpg`}
-        alt=""
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover opacity-55 group-hover:opacity-75 transition-opacity duration-500"
-      />
+      {thumbnail && (
+        <img
+          src={thumbnail}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-55 group-hover:opacity-75 transition-opacity duration-500"
+        />
+      )}
       <div className="absolute inset-0 pointer-events-none gradient-card-bottom" />
       <div className="relative z-10 flex flex-col justify-end p-5 w-full">
         <div className="flex items-end justify-between gap-3">
