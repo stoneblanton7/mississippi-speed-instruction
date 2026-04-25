@@ -28,12 +28,17 @@ export default function CampPage({ camp, banner }) {
 
   return (
     <article>
-      <section className="relative bg-bg pt-32 pb-16 lg:pt-44 lg:pb-24 border-b border-border overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden border-b border-border">
+        <img
+          src={banner}
+          alt={`${camp.name} training`}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div
           aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-30 gradient-final-glow"
+          className="absolute inset-0 pointer-events-none gradient-card-bottom"
         />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex flex-col justify-end pb-16 md:pb-24">
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
             {eyebrowYear} · {camp.gender} Camp · Madison Ridgeland Academy
           </p>
@@ -53,16 +58,6 @@ export default function CampPage({ camp, banner }) {
               Register for Camp
             </Button>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-surface border-b border-border">
-        <div className="mx-auto max-w-6xl">
-          <img
-            src={banner}
-            alt={`${camp.name} promotional banner`}
-            className="w-full h-auto block"
-          />
         </div>
       </section>
 
