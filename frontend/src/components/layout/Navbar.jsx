@@ -7,7 +7,7 @@ import logo from '../../assets/logo.svg';
 const TWO_CAMPS_ID = 'two-camps';
 
 const ROUTE_LINKS = [
-  { to: '/film', label: 'Film' },
+  { to: '/film', label: 'Videos' },
   { to: '/elements', label: 'Elements' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
