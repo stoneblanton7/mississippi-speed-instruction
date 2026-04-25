@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import Button from './ui/Button.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
@@ -25,8 +26,39 @@ function FactTile({ label, value, mono = true }) {
   );
 }
 
+const FAQS = [
+  {
+    q: 'What if my child has never done speed training before?',
+    a: "Most of our campers haven't. The drills are built for first-timers. By day two, your kid will be doing things they couldn't do on day one — that's the point.",
+  },
+  {
+    q: 'What should they bring?',
+    a: 'Athletic shoes (cleats optional), athletic gear, and a water bottle. Sunscreen if it’s hot. Bring energy.',
+  },
+  {
+    q: "What if my child can't make all three days?",
+    a: "Let us know in advance and we'll do our best to catch them up. Three days together is ideal because the elements build on each other, but one missed day isn't a deal-breaker.",
+  },
+  {
+    q: 'Have a different question?',
+    a: (
+      <>
+        Reach out through the{' '}
+        <Link
+          to="/contact"
+          className="text-accent hover:text-accent-hover border-b border-current"
+        >
+          contact page
+        </Link>{' '}
+        — we usually reply within a day.
+      </>
+    ),
+  },
+];
+
 export default function CampPage({ camp, banner }) {
   const eyebrowYear = camp.dates.includes('2026') ? 'SUMMER 2026' : 'SUMMER';
+  const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <article>
@@ -218,52 +250,43 @@ export default function CampPage({ camp, banner }) {
           <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
             Common questions.
           </h2>
-          <dl className="mt-12 space-y-10">
-            <div>
-              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
-                What if my child has never done speed training before?
-              </dt>
-              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
-                Most of our campers haven't. The drills are built for
-                first-timers. By day two, your kid will be doing things they
-                couldn't do on day one — that's the point.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
-                What should they bring?
-              </dt>
-              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
-                Athletic shoes (cleats optional), athletic gear, and a water
-                bottle. Sunscreen if it's hot. Bring energy.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
-                What if my child can't make all three days?
-              </dt>
-              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
-                Let us know in advance and we'll do our best to catch them up.
-                Three days together is ideal because the elements build on each
-                other, but one missed day isn't a deal-breaker.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
-                Have a different question?
-              </dt>
-              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
-                Reach out through the{' '}
-                <Link
-                  to="/contact"
-                  className="text-accent hover:text-accent-hover border-b border-current"
-                >
-                  contact page
-                </Link>{' '}
-                — we usually reply within a day.
-              </dd>
-            </div>
-          </dl>
+          <div className="mt-12 divide-y divide-border border-y border-border">
+            {FAQS.map((item, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div key={i}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between gap-6 py-6 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                  >
+                    <span className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight group-hover:text-accent transition-colors">
+                      {item.q}
+                    </span>
+                    <ChevronDown
+                      size={24}
+                      strokeWidth={2}
+                      className={
+                        'shrink-0 transition-transform duration-300 ' +
+                        (isOpen ? 'rotate-180 text-accent' : 'text-text-muted')
+                      }
+                    />
+                  </button>
+                  <div
+                    className={
+                      'overflow-hidden transition-all duration-300 ease-out ' +
+                      (isOpen ? 'max-h-[500px] pb-6' : 'max-h-0')
+                    }
+                  >
+                    <p className="font-body text-text-muted text-base lg:text-lg leading-relaxed pr-12">
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
