@@ -37,12 +37,9 @@ function CampCard({ camp, detailHref, image }) {
       />
 
       <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10">
-        <div className="absolute top-8 md:top-10 left-8 md:left-10 right-8 md:right-10 flex items-center justify-between">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+        <div className="absolute top-8 md:top-10 left-8 md:left-10 right-8 md:right-10">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em] [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             Summer 2026 · {camp.gender}
-          </p>
-          <p className="font-mono text-xs text-text-dim uppercase tracking-widest">
-            {camp.spots} spots
           </p>
         </div>
 
@@ -53,7 +50,7 @@ function CampCard({ camp, detailHref, image }) {
           {camp.name}
         </h3>
 
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 font-mono text-sm md:text-base text-text-muted">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 font-mono text-sm md:text-base font-medium text-text [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
           <span>
             <span className="text-accent">●</span> {camp.dates}
           </span>
@@ -66,9 +63,12 @@ function CampCard({ camp, detailHref, image }) {
           <span>
             <span className="text-accent">●</span> ${camp.cost}
           </span>
+          <span>
+            <span className="text-accent">●</span> {camp.spots} spots
+          </span>
         </div>
 
-        <p className="font-body text-text-muted text-sm md:text-base mb-8 max-w-md">
+        <p className="font-body text-text text-sm md:text-base mb-8 max-w-md [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
           {camp.location}
         </p>
 

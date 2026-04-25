@@ -62,11 +62,11 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
 
   return (
     <article>
-      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden border-b border-border">
+      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden border-b border-border bg-bg">
         <img
           src={banner}
           alt={`${camp.name} training`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div
           aria-hidden="true"
