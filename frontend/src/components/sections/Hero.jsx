@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       className="relative w-full overflow-hidden bg-bg"
-      style={{ height: '100dvh', minHeight: '640px' }}
+      style={{ height: '100vh', minHeight: '640px' }}
     >
         {/* Vimeo background — full bleed cover */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
