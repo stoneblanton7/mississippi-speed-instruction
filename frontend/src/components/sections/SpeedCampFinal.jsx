@@ -1,73 +1,90 @@
-import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import Button from '../ui/Button.jsx';
-import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
+import { REGISTER_LINK_PROPS } from '../../config.js';
+import imgHurdles from '../../assets/kids-camp (2).png';
+import imgParachute from '../../assets/kids-camp-4.jpg';
+import imgCoaching from '../../assets/kids-camp (3).jpg';
+import imgHuddle from '../../assets/kids-camp 7.png';
 
 export default function SpeedCampFinal() {
   return (
-    <section className="relative overflow-hidden bg-bg border-t border-border">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-30 gradient-final-glow"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none gradient-section-mask"
-      />
+    <section className="bg-bg py-24 md:py-32 lg:py-40 px-6 md:px-12 border-t border-border overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em] mb-6">
+              Summer 2026
+            </p>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-32 lg:py-48">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center"
-        >
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Summer 2026 · Madison Ridgeland Academy
-          </p>
-          <h2
-            className="font-heading uppercase mt-6 leading-[1.0]"
-            style={{ fontSize: 'clamp(80px, 16vw, 240px)' }}
-          >
-            Speed
-            <br />
-            Camp.
-          </h2>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl mx-auto">
-            Three days. Ten elements. One faster athlete. Pick the camp that matches your
-            athlete and lock the spot.
-          </p>
+            <h2
+              className="font-heading text-text uppercase leading-[1.0] mb-8"
+              style={{ fontSize: 'clamp(64px, 10vw, 144px)' }}
+            >
+              Speed
+              <br />
+              Camp
+            </h2>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-            <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
-              Register Boys Camp
-            </Button>
-            <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
-              Register Girls Camp
-            </Button>
-          </div>
+            <p className="font-body text-text-muted text-lg lg:text-xl leading-relaxed mb-4 max-w-md">
+              Three days. Ten elements. One faster athlete.
+            </p>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto pt-10 border-t border-border">
-            <div className="text-left sm:text-center">
-              <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
-                Boys Camp
-              </p>
-              <p className="font-heading text-2xl uppercase mt-2">{CAMPS.boys.dates}</p>
-              <p className="font-body text-sm text-text-muted mt-1">
-                {CAMPS.boys.time} · Ages {CAMPS.boys.ageRange} · ${CAMPS.boys.cost}
-              </p>
-            </div>
-            <div className="text-left sm:text-center">
-              <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
-                Girls Camp
-              </p>
-              <p className="font-heading text-2xl uppercase mt-2">{CAMPS.girls.dates}</p>
-              <p className="font-body text-sm text-text-muted mt-1">
-                {CAMPS.girls.time} · Ages {CAMPS.girls.ageRange} · ${CAMPS.girls.cost}
-              </p>
+            <p className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-10 max-w-md">
+              Madison Ridgeland Academy. Boys June 9–11 · Girls June 23–25.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                as="a"
+                {...REGISTER_LINK_PROPS}
+                variant="primary"
+                size="lg"
+                arrow
+              >
+                Register for Camp
+              </Button>
+              <Button as={Link} to="/camp/boys" variant="ghost" size="lg">
+                Learn More
+              </Button>
             </div>
           </div>
-        </motion.div>
+
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 h-[500px] md:h-[640px]">
+              <div className="col-span-4 row-span-4 overflow-hidden rounded-sm bg-surface">
+                <img
+                  src={imgHurdles}
+                  alt="Two MSI athletes sprinting through agility hurdles"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+
+              <div className="col-span-2 row-span-2 overflow-hidden rounded-sm bg-surface">
+                <img
+                  src={imgParachute}
+                  alt="MSI athletes running the parachute drill"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+
+              <div className="col-span-2 row-span-2 overflow-hidden rounded-sm bg-surface">
+                <img
+                  src={imgCoaching}
+                  alt="MSI coach training a young athlete in stance technique"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+
+              <div className="col-span-6 row-span-2 overflow-hidden rounded-sm bg-surface">
+                <img
+                  src={imgHuddle}
+                  alt="MSI coach talking with a group of athletes"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
