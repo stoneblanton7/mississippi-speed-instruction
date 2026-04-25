@@ -60,7 +60,7 @@ export default function ElementsIndex() {
           >
             Ten Elements
             <br />
-            of Speed.
+            of <span className="text-accent">Speed.</span>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
             Every drill at MSI maps to one of ten measurable elements. Click into any element

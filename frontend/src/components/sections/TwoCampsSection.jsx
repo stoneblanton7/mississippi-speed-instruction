@@ -95,7 +95,7 @@ export default function TwoCampsSection() {
           <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
             Two camps.
             <br />
-            Three days each.
+            Three days <span className="text-accent">each.</span>
           </h2>
           <p className="font-body text-text-muted text-lg mt-6">
             Same program, designed by Mike Frascogna and led by Coach Phillip Short.

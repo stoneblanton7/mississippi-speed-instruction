@@ -74,7 +74,7 @@ export default function Hero() {
           >
             Faster Athletes
             <br />
-            Start Here.
+            Start <span className="text-accent">Here.</span>
           </motion.h1>
 
           <motion.p

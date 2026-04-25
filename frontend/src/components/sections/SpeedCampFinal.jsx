@@ -29,7 +29,7 @@ export default function SpeedCampFinal() {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(80px, 16vw, 240px)' }}
           >
-            Speed
+            <span className="text-accent">Speed</span>
             <br />
             Camp.
           </h2>

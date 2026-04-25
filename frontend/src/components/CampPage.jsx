@@ -41,7 +41,23 @@ export default function CampPage({ camp, banner }) {
             className="font-heading uppercase mt-6 leading-[1.0]"
             style={{ fontSize: 'clamp(64px, 12vw, 160px)' }}
           >
-            {camp.name}
+            {camp.name.split(' ').map((word, i, arr) => {
+              const trailingSpace = i < arr.length - 1 ? ' ' : '';
+              if (word.toUpperCase() === 'SPEED') {
+                return (
+                  <span key={i} className="text-accent">
+                    {word}
+                    {trailingSpace}
+                  </span>
+                );
+              }
+              return (
+                <span key={i}>
+                  {word}
+                  {trailingSpace}
+                </span>
+              );
+            })}
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl">
             Three days. Ten elements. One faster athlete.

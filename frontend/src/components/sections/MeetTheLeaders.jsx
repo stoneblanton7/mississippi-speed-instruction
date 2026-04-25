@@ -41,7 +41,7 @@ export default function MeetTheLeaders() {
             className="font-heading text-text uppercase mt-4 leading-[1.0]"
             style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
           >
-            Meet the Leaders.
+            Meet the <span className="text-accent">Leaders.</span>
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed">
             Two coaches. Three decades of speed. Click to learn more about each.

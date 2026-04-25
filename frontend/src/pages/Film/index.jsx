@@ -87,7 +87,7 @@ export default function Film() {
           >
             Every drill.
             <br />
-            Every element.
+            Every <span className="text-accent">element.</span>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
             Watch how MSI builds speed. Pick a video below.

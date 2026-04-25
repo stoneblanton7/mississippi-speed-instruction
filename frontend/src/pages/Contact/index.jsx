@@ -64,7 +64,7 @@ export default function Contact() {
             style={{ fontSize: 'clamp(56px, 10vw, 160px)' }}
           >
             <span className="block">Questions?</span>
-            <span className="block">Let's talk.</span>
+            <span className="block">Let's <span className="text-accent">talk.</span></span>
           </h1>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-12 max-w-2xl leading-relaxed">
             Drop us a line — we respond within one business day.

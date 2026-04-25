@@ -27,7 +27,7 @@ function StaticGrid() {
           <h2 className="font-heading text-5xl lg:text-7xl uppercase mt-4 leading-[1.0]">
             Ten Elements
             <br />
-            of Speed
+            of <span className="text-accent">Speed</span>
           </h2>
           <p className="font-body text-text-muted text-lg mt-6">
             Every drill at MSI maps to one of ten measurable elements. Master them and
