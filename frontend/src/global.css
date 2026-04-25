@@ -55,6 +55,10 @@ body {
   color: var(--color-text-inverted);
 }
 
+.text-text-muted {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 16px rgba(0, 0, 0, 0.9);
+}
+
 @layer utilities {
   .gradient-hero {
     background: linear-gradient(
