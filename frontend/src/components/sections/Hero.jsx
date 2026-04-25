@@ -21,6 +21,7 @@ const HERO_SRC = buildVimeoSrc(VIMEO.homeHero, {
 
 export default function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [heroKey, setHeroKey] = useState(0);
 
   return (
     <>
@@ -31,6 +32,7 @@ export default function Hero() {
         {/* Vimeo background — full bleed cover */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <iframe
+            key={heroKey}
             src={HERO_SRC}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             style={{
@@ -117,7 +119,10 @@ export default function Hero() {
           vimeoId={VIMEO.homeHero}
           vimeoHash={VIMEO.homeHeroHash}
           title="MSI hero film"
-          onClose={() => setVideoOpen(false)}
+          onClose={() => {
+            setVideoOpen(false);
+            setHeroKey((k) => k + 1);
+          }}
         />
       )}
     </>
