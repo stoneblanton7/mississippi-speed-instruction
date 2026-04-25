@@ -24,7 +24,7 @@ export default function BuiltByTheBest() {
               <img
                 src={mikePortrait}
                 alt="Mike Frascogna III"
-                className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05]"
+                className="absolute inset-0 h-full w-full object-cover object-top grayscale contrast-[1.05]"
               />
               <div className="absolute inset-0 pointer-events-none gradient-portrait-bottom" />
               <div className="absolute bottom-6 left-6 right-6">
