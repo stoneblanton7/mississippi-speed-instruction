@@ -73,7 +73,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
           className="absolute inset-0 pointer-events-none gradient-card-bottom"
         />
         <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex flex-col justify-end pb-16 md:pb-24">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em] [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             {eyebrowYear} · {camp.gender} Camp · Madison Ridgeland Academy
           </p>
           <h1
@@ -82,7 +82,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
           >
             {camp.name}
           </h1>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             Three days at Madison Ridgeland Academy where your kid learns the
             foundations of real athletic speed — from coaches who've been doing
             this for thirty years.

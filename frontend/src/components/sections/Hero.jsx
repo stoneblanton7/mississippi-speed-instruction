@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="font-mono text-xs lg:text-sm text-accent uppercase tracking-[0.4em] mb-5"
+            className="font-mono text-xs lg:text-sm text-accent uppercase tracking-[0.4em] mb-5 [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]"
           >
             Mississippi Speed Instruction · Est. 1993
           </motion.p>
@@ -81,7 +81,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
-            className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-8 max-w-2xl"
+            className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-8 max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]"
           >
             Three days. Ten elements. One faster athlete. Madison Ridgeland Academy, Summer 2026.
           </motion.p>
