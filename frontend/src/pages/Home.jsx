@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import Hero from '../components/sections/Hero.jsx';
 import TwoCampsSection from '../components/sections/TwoCampsSection.jsx';
 import TenElements from '../components/sections/TenElements.jsx';
-import FilmRoom from '../components/sections/FilmRoom.jsx';
 import MeetTheLeaders from '../components/sections/MeetTheLeaders.jsx';
 import SpeedCampFinal from '../components/sections/SpeedCampFinal.jsx';
 import StickyRegisterCTA from '../components/ui/StickyRegisterCTA.jsx';
@@ -27,7 +26,6 @@ export default function Home() {
       <Hero />
       <TwoCampsSection />
       <TenElements />
-      <FilmRoom />
       <MeetTheLeaders />
       <SpeedCampFinal />
       <StickyRegisterCTA />

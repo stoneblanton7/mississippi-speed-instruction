@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 import Button from '../ui/Button.jsx';
-import VideoModal from '../ui/VideoModal.jsx';
 import {
   VIMEO,
   REGISTER_LINK_PROPS,
@@ -20,19 +19,14 @@ const HERO_SRC = buildVimeoSrc(VIMEO.homeHero, {
 });
 
 export default function Hero() {
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [heroKey, setHeroKey] = useState(0);
-
   return (
-    <>
-      <section
-        className="relative w-full overflow-hidden bg-bg"
-        style={{ height: '100dvh', minHeight: '640px' }}
-      >
+    <section
+      className="relative w-full overflow-hidden bg-bg"
+      style={{ height: '100dvh', minHeight: '640px' }}
+    >
         {/* Vimeo background — full bleed cover */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <iframe
-            key={heroKey}
             src={HERO_SRC}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             style={{
@@ -101,30 +95,12 @@ export default function Hero() {
             <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
               Register for Camp
             </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              size="lg"
-              onClick={() => setVideoOpen(true)}
-            >
+            <Button as={Link} to="/film" variant="ghost" size="lg">
               <Play size={16} strokeWidth={2.5} />
               Watch the Film
             </Button>
           </motion.div>
         </div>
-      </section>
-
-      {videoOpen && (
-        <VideoModal
-          vimeoId={VIMEO.homeHero}
-          vimeoHash={VIMEO.homeHeroHash}
-          title="MSI hero film"
-          onClose={() => {
-            setVideoOpen(false);
-            setHeroKey((k) => k + 1);
-          }}
-        />
-      )}
-    </>
+    </section>
   );
 }

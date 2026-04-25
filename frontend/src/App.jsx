@@ -8,6 +8,7 @@ import ElementDetail from './pages/Elements/[ElementSlug]/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
 import AboutPhillip from './pages/About/PhillipShort/index.jsx';
 import Contact from './pages/Contact/index.jsx';
+import Film from './pages/Film/index.jsx';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/camp/boys" element={<BoysCamp />} />
           <Route path="/camp/girls" element={<GirlsCamp />} />
+          <Route path="/film" element={<Film />} />
           <Route path="/elements" element={<Elements />} />
           <Route path="/elements/:slug" element={<ElementDetail />} />
           <Route path="/about" element={<Navigate to="/about/mike-frascogna" replace />} />
