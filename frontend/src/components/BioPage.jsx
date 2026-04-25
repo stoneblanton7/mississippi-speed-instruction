@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Play } from 'lucide-react';
 import VideoModal from './ui/VideoModal.jsx';
+import CoachToggle from './ui/CoachToggle.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { useVimeoThumbnail } from '../hooks/useVimeoThumbnail.js';
 
@@ -62,7 +63,11 @@ export default function BioPage({
   return (
     <>
       <section className="relative bg-bg pt-24 lg:pt-28 pb-16 lg:pb-24 border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mb-12">
+            <CoachToggle />
+          </div>
+          <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] bg-surface overflow-hidden border border-border">
               <img
@@ -85,6 +90,7 @@ export default function BioPage({
               {name}
             </h1>
             <p className="font-body text-text text-xl lg:text-2xl mt-6">{role}</p>
+          </div>
           </div>
         </div>
       </section>

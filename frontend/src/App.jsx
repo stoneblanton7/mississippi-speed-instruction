@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './pages/Home.jsx';
 import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
 import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
 import Elements from './pages/Elements/index.jsx';
 import ElementDetail from './pages/Elements/[ElementSlug]/index.jsx';
-import About from './pages/About/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
 import AboutPhillip from './pages/About/PhillipShort/index.jsx';
 import Contact from './pages/Contact/index.jsx';
@@ -20,7 +19,7 @@ export default function App() {
           <Route path="/camp/girls" element={<GirlsCamp />} />
           <Route path="/elements" element={<Elements />} />
           <Route path="/elements/:slug" element={<ElementDetail />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Navigate to="/about/mike-frascogna" replace />} />
           <Route path="/about/mike-frascogna" element={<AboutMike />} />
           <Route path="/about/phillip-short" element={<AboutPhillip />} />
           <Route path="/contact" element={<Contact />} />
