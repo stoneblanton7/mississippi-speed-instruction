@@ -63,9 +63,9 @@ export default function Hero() {
             className="font-heading text-text leading-[1.0] uppercase mb-8"
             style={{ fontSize: 'clamp(48px, 9vw, 128px)' }}
           >
-            Faster Athletes
+            Speed
             <br />
-            Start Here.
+            Is a skill.
           </h1>
 
           <p className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-8 max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
