@@ -5,7 +5,7 @@ import Button from './ui/Button.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
-import imgIncluded from '../assets/kids-camp 9.png';
+import imgIncludedDefault from '../assets/kids-camp 9.png';
 import imgDay from '../assets/kids-camp (1).png';
 
 function FactTile({ label, value, mono = true }) {
@@ -56,7 +56,7 @@ const FAQS = [
   },
 ];
 
-export default function CampPage({ camp, banner }) {
+export default function CampPage({ camp, banner, includedImage = imgIncludedDefault }) {
   const eyebrowYear = camp.dates.includes('2026') ? 'SUMMER 2026' : 'SUMMER';
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -142,9 +142,9 @@ export default function CampPage({ camp, banner }) {
                 </li>
               </ul>
             </div>
-            <div className="overflow-hidden rounded-sm bg-surface aspect-[4/5] lg:aspect-[3/4] group">
+            <div className="overflow-hidden rounded-sm bg-surface aspect-video group">
               <img
-                src={imgIncluded}
+                src={includedImage}
                 alt="MSI coach with athletes during training"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
