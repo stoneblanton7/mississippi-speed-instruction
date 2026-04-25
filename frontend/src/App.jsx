@@ -8,7 +8,7 @@ import ElementDetail from './pages/Elements/[ElementSlug]/index.jsx';
 import About from './pages/About/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
 import AboutPhillip from './pages/About/PhillipShort/index.jsx';
-import Contact from './pages/Contact.jsx';
+import Contact from './pages/Contact/index.jsx';
 
 export default function App() {
   return (
