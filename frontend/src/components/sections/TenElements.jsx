@@ -25,11 +25,11 @@ const ELEMENTS = [
   { slug: 'visual-acuity',        name: 'VISUAL ACUITY',        outcome: 'Eyes that read the game a half-second before everyone else.',  icon: iconVisualAcuity },
 ];
 
-const RADIUS = 240;
-const ICON_SIZE = 80;
-const RING_PADDING = 60;
-const RADIUS_MOBILE = 130;
-const ICON_SIZE_MOBILE = 56;
+const RADIUS = 320;
+const ICON_SIZE = 110;
+const RING_PADDING = 80;
+const RADIUS_MOBILE = 150;
+const ICON_SIZE_MOBILE = 64;
 
 const toRadians = (degrees) => (Math.PI / 180) * degrees;
 
@@ -123,14 +123,14 @@ export default function TenElements() {
                     <img
                       src={el.icon}
                       alt=""
-                      className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                      className="w-14 h-14 md:w-16 md:h-16 object-contain"
                     />
                   </button>
                 );
               })}
             </div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 md:w-64 md:h-64 rounded-full bg-bg border border-border flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full bg-bg border border-border flex flex-col items-center justify-center text-center px-6 pointer-events-none">
               {hovered ? (
                 <div>
                   <p className="font-mono text-[10px] md:text-xs text-accent uppercase tracking-[0.4em] mb-3">
