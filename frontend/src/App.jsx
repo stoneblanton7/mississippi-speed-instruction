@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout.jsx';
 import Home from './pages/Home.jsx';
 import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
 import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
-import Elements from './pages/Elements.jsx';
+import Elements from './pages/Elements/index.jsx';
 import ElementDetail from './pages/ElementDetail.jsx';
 import About from './pages/About/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
