@@ -1,80 +1,84 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 import Button from '../ui/Button.jsx';
 import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
-import boysBanner from '../../assets/camp-boys-banner.png';
-import girlsBanner from '../../assets/camp-girls-banner.png';
+import imgBoys from '../../assets/kids-camp (2).png';
+import imgGirls from '../../assets/kids-camp 6.jpg';
 
 const CARDS = [
-  { camp: CAMPS.boys, banner: boysBanner, detailHref: '/camp/boys' },
-  { camp: CAMPS.girls, banner: girlsBanner, detailHref: '/camp/girls' },
+  { camp: CAMPS.boys, detailHref: '/camp/boys', image: imgBoys },
+  { camp: CAMPS.girls, detailHref: '/camp/girls', image: imgGirls },
 ];
 
-function CampCard({ camp, banner, detailHref }) {
+function CampCard({ camp, detailHref, image }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="group relative bg-surface border border-border overflow-hidden flex flex-col"
+      className="relative overflow-hidden rounded-sm h-[520px] md:h-[640px] group"
     >
-      <div className="aspect-[16/9] overflow-hidden bg-bg">
-        <img
-          src={banner}
-          alt={`${camp.name} promotional banner`}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-        />
-      </div>
+      <img
+        src={image}
+        alt={`MSI ${camp.name} training`}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
 
-      <div className="p-8 lg:p-10 flex-1 flex flex-col">
-        <p className="font-mono text-xs text-text-dim uppercase tracking-widest">
-          Summer 2026 · {camp.gender}
-        </p>
-        <h3 className="font-heading text-4xl lg:text-5xl uppercase mt-2">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none gradient-card-bottom"
+      />
+
+      <div
+        aria-hidden="true"
+        className="absolute top-8 bottom-8 left-0 w-1 bg-accent"
+      />
+
+      <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10">
+        <div className="absolute top-8 md:top-10 left-8 md:left-10 right-8 md:right-10 flex items-center justify-between">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            Summer 2026 · {camp.gender}
+          </p>
+          <p className="font-mono text-xs text-text-dim uppercase tracking-widest">
+            {camp.spots} spots
+          </p>
+        </div>
+
+        <h3
+          className="font-heading text-text uppercase leading-[1.0] mb-6"
+          style={{ fontSize: 'clamp(40px, 5vw, 72px)' }}
+        >
           {camp.name}
         </h3>
 
-        <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-body text-sm">
-          <div>
-            <dt className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Dates</dt>
-            <dd className="text-text mt-1">{camp.dates}</dd>
-          </div>
-          <div>
-            <dt className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Time</dt>
-            <dd className="text-text mt-1">{camp.time}</dd>
-          </div>
-          <div>
-            <dt className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Ages</dt>
-            <dd className="text-text mt-1">{camp.ageRange}</dd>
-          </div>
-          <div>
-            <dt className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Cost</dt>
-            <dd className="text-text mt-1 font-mono">${camp.cost}</dd>
-          </div>
-          <div className="col-span-2">
-            <dt className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Location</dt>
-            <dd className="text-text mt-1">{camp.location}</dd>
-          </div>
-        </dl>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 font-mono text-sm md:text-base text-text-muted">
+          <span>
+            <span className="text-accent">●</span> {camp.dates}
+          </span>
+          <span>
+            <span className="text-accent">●</span> {camp.time}
+          </span>
+          <span>
+            <span className="text-accent">●</span> Ages {camp.ageRange}
+          </span>
+          <span>
+            <span className="text-accent">●</span> ${camp.cost}
+          </span>
+        </div>
 
-        <p className="font-mono text-xs text-text-dim uppercase tracking-widest mt-8">
-          Only {camp.spots} spots
+        <p className="font-body text-text-muted text-sm md:text-base mb-8 max-w-md">
+          {camp.location}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4 mt-auto pt-6">
+        <div className="flex flex-col sm:flex-row gap-3">
           <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" arrow>
             Register {camp.gender}
           </Button>
-          <Link
-            to={detailHref}
-            className="inline-flex items-center gap-1.5 font-body text-sm font-semibold uppercase tracking-widest text-text border-b border-transparent hover:border-text transition-colors pb-0.5"
-          >
-            Camp details
-            <ArrowRight size={14} strokeWidth={2.5} />
-          </Link>
+          <Button as={Link} to={detailHref} variant="ghost">
+            Camp Details
+          </Button>
         </div>
       </div>
     </motion.article>
