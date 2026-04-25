@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Button from './ui/Button.jsx';
+import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
 import imgIncluded from '../assets/kids-camp 7.png';
@@ -290,40 +290,7 @@ export default function CampPage({ camp, banner }) {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-bg">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-30 gradient-final-glow"
-        />
-        <div className="relative mx-auto max-w-5xl px-6 lg:px-10 py-28 lg:py-40 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              The next step
-            </p>
-            <h2
-              className="font-heading uppercase mt-6 leading-[1.0]"
-              style={{ fontSize: 'clamp(40px, 6vw, 88px)' }}
-            >
-              See your athlete on the field this summer.
-            </h2>
-            <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl mx-auto leading-relaxed">
-              Three days at MRA. Ten elements of speed. One athlete who's
-              measurably faster — and almost always more confident. Spots are
-              limited. Registration takes 90 seconds.
-            </p>
-            <div className="mt-10">
-              <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
-                Register for Camp
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <SpeedCampFinal />
     </article>
   );
 }
