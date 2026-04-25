@@ -73,7 +73,7 @@ export default function BioPage({
               <img
                 src={portrait}
                 alt={name}
-                className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.05]"
+                className="absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: 'center top' }}
               />
               <div className="absolute inset-0 pointer-events-none gradient-portrait-bottom" />

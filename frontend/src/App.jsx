@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
+import ScrollToTop from './components/layout/ScrollToTop.jsx';
 import Home from './pages/Home.jsx';
 import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
 import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
@@ -13,6 +14,7 @@ import Film from './pages/Film/index.jsx';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
