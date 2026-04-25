@@ -141,7 +141,10 @@ export default function TenElements() {
                   y: i === activeIdx ? 0 : 24,
                 }}
                 transition={{ duration: 0.45, ease: 'easeOut' }}
-                className="absolute inset-0 flex flex-col justify-center"
+                className={
+                  'absolute inset-0 flex flex-col justify-center ' +
+                  (i === activeIdx ? 'pointer-events-auto' : 'pointer-events-none')
+                }
               >
                 <p className="font-mono text-sm text-text-dim uppercase tracking-widest">
                   Element {String(i + 1).padStart(2, '0')} / 10
