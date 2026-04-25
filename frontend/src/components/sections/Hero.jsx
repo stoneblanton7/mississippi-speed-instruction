@@ -13,46 +13,12 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-bg"
-      style={{ height: '100dvh', minHeight: '640px' }}
+      className="relative w-full overflow-hidden bg-bg flex flex-col"
+      style={{ height: '100dvh', minHeight: '780px' }}
     >
-      {/* LAYER 1 — Vimeo background */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <iframe
-          src={HERO_SRC}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            width: 'max(100vw, calc(100vh * 16 / 9))',
-            height: 'max(100vh, calc(100vw * 9 / 16))',
-          }}
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          title="MSI hero loop"
-          aria-hidden="true"
-        />
-      </div>
-
-      {/* LAYER 2 — ghosted SPEED, centered in middle zone */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-        <span
-          aria-hidden="true"
-          className="font-heading-italic font-semibold italic text-text-ghost leading-none whitespace-nowrap select-none"
-          style={{
-            fontSize: 'clamp(180px, 28vw, 480px)',
-            letterSpacing: '-0.04em',
-          }}
-        >
-          SPEED
-        </span>
-      </div>
-
-      {/* LAYER 3 — gradient overlay (dark top + bottom, clear middle) */}
-      <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-b from-overlay-bottom via-transparent to-overlay-bottom" />
-
-      {/* LAYER 4 — content: 3-zone flex column (top headline / middle empty / bottom CTAs) */}
-      <div className="relative z-30 mx-auto h-full max-w-7xl px-6 lg:px-10 flex flex-col justify-between pt-28 lg:pt-32 pb-12 lg:pb-20">
-        {/* TOP ZONE */}
-        <div>
+      {/* TOP — text content + ghosted SPEED */}
+      <div className="relative flex-shrink-0">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-28 lg:pt-32 pb-2">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,15 +38,11 @@ export default function Hero() {
             <br />
             Start Here.
           </motion.h1>
-        </div>
-
-        {/* BOTTOM ZONE */}
-        <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
-            className="font-body text-text-muted text-base lg:text-lg leading-relaxed"
+            className="font-body text-text-muted text-base lg:text-lg max-w-xl mt-6"
           >
             Three days. Ten elements. One faster athlete. Madison Ridgeland Academy, Summer 2026.
           </motion.p>
@@ -104,9 +66,47 @@ export default function Hero() {
             </Button>
           </motion.div>
         </div>
+
+        {/* Ghosted SPEED — full-width, sits at bottom of top section, slightly overlapping the video below */}
+        <div
+          aria-hidden="true"
+          className="relative pointer-events-none select-none w-full overflow-hidden mt-2 lg:mt-4"
+          style={{ marginBottom: '-0.18em' }}
+        >
+          <span
+            className="block font-heading-italic font-semibold italic text-text-ghost leading-[0.85] text-center"
+            style={{
+              fontSize: 'clamp(140px, 22vw, 360px)',
+              letterSpacing: '-0.04em',
+            }}
+          >
+            SPEED
+          </span>
+        </div>
       </div>
 
-      {/* 30-Year badge — top-right, above content layer */}
+      {/* BOTTOM — Vimeo background, fills remaining viewport */}
+      <div className="relative flex-1 overflow-hidden bg-bg border-t border-border">
+        <iframe
+          src={HERO_SRC}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          style={{
+            width: 'max(100vw, calc(100vh * 16 / 9))',
+            height: 'max(100vh, calc(100vw * 9 / 16))',
+          }}
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          title="MSI hero loop"
+          aria-hidden="true"
+        />
+        {/* Subtle top fade so SPEED bleeds cleanly into the video */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-24 pointer-events-none bg-gradient-to-b from-bg to-transparent"
+        />
+      </div>
+
+      {/* 30-Year badge — top-right */}
       <img
         src={thirtyYears}
         alt=""
