@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Facebook, Instagram, Mail, MapPin, Check } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
 import { SOCIAL } from '../../config.js';
@@ -145,20 +145,6 @@ export default function Contact() {
                 Find us
               </p>
               <ul className="mt-8 space-y-6">
-                <li className="flex items-start gap-4">
-                  <Mail size={18} strokeWidth={2} className="text-text-muted mt-0.5" />
-                  <div>
-                    <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
-                      Email
-                    </p>
-                    <a
-                      href="mailto:info@mississippispeed.com"
-                      className="font-body text-text mt-1 block hover:text-accent transition-colors"
-                    >
-                      info@mississippispeed.com
-                    </a>
-                  </div>
-                </li>
                 <li className="flex items-start gap-4">
                   <MapPin size={18} strokeWidth={2} className="text-text-muted mt-0.5" />
                   <div>
