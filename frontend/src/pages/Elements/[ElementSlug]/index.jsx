@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
 import VideoModal from '../../../components/ui/VideoModal.jsx';
 import SpeedCampFinal from '../../../components/sections/SpeedCampFinal.jsx';
 import { ELEMENTS, ELEMENTS_BY_SLUG, SPORTS } from '../../../api/data/elements.js';
+import { buildVimeoSrc } from '../../../config.js';
 
 const RELATED_DRILLS = {
   acceleration: [
@@ -143,7 +144,11 @@ export default function ElementDetail() {
           </h2>
           <div className="mt-10 aspect-video bg-bg border border-border overflow-hidden">
             <iframe
-              src={`https://player.vimeo.com/video/${element.vimeoId}?title=0&byline=0&portrait=0`}
+              src={buildVimeoSrc(
+                element.vimeoId,
+                { title: 0, byline: 0, portrait: 0 },
+                element.vimeoHash
+              )}
               className="h-full w-full"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen

@@ -6,7 +6,7 @@
     "iconKey": "acceleration",
     "outcome": "How fast they explode out of the first three steps.",
     "definition": [
-      "Acceleration is how quickly an athlete moves from a stop to game speed — the explosive moment that separates getting to the ball from watching it pass. It happens in the first three to ten yards, and it's almost entirely trainable.",
+      "Acceleration is how quickly an athlete moves from a stop to game speed \u2014 the explosive moment that separates getting to the ball from watching it pass. It happens in the first three to ten yards, and it's almost entirely trainable.",
       "We coach acceleration through resisted starts, falling-start drills, and mechanics work on body lean and arm drive. Athletes leave camp with a faster first step at every angle they need it."
     ],
     "vimeoId": "998320024",
@@ -16,7 +16,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 3
-    }
+    },
+    "vimeoHash": "57415d7cef"
   },
   "balance-body-control": {
     "slug": "balance-body-control",
@@ -35,14 +36,15 @@
       "football": 4,
       "soccer": 4,
       "volleyball": 4
-    }
+    },
+    "vimeoHash": "8211646afd"
   },
   "change-of-direction": {
     "slug": "change-of-direction",
     "number": "03",
     "name": "Change of Direction",
     "iconKey": "change-of-direction",
-    "outcome": "Cut without losing speed — the difference at every level.",
+    "outcome": "Cut without losing speed \u2014 the difference at every level.",
     "definition": [
       "Change of direction is the difference between a defender who closes and one who chases. It's the ability to plant, redirect, and accelerate again without bleeding speed.",
       "We train it with cone work, mirror drills, and decision-based reactive cuts so athletes can change vectors at full game speed."
@@ -54,7 +56,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 2
-    }
+    },
+    "vimeoHash": "fb49ddcdb6"
   },
   "core-strength": {
     "slug": "core-strength",
@@ -64,7 +67,7 @@
     "outcome": "Power transfers through a stable trunk. No exceptions.",
     "definition": [
       "Power generated in the legs is wasted unless it travels through a stable trunk. Core strength means the muscles around the spine and pelvis can resist twist, hold posture, and deliver force from ground to fingertips.",
-      "We train it with anti-rotation work, loaded carries, and dynamic stability drills — not crunches."
+      "We train it with anti-rotation work, loaded carries, and dynamic stability drills \u2014 not crunches."
     ],
     "vimeoId": "998320246",
     "sportImportance": {
@@ -73,7 +76,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 5
-    }
+    },
+    "vimeoHash": "f4a2079464"
   },
   "flexibility": {
     "slug": "flexibility",
@@ -82,7 +86,7 @@
     "iconKey": "flexibility",
     "outcome": "Stay healthy through the whole season.",
     "definition": [
-      "Flexibility lets athletes reach top positions — full stride length, deeper cuts, longer arm action — without their bodies fighting back. Inflexible athletes leave performance on the field and pile up soft-tissue injuries.",
+      "Flexibility lets athletes reach top positions \u2014 full stride length, deeper cuts, longer arm action \u2014 without their bodies fighting back. Inflexible athletes leave performance on the field and pile up soft-tissue injuries.",
       "We train it daily with dynamic warm-ups and end-of-session mobility work targeted to the joints athletes use most."
     ],
     "vimeoId": "998320282",
@@ -92,7 +96,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 5
-    }
+    },
+    "vimeoHash": "8fcfabd4c8"
   },
   "foot-quickness": {
     "slug": "foot-quickness",
@@ -111,7 +116,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 4
-    }
+    },
+    "vimeoHash": "ebccf23d7e"
   },
   "jumping": {
     "slug": "jumping",
@@ -130,7 +136,8 @@
       "football": 4,
       "soccer": 4,
       "volleyball": 5
-    }
+    },
+    "vimeoHash": "6a4515ebb9"
   },
   "lateral-speed": {
     "slug": "lateral-speed",
@@ -139,7 +146,7 @@
     "iconKey": "lateral-speed",
     "outcome": "Closing speed when the play breaks down.",
     "definition": [
-      "Lateral speed is how fast an athlete moves side-to-side without crossing their feet — the defensive shuffle, the slide step, the recovery angle. It's what closes a passing lane and beats a runner to the spot.",
+      "Lateral speed is how fast an athlete moves side-to-side without crossing their feet \u2014 the defensive shuffle, the slide step, the recovery angle. It's what closes a passing lane and beats a runner to the spot.",
       "We train it with lateral plyos, mirror drills, and high-speed shuffle progressions."
     ],
     "vimeoId": "998320393",
@@ -149,7 +156,8 @@
       "football": 4,
       "soccer": 4,
       "volleyball": 4
-    }
+    },
+    "vimeoHash": "16163757c1"
   },
   "top-speed": {
     "slug": "top-speed",
@@ -158,7 +166,7 @@
     "iconKey": "top-speed",
     "outcome": "Pure straight-line gear when the field opens up.",
     "definition": [
-      "Top speed is the maximum velocity an athlete can hit when the field opens up — the breakaway. Most athletes never reach it in a game; the ones who do, finish plays.",
+      "Top speed is the maximum velocity an athlete can hit when the field opens up \u2014 the breakaway. Most athletes never reach it in a game; the ones who do, finish plays.",
       "We train it with sprint mechanics work, fly-in 10s, and overspeed protocols."
     ],
     "vimeoId": "998320416",
@@ -168,7 +176,8 @@
       "football": 5,
       "soccer": 5,
       "volleyball": 1
-    }
+    },
+    "vimeoHash": "84da1966d4"
   },
   "visual-acuity": {
     "slug": "visual-acuity",
@@ -177,7 +186,7 @@
     "iconKey": "visual-acuity",
     "outcome": "Read the field, react before the ball.",
     "definition": [
-      "Visual acuity is the trained skill of seeing more, processing faster, and acting earlier than opponents. It's why some athletes always seem to be a step ahead — they're not faster, they're earlier.",
+      "Visual acuity is the trained skill of seeing more, processing faster, and acting earlier than opponents. It's why some athletes always seem to be a step ahead \u2014 they're not faster, they're earlier.",
       "We train it with peripheral vision drills, ball-tracking work, and pattern-recognition reps that teach the eyes to lead the body."
     ],
     "vimeoId": "998320452",
@@ -187,6 +196,7 @@
       "football": 4,
       "soccer": 4,
       "volleyball": 4
-    }
+    },
+    "vimeoHash": "711273ac01"
   }
 }

@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { X } from 'lucide-react';
+import { buildVimeoSrc } from '../../config.js';
 
-export default function VideoModal({ vimeoId, title, onClose }) {
+export default function VideoModal({ vimeoId, vimeoHash, title, onClose }) {
   useEffect(() => {
     if (!vimeoId) return;
     const onKey = (e) => {
@@ -16,6 +17,12 @@ export default function VideoModal({ vimeoId, title, onClose }) {
   }, [vimeoId, onClose]);
 
   if (!vimeoId) return null;
+
+  const src = buildVimeoSrc(
+    vimeoId,
+    { autoplay: 1, title: 0, byline: 0, portrait: 0 },
+    vimeoHash
+  );
 
   return (
     <div
@@ -38,7 +45,7 @@ export default function VideoModal({ vimeoId, title, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <iframe
-          src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+          src={src}
           className="absolute inset-0 h-full w-full"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen

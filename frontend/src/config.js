@@ -66,3 +66,43 @@ export const VIMEO = {
   mikeBio: '1029090078',
   phillipBio: '1027326776',
 };
+
+// Mike's Vimeo videos are set to "private with hashed link" — every embed
+// requires the h= URL parameter to authenticate. VideoModal looks up the
+// hash here when it isn't passed explicitly.
+export const VIMEO_HASHES = {
+  '1071529794': '4e88b51a6d', // Home hero — MSI Web Header
+  '1054590195': 'a46fc6ed85', // Coach Epsy Acceleration Drill
+  '1065590680': '813bd90be5', // Coach NS Tether Drill
+  '1065590471': '7e9be16bde', // Coach PS Wall Drill
+  '1029090078': 'f3d1a7b264', // M3 Bio
+  '1065590323': '3ba2662b12', // Coach SB Change of Direction
+  '1065590864': '24ab264780', // Ladder Drills 1 & 2 Foot Runs
+  '1065591042': 'bc47d2ad5f', // Coach M4 Ball Drop Drill
+  '1027326776': '1582d8b85d', // Phillip Short Bio
+  '1036431560': 'c1fb32e0ca', // Drop Back Drills
+  '1036422233': '6f153be04e', // Medicine Ball Drill
+  '1022931423': '65a233cc40', // Disassociate Drill
+  '1022932056': 'd445466bb0', // Football Grip
+  '1022932565': '2bb3de2e75', // 1234 Drill
+  '998320024': '57415d7cef', // Skill: Acceleration
+  '998320201': '8211646afd', // Skill: Balance & Body Control
+  '998320225': 'fb49ddcdb6', // Skill: Change of Direction
+  '998320246': 'f4a2079464', // Skill: Core Strength
+  '998320282': '8fcfabd4c8', // Skill: Flexibility
+  '998320323': 'ebccf23d7e', // Skill: Foot Quickness
+  '998320362': '6a4515ebb9', // Skill: Jumping
+  '998320393': '16163757c1', // Skill: Lateral Speed
+  '998320416': '84da1966d4', // Skill: Top Speed
+  '998320452': '711273ac01', // Skill: Visual Acuity
+};
+
+export function buildVimeoSrc(id, params = {}, explicitHash) {
+  const hash = explicitHash ?? VIMEO_HASHES[id];
+  const search = new URLSearchParams();
+  if (hash) search.set('h', hash);
+  for (const [k, v] of Object.entries(params)) {
+    if (v !== undefined && v !== null) search.set(k, String(v));
+  }
+  return `https://player.vimeo.com/video/${id}?${search.toString()}`;
+}
