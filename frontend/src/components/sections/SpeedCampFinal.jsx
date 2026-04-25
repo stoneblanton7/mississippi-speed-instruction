@@ -4,7 +4,7 @@ import { REGISTER_LINK_PROPS } from '../../config.js';
 import imgHurdles from '../../assets/kids-camp (2).png';
 import imgParachute from '../../assets/kids-camp-4.jpg';
 import imgCoaching from '../../assets/kids-camp (3).jpg';
-import imgHuddle from '../../assets/kids-camp 7.png';
+import imgHuddle from '../../assets/kids-camp 9.png';
 
 export default function SpeedCampFinal() {
   return (

@@ -5,7 +5,7 @@ import Button from './ui/Button.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
-import imgIncluded from '../assets/kids-camp 7.png';
+import imgIncluded from '../assets/kids-camp 9.png';
 import imgDay from '../assets/kids-camp (1).png';
 
 function FactTile({ label, value, mono = true }) {
