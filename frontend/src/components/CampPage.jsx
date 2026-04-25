@@ -5,6 +5,7 @@ import Button from './ui/Button.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
 import imgIncluded from '../assets/kids-camp 7.png';
+import imgDay from '../assets/kids-camp (1).png';
 
 function FactTile({ label, value, mono = true }) {
   return (
@@ -129,29 +130,40 @@ export default function CampPage({ camp, banner }) {
       </section>
 
       <section className="bg-surface py-20 lg:py-28 border-b border-border">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            The Day
-          </p>
-          <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
-            A day at camp.
-          </h2>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 leading-relaxed">
-            Camp runs {camp.time} each day. Your athlete shows up in athletic
-            gear, ready to go. We start with a group warm-up that wakes everyone
-            up, then break into smaller groups for the day's elements. Coaches
-            rotate so every kid gets direct instruction from each one. We close
-            out with a fun team competition — relay races, agility games,
-            friendly contests that put the day's learning into practice. Pickup
-            is at the same spot every day.
-          </p>
-          <p className="font-body text-text-muted text-base lg:text-lg mt-6 leading-relaxed">
-            The program is{' '}
-            <span className="text-text font-semibold">designed by Mike Frascogna</span>{' '}
-            and the camp is led by{' '}
-            <span className="text-text font-semibold">Coach Phillip Short</span>{' '}
-            and other MSI instructors.
-          </p>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="overflow-hidden rounded-sm bg-bg aspect-[4/5] lg:aspect-[3/4] order-2 lg:order-1 group">
+              <img
+                src={imgDay}
+                alt="MSI campers ready for a day of training"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+                The Day
+              </p>
+              <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
+                A day at camp.
+              </h2>
+              <p className="font-body text-text-muted text-lg lg:text-xl mt-8 leading-relaxed">
+                Camp runs {camp.time} each day. Your athlete shows up in athletic
+                gear, ready to go. We start with a group warm-up that wakes everyone
+                up, then break into smaller groups for the day's elements. Coaches
+                rotate so every kid gets direct instruction from each one. We close
+                out with a fun team competition — relay races, agility games,
+                friendly contests that put the day's learning into practice. Pickup
+                is at the same spot every day.
+              </p>
+              <p className="font-body text-text-muted text-base lg:text-lg mt-6 leading-relaxed">
+                The program is{' '}
+                <span className="text-text font-semibold">designed by Mike Frascogna</span>{' '}
+                and the camp is led by{' '}
+                <span className="text-text font-semibold">Coach Phillip Short</span>{' '}
+                and other MSI instructors.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
