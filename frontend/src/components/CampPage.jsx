@@ -35,7 +35,7 @@ export default function CampPage({ camp, banner }) {
         />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            {eyebrowYear} · Madison Ridgeland Academy
+            {eyebrowYear} · {camp.gender} Camp · Madison Ridgeland Academy
           </p>
           <h1
             className="font-heading uppercase mt-6 leading-[1.0]"
@@ -43,12 +43,14 @@ export default function CampPage({ camp, banner }) {
           >
             {camp.name}
           </h1>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl">
-            Three days. Ten elements. One faster athlete.
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
+            Three days at Madison Ridgeland Academy where your kid learns the
+            foundations of real athletic speed — from coaches who've been doing
+            this for thirty years.
           </p>
           <div className="mt-10">
             <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
-              Register Now
+              Register for Camp
             </Button>
           </div>
         </div>
@@ -67,12 +69,48 @@ export default function CampPage({ camp, banner }) {
       <section className="bg-bg py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            The Spec
+            Included
           </p>
           <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-            What you're signing up for.
+            What's included.
           </h2>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+          <div className="mt-8 max-w-3xl space-y-5 font-body text-text-muted text-lg lg:text-xl leading-relaxed">
+            <p>
+              Every camper gets the same coaching that's trained Mississippi
+              athletes for thirty years — sized down for the {camp.ageRange} age
+              group and built to feel like a great three days, not a tryout.
+            </p>
+            <p>
+              The camp covers all ten elements of speed across the three days —
+              acceleration, change of direction, foot quickness, lateral
+              movement, and the rest — with drills designed to be genuinely fun.
+              Kids leave faster, more coordinated, and (in our experience)
+              asking when they can come back.
+            </p>
+          </div>
+          <ul className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-3xl font-body text-text text-base lg:text-lg">
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-accent shrink-0">●</span>
+              Three days of in-person, small-group instruction
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-accent shrink-0">●</span>
+              All ten elements of speed taught across the camp
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-accent shrink-0">●</span>
+              Direct coaching from Phillip Short and the MSI team
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-accent shrink-0">●</span>
+              Daily team competition that puts the work into action
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="text-accent shrink-0">●</span>
+              Capped at {camp.spots} athletes so every kid gets attention
+            </li>
+          </ul>
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <FactTile label="Dates" value={camp.dates} />
             <FactTile label="Time" value={camp.time} />
             <FactTile label="Location" value={camp.location} mono={false} />
@@ -86,23 +124,30 @@ export default function CampPage({ camp, banner }) {
       <section className="bg-surface py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            The Camp
+            The Day
           </p>
           <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
-            How three days actually go.
+            A day at camp.
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-8 leading-relaxed">
-            A fun three (3) day introduction to speed agility and quickness training, 4:00–5:45
-            at Madison Ridgeland Academy. The program is{' '}
-            <span className="text-text font-semibold">designed by Mike Frascogna</span> and the
-            camp will be led by{' '}
-            <span className="text-text font-semibold">Coach Phillip Short</span> and other MSI
-            instructors.
+            Camp runs {camp.time} each day. Your athlete shows up in athletic
+            gear, ready to go. We start with a group warm-up that wakes everyone
+            up, then break into smaller groups for the day's elements. Coaches
+            rotate so every kid gets direct instruction from each one. We close
+            out with a fun team competition — relay races, agility games,
+            friendly contests that put the day's learning into practice. Pickup
+            is at the same spot every day.
           </p>
-          <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed">
-            High speed drills and competition will teach athletes correct movement form in areas
-            such as acceleration, top speed, lateral speed, foot quickness, jumping, change of
-            direction, and visual acuity. Great for athletes competing in any team sport.
+          <p className="font-body text-text text-lg lg:text-xl mt-6 leading-relaxed font-semibold">
+            This isn't a boot camp. It's a coaching camp. Kids work hard because
+            they want to, not because we make them.
+          </p>
+          <p className="font-body text-text-muted text-base lg:text-lg mt-6 leading-relaxed">
+            The program is{' '}
+            <span className="text-text font-semibold">designed by Mike Frascogna</span>{' '}
+            and the camp is led by{' '}
+            <span className="text-text font-semibold">Coach Phillip Short</span>{' '}
+            and other MSI instructors.
           </p>
         </div>
       </section>
@@ -150,6 +195,63 @@ export default function CampPage({ camp, banner }) {
         </div>
       </section>
 
+      <section className="bg-surface py-20 lg:py-28 border-b border-border">
+        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            FAQ
+          </p>
+          <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
+            Common questions.
+          </h2>
+          <dl className="mt-12 space-y-10">
+            <div>
+              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
+                What if my child has never done speed training before?
+              </dt>
+              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
+                Most of our campers haven't. The drills are built for
+                first-timers. By day two, your kid will be doing things they
+                couldn't do on day one — that's the point.
+              </dd>
+            </div>
+            <div>
+              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
+                What should they bring?
+              </dt>
+              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
+                Athletic shoes (cleats optional), athletic gear, and a water
+                bottle. Sunscreen if it's hot. Bring energy.
+              </dd>
+            </div>
+            <div>
+              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
+                What if my child can't make all three days?
+              </dt>
+              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
+                Let us know in advance and we'll do our best to catch them up.
+                Three days together is ideal because the elements build on each
+                other, but one missed day isn't a deal-breaker.
+              </dd>
+            </div>
+            <div>
+              <dt className="font-heading text-text text-xl lg:text-2xl uppercase leading-tight">
+                Have a different question?
+              </dt>
+              <dd className="font-body text-text-muted text-lg mt-3 leading-relaxed">
+                Reach out through the{' '}
+                <Link
+                  to="/contact"
+                  className="text-accent hover:text-accent-hover border-b border-current"
+                >
+                  contact page
+                </Link>{' '}
+                — we usually reply within a day.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-bg">
         <div
           aria-hidden="true"
@@ -163,22 +265,22 @@ export default function CampPage({ camp, banner }) {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              Lock the spot
+              The next step
             </p>
             <h2
               className="font-heading uppercase mt-6 leading-[1.0]"
-              style={{ fontSize: 'clamp(56px, 9vw, 140px)' }}
+              style={{ fontSize: 'clamp(40px, 6vw, 88px)' }}
             >
-              Register for
-              <br />
-              {camp.name}.
+              See your athlete on the field this summer.
             </h2>
-            <p className="font-body text-text-muted text-lg lg:text-xl mt-8">
-              Only {camp.spots} spots. Three days. ${camp.cost}.
+            <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl mx-auto leading-relaxed">
+              Three days at MRA. Ten elements of speed. One athlete who's
+              measurably faster — and almost always more confident. Spots are
+              limited. Registration takes 90 seconds.
             </p>
             <div className="mt-10">
               <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
-                Register Now
+                Register for Camp
               </Button>
             </div>
           </motion.div>
