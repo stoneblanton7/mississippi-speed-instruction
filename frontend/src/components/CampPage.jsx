@@ -138,10 +138,6 @@ export default function CampPage({ camp, banner }) {
             friendly contests that put the day's learning into practice. Pickup
             is at the same spot every day.
           </p>
-          <p className="font-body text-text text-lg lg:text-xl mt-6 leading-relaxed font-semibold">
-            This isn't a boot camp. It's a coaching camp. Kids work hard because
-            they want to, not because we make them.
-          </p>
           <p className="font-body text-text-muted text-base lg:text-lg mt-6 leading-relaxed">
             The program is{' '}
             <span className="text-text font-semibold">designed by Mike Frascogna</span>{' '}
