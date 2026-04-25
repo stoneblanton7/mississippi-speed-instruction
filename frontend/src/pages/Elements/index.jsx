@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import Reveal from '../../components/ui/Reveal.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
 import { ELEMENTS } from '../../api/data/elements.js';
 
@@ -52,33 +51,31 @@ export default function ElementsIndex() {
           className="absolute inset-0 pointer-events-none opacity-30 gradient-final-glow"
         />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal>
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              The Methodology
-            </p>
-            <h1
-              className="font-heading uppercase mt-6 leading-[1.0]"
-              style={{ fontSize: 'clamp(64px, 12vw, 180px)' }}
-            >
-              Ten Elements
-              <br />
-              of Speed.
-            </h1>
-            <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
-              Every drill at MSI maps to one of ten measurable elements. Click into any element
-              to see the science, the drills, and the coaches who teach it.
-            </p>
-          </Reveal>
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            The Methodology
+          </p>
+          <h1
+            className="font-heading uppercase mt-6 leading-[1.0]"
+            style={{ fontSize: 'clamp(64px, 12vw, 180px)' }}
+          >
+            Ten Elements
+            <br />
+            of Speed.
+          </h1>
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-8 max-w-2xl leading-relaxed">
+            Every drill at MSI maps to one of ten measurable elements. Click into any element
+            to see the science, the drills, and the coaches who teach it.
+          </p>
         </div>
       </section>
 
       <section className="bg-bg border-b border-border">
         <div className="mx-auto max-w-7xl">
-          <Reveal delay={200} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border">
             {ELEMENTS.map((el, i) => (
               <ElementCard key={el.slug} element={el} index={i} />
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
 

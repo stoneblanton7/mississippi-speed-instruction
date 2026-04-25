@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Button from './ui/Button.jsx';
-import Reveal from './ui/Reveal.jsx';
 import SpeedCampFinal from './sections/SpeedCampFinal.jsx';
 import { REGISTER_LINK_PROPS } from '../config.js';
 import { ELEMENTS } from '../api/data/elements.js';
@@ -99,7 +98,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
       <section className="bg-bg py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <Reveal>
+            <div>
               <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
                 Included
               </p>
@@ -142,39 +141,37 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                   Capped at {camp.spots} athletes so every kid gets attention
                 </li>
               </ul>
-            </Reveal>
-            <Reveal delay={150} className="overflow-hidden rounded-sm bg-surface aspect-video group">
+            </div>
+            <div className="overflow-hidden rounded-sm bg-surface aspect-video group">
               <img
                 src={includedImage}
                 alt="MSI coach with athletes during training"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-            </Reveal>
-          </div>
-          <Reveal delay={250}>
-            <div className="mt-16 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
-              <FactTile label="Dates" value={camp.dates} />
-              <FactTile label="Time" value={camp.time} />
-              <FactTile label="Location" value={camp.location} mono={false} />
-              <FactTile label="Ages" value={camp.ageRange} />
-              <FactTile label="Limit" value={`${camp.spots} ATHLETES`} />
-              <FactTile label="Cost" value={`$${camp.cost}`} />
             </div>
-          </Reveal>
+          </div>
+          <div className="mt-16 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+            <FactTile label="Dates" value={camp.dates} />
+            <FactTile label="Time" value={camp.time} />
+            <FactTile label="Location" value={camp.location} mono={false} />
+            <FactTile label="Ages" value={camp.ageRange} />
+            <FactTile label="Limit" value={`${camp.spots} ATHLETES`} />
+            <FactTile label="Cost" value={`$${camp.cost}`} />
+          </div>
         </div>
       </section>
 
       <section className="bg-surface py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <Reveal className="overflow-hidden rounded-sm bg-bg aspect-[4/5] lg:aspect-[3/4] order-2 lg:order-1 group">
+            <div className="overflow-hidden rounded-sm bg-bg aspect-[4/5] lg:aspect-[3/4] order-2 lg:order-1 group">
               <img
                 src={imgDay}
                 alt="MSI campers ready for a day of training"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-            </Reveal>
-            <Reveal delay={150} className="order-1 lg:order-2">
+            </div>
+            <div className="order-1 lg:order-2">
               <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
                 The Day
               </p>
@@ -197,22 +194,20 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                 <span className="text-text font-semibold">Coach Phillip Short</span>{' '}
                 and other MSI instructors.
               </p>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-bg py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal>
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              The Curriculum
-            </p>
-            <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
-              What your athlete will train.
-            </h2>
-          </Reveal>
-          <Reveal delay={150} className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            The Curriculum
+          </p>
+          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-4 leading-[1.0]">
+            What your athlete will train.
+          </h2>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
             {ELEMENTS.map((el, i) => (
               <Link
                 key={el.slug}
@@ -243,21 +238,19 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                 </div>
               </Link>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
 
       <section className="bg-surface py-20 lg:py-28 border-b border-border">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <Reveal>
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              FAQ
-            </p>
-            <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
-              Common questions.
-            </h2>
-          </Reveal>
-          <Reveal delay={150} className="mt-12 divide-y divide-border border-y border-border">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            FAQ
+          </p>
+          <h2 className="font-heading text-4xl lg:text-5xl uppercase mt-4 leading-[1.0]">
+            Common questions.
+          </h2>
+          <div className="mt-12 divide-y divide-border border-y border-border">
             {FAQS.map((item, i) => {
               const isOpen = openFaq === i;
               return (
@@ -293,7 +286,7 @@ export default function CampPage({ camp, banner, includedImage = imgIncludedDefa
                 </div>
               );
             })}
-          </Reveal>
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Reveal from '../ui/Reveal.jsx';
 
 import iconAcceleration from '../../assets/skill-icon-acceleration.png';
 import iconBalance from '../../assets/skill-icon-balance-body-control.png';
@@ -62,25 +61,23 @@ export default function TenElements() {
   return (
     <section className="bg-bg py-24 lg:py-32 border-t border-border overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal>
-          <div className="mb-14 lg:mb-20 max-w-3xl">
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-              The Curriculum
-            </p>
-            <h2
-              className="font-heading text-text uppercase mt-4 leading-[1.0]"
-              style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
-            >
-              Ten Elements. One Athlete.
-            </h2>
-            <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed max-w-2xl">
-              Every drill, every session, every camp comes back to these ten
-              foundations of speed. Hover to explore, click to dive in.
-            </p>
-          </div>
-        </Reveal>
+        <div className="mb-14 lg:mb-20 max-w-3xl">
+          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+            The Curriculum
+          </p>
+          <h2
+            className="font-heading text-text uppercase mt-4 leading-[1.0]"
+            style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
+          >
+            Ten Elements. One Athlete.
+          </h2>
+          <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed max-w-2xl">
+            Every drill, every session, every camp comes back to these ten
+            foundations of speed. Hover to explore, click to dive in.
+          </p>
+        </div>
 
-        <Reveal delay={200} className="flex justify-center">
+        <div className="flex justify-center">
           <div
             className="relative"
             style={{ width: ringSize, height: ringSize }}
@@ -158,7 +155,7 @@ export default function TenElements() {
               )}
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

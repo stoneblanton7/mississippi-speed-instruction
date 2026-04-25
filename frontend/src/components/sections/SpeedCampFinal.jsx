@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Button from '../ui/Button.jsx';
-import Reveal from '../ui/Reveal.jsx';
 import { REGISTER_LINK_PROPS } from '../../config.js';
 import imgHurdles from '../../assets/kids-camp (2).png';
 import imgParachute from '../../assets/kids-camp-4.jpg';
@@ -12,7 +11,7 @@ export default function SpeedCampFinal() {
     <section className="bg-bg py-24 md:py-32 lg:py-40 px-6 md:px-12 border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <Reveal className="lg:col-span-5">
+          <div className="lg:col-span-5">
             <p className="font-mono text-xs text-accent uppercase tracking-[0.4em] mb-6">
               Summer 2026
             </p>
@@ -48,9 +47,9 @@ export default function SpeedCampFinal() {
                 Learn More
               </Button>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={200} className="lg:col-span-7">
+          <div className="lg:col-span-7">
             <div className="grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 h-[500px] md:h-[640px]">
               <div className="col-span-4 row-span-4 overflow-hidden rounded-sm bg-surface">
                 <img
@@ -84,7 +83,7 @@ export default function SpeedCampFinal() {
                 />
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
