@@ -74,6 +74,15 @@ export default function TenElements() {
     setActiveIdx(next);
   });
 
+  const scrollToElement = (index) => {
+    if (!ref.current) return;
+    const sectionTop = ref.current.offsetTop;
+    const sectionHeight = ref.current.offsetHeight;
+    const elementProgress = (index + 0.5) / ELEMENTS.length;
+    const targetScroll = sectionTop + sectionHeight * elementProgress;
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+  };
+
   if (reduced) return <StaticGrid />;
 
   const active = ELEMENTS[activeIdx];
@@ -102,15 +111,21 @@ export default function TenElements() {
 
             <ol className="mt-10 grid grid-cols-2 gap-x-6 gap-y-2 max-w-md font-mono text-xs uppercase tracking-widest">
               {ELEMENTS.map((el, i) => (
-                <li
-                  key={el.slug}
-                  className={
-                    'flex items-center gap-2 py-1 transition-colors ' +
-                    (i === activeIdx ? 'text-accent' : 'text-text-dim')
-                  }
-                >
-                  <span>{String(i + 1).padStart(2, '0')}</span>
-                  <span>{el.name}</span>
+                <li key={el.slug}>
+                  <button
+                    type="button"
+                    onClick={() => scrollToElement(i)}
+                    aria-label={`Jump to element ${i + 1}: ${el.name}`}
+                    className={
+                      'group flex items-center gap-2 py-1 w-full text-left cursor-pointer transition-colors hover:text-text focus:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded ' +
+                      (i === activeIdx ? 'text-accent' : 'text-text-dim')
+                    }
+                  >
+                    <span>{String(i + 1).padStart(2, '0')}</span>
+                    <span className="transition-transform group-hover:translate-x-0.5">
+                      {el.name}
+                    </span>
+                  </button>
                 </li>
               ))}
             </ol>
