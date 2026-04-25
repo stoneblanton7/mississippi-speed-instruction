@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 import Button from '../ui/Button.jsx';
 import {
@@ -56,40 +55,24 @@ export default function Hero() {
 
         {/* Content — anchored bottom-left */}
         <div className="relative z-20 mx-auto h-full max-w-7xl px-6 lg:px-10 flex flex-col justify-end pb-16 lg:pb-24">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="font-mono text-xs lg:text-sm text-accent uppercase tracking-[0.4em] mb-5 [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]"
-          >
+          <p className="font-mono text-xs lg:text-sm text-accent uppercase tracking-[0.4em] mb-5 [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             Mississippi Speed Instruction · Est. 1993
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+          <h1
             className="font-heading text-text leading-[1.0] uppercase mb-8"
             style={{ fontSize: 'clamp(48px, 9vw, 128px)' }}
           >
-            HIGH SPEED THRILLS
-          </motion.h1>
+            Faster Athletes
+            <br />
+            Start Here.
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
-            className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-8 max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]"
-          >
+          <p className="font-body text-text-muted text-base lg:text-lg leading-relaxed mb-8 max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             Three days. Ten elements. One faster athlete. Madison Ridgeland Academy, Summer 2026.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
               Register for Camp
             </Button>
@@ -97,7 +80,7 @@ export default function Hero() {
               <Play size={16} strokeWidth={2.5} />
               Watch the Film
             </Button>
-          </motion.div>
+          </div>
         </div>
     </section>
   );
