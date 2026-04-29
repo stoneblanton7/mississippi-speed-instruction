@@ -85,16 +85,6 @@ export const VIMEO_HASHES = {
   '1022931423': '65a233cc40', // Disassociate Drill
   '1022932056': 'd445466bb0', // Football Grip
   '1022932565': '2bb3de2e75', // 1234 Drill
-  '998320024': '57415d7cef', // Skill: Acceleration
-  '998320201': '8211646afd', // Skill: Balance & Body Control
-  '998320225': 'fb49ddcdb6', // Skill: Change of Direction
-  '998320246': 'f4a2079464', // Skill: Core Strength
-  '998320282': '8fcfabd4c8', // Skill: Flexibility
-  '998320323': 'ebccf23d7e', // Skill: Foot Quickness
-  '998320362': '6a4515ebb9', // Skill: Jumping
-  '998320393': '16163757c1', // Skill: Lateral Speed
-  '998320416': '84da1966d4', // Skill: Top Speed
-  '998320452': '711273ac01', // Skill: Visual Acuity
 };
 
 export function buildVimeoSrc(id, params = {}, explicitHash) {

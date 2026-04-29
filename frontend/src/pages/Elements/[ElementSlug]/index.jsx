@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
 import VideoModal from '../../../components/ui/VideoModal.jsx';
 import SpeedCampFinal from '../../../components/sections/SpeedCampFinal.jsx';
 import { ELEMENTS, ELEMENTS_BY_SLUG, SPORTS } from '../../../api/data/elements.js';
-import { buildVimeoSrc } from '../../../config.js';
 import { useVimeoThumbnail } from '../../../hooks/useVimeoThumbnail.js';
 
 const RELATED_DRILLS = {
@@ -134,30 +133,6 @@ export default function ElementDetail() {
             {element.definition.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-surface py-20 lg:py-28 border-b border-border">
-        <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Skill Overview
-          </p>
-          <h2 className="font-heading text-3xl lg:text-5xl uppercase mt-4 leading-[1.0]">
-            See it on the field.
-          </h2>
-          <div className="mt-10 aspect-video bg-bg border border-border overflow-hidden">
-            <iframe
-              src={buildVimeoSrc(
-                element.vimeoId,
-                { title: 0, byline: 0, portrait: 0 },
-                element.vimeoHash
-              )}
-              className="h-full w-full"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title={`${element.name} — skill overview`}
-            />
           </div>
         </div>
       </section>
