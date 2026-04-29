@@ -1,4 +1,4 @@
-export const VIDEO_CATEGORIES = ['coaches', 'elements', 'promo'];
+export const VIDEO_CATEGORIES = ['coaches', 'promo'];
 
 export const VIDEOS = [
   // PROMO
@@ -103,77 +103,5 @@ export const VIDEOS = [
     title: '1234 Drill',
     coach: 'Philip Short',
     category: 'coaches',
-  },
-
-  // ELEMENTS — SKILL OVERVIEWS
-  {
-    id: '998320024',
-    hash: '57415d7cef',
-    title: 'Acceleration',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320201',
-    hash: '8211646afd',
-    title: 'Balance & Body Control',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320225',
-    hash: 'fb49ddcdb6',
-    title: 'Change of Direction',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320246',
-    hash: 'f4a2079464',
-    title: 'Core Strength',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320282',
-    hash: '8fcfabd4c8',
-    title: 'Flexibility',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320323',
-    hash: 'ebccf23d7e',
-    title: 'Foot Quickness',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320362',
-    hash: '6a4515ebb9',
-    title: 'Jumping',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320393',
-    hash: '16163757c1',
-    title: 'Lateral Speed',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320416',
-    hash: '84da1966d4',
-    title: 'Top Speed',
-    coach: 'MSI',
-    category: 'elements',
-  },
-  {
-    id: '998320452',
-    hash: '711273ac01',
-    title: 'Visual Acuity',
-    coach: 'MSI',
-    category: 'elements',
   },
 ];

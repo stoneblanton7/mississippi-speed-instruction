@@ -6,7 +6,6 @@ import { useVimeoThumbnail } from '../../hooks/useVimeoThumbnail.js';
 const FILTERS = [
   { value: 'all', label: 'All' },
   { value: 'coaches', label: 'Coaches' },
-  { value: 'elements', label: 'Elements' },
   { value: 'promo', label: 'Promo' },
 ];
 
