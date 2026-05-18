@@ -1,4 +1,57 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, Play } from 'lucide-react';
+import { EPISODES } from '../../api/data/episodes.js';
+
+function EpisodeTile({ episode }) {
+  const epNumber = String(episode.number).padStart(2, '0');
+  return (
+    <Link
+      to={`/podcast/${episode.slug}`}
+      className="group block bg-surface border border-border hover:border-text transition-colors overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+    >
+      <div className="relative aspect-video bg-bg overflow-hidden">
+        <img
+          src={episode.thumbnail}
+          alt=""
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute bottom-4 right-4 inline-flex items-center justify-center h-12 w-12 rounded-full bg-accent text-text-inverted shadow-lg transition-transform duration-300 group-hover:scale-110"
+        >
+          <Play size={18} strokeWidth={2.5} className="ml-0.5" fill="currentColor" />
+        </span>
+      </div>
+      <div className="p-6 lg:p-7">
+        <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+          Episode {epNumber} · {episode.publishedAt}
+        </p>
+        <h3 className="font-heading text-2xl lg:text-3xl uppercase mt-4 leading-[1.05]">
+          {episode.shortTitle}
+        </h3>
+        <p className="font-body text-text-muted text-sm mt-3 uppercase tracking-widest font-semibold">
+          ft. {episode.guests}
+        </p>
+        <p className="font-body text-text-muted text-base mt-4 leading-relaxed">
+          {episode.hook}
+        </p>
+        <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-text-muted group-hover:text-accent group-hover:gap-3 transition-all">
+          Watch episode
+          <ArrowRight size={12} strokeWidth={2.5} />
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export default function Podcast() {
+  const sorted = [...EPISODES].sort((a, b) => b.number - a.number);
+
   return (
     <>
       <section className="relative bg-bg pt-32 pb-12 lg:pt-44 lg:pb-16 border-b border-border overflow-hidden">
@@ -25,24 +78,21 @@ export default function Podcast() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 lg:py-32 border-b border-border">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
-          <span
-            aria-hidden="true"
-            className="inline-block h-2 w-2 rounded-full bg-accent mb-8"
-          />
-          <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
-            Coming Soon
-          </p>
-          <h2 className="font-heading text-4xl lg:text-6xl uppercase mt-6 leading-[1.0]">
-            The first episodes drop soon.
-          </h2>
-          <p className="font-body text-text-muted text-lg mt-8 leading-relaxed">
-            We're producing five episodes right now and rolling them out over
-            the coming weeks. Check back here — or follow{' '}
-            <span className="text-text font-semibold">@mississippispeed</span>{' '}
-            on YouTube to catch the launch.
-          </p>
+      <section className="bg-bg py-16 lg:py-24 border-b border-border">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="flex items-baseline justify-between mb-10">
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.4em]">
+              All Episodes
+            </p>
+            <p className="font-mono text-xs text-text-muted uppercase tracking-widest">
+              {sorted.length} {sorted.length === 1 ? 'episode' : 'episodes'}
+            </p>
+          </div>
+          <div className="grid gap-6 lg:gap-8 sm:grid-cols-2">
+            {sorted.map((ep) => (
+              <EpisodeTile key={ep.slug} episode={ep} />
+            ))}
+          </div>
         </div>
       </section>
     </>

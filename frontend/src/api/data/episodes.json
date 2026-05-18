@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "episode-2-george-adams",
+    "number": 2,
+    "title": "Only 6% of Kids Make It to College Sports — Here's What Most Parents Get Wrong",
+    "shortTitle": "Let Them Play",
+    "guests": "George Adams",
+    "guestDetails": [
+      {
+        "name": "George Adams",
+        "role": "Head Athletic Performance Coach, Madison-Ridgeland Academy · 8 state championships · former Minnesota Vikings and University of Georgia"
+      }
+    ],
+    "youtubeId": "Dx6sxPjAenw",
+    "thumbnailKey": "ep2",
+    "publishedAt": "May 2026",
+    "hook": "Only 6% of high school athletes ever play college sports. So why train like the goal is D1?",
+    "description": "Coach Philip Short sits down with George Adams — Head Athletic Performance Coach at Madison-Ridgeland Academy and the coach behind 8 state championships. George unpacks why most youth speed training is backwards, why structured drills are hurting young athletes, and what parents should actually focus on.",
+    "transcriptPath": "/podcast/ep_2_transcript.txt"
+  },
+  {
+    "slug": "episode-1-stratton-sisters",
+    "number": 1,
+    "title": "What SEC-Level Speed Actually Takes (What 99% of Parents Miss)",
+    "shortTitle": "From Youth to the SEC",
+    "guests": "Lauren & Kat Stratton",
+    "guestDetails": [
+      {
+        "name": "Lauren Stratton",
+        "role": "Former Mississippi State Soccer · Madison Academy girls' soccer coach"
+      },
+      {
+        "name": "Kat Stratton",
+        "role": "Assistant Coach, Mississippi State Women's Soccer · 2024 SEC Champion · former Alabama"
+      }
+    ],
+    "youtubeId": "CyAS9dJYMa0",
+    "thumbnailKey": "ep1",
+    "publishedAt": "April 2026",
+    "hook": "Most parents think their kid is either born fast — or they're not. Two SEC coaches break down what actually builds great athletes.",
+    "description": "Coach Lauren Stratton played at Mississippi State. Coach Kat Stratton played at Alabama and is now an assistant coach at Mississippi State, where her staff won the 2024 SEC Championship. They sit down with Coach Philip Short to break down what really builds great athletes from age 7 all the way to college — and what most parents are missing. We cover specialization, the weight room myth for girls, why fatigue beats skill, how to make practice harder than the game, and the one thing every parent should do differently for their daughter.",
+    "transcriptPath": "/podcast/ep_1_transcript.txt"
+  }
+]
