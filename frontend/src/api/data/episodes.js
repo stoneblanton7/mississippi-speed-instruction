@@ -1,6 +1,6 @@
 import data from './episodes.json';
-import ep1Thumb from '../../assets/podcast/winner_EP1.png';
-import ep2Thumb from '../../assets/podcast/b-EP2.png';
+import ep1Thumb from '../../assets/podcast/winner_EP1.jpg';
+import ep2Thumb from '../../assets/podcast/b-EP2.jpg';
 
 const THUMBNAILS = {
   ep1: ep1Thumb,
