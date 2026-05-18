@@ -56,7 +56,7 @@ function LibraryTile({ video, active, onSelect }) {
   );
 }
 
-export default function Film() {
+export default function Videos() {
   const [selected, setSelected] = useState(DEFAULT_VIDEO);
   const [filter, setFilter] = useState('all');
 

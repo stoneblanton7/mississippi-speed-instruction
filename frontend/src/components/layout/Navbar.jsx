@@ -16,7 +16,7 @@ const ABOUT_ITEMS = [
 ];
 
 const ROUTE_LINKS = [
-  { to: '/film', label: 'Videos' },
+  { to: '/videos', label: 'Videos' },
   { to: '/elements', label: 'Elements' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <NavDropdown label="Camp" items={CAMP_ITEMS} />
           <NavLink
-            to="/film"
+            to="/videos"
             className={({ isActive }) =>
               'font-body text-sm uppercase tracking-widest transition-colors ' +
               (isActive ? 'text-accent' : 'text-text hover:text-accent')
@@ -101,7 +101,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-4 px-6 py-5">
             <MobileGroup label="Camp" items={CAMP_ITEMS} onItemClick={closeMobile} />
             <NavLink
-              to="/film"
+              to="/videos"
               onClick={closeMobile}
               className={({ isActive }) =>
                 'font-body text-base uppercase tracking-widest py-2 ' +
