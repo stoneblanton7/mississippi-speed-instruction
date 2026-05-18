@@ -9,6 +9,9 @@ node_modules/
 dist/
 build/
 
+# Production build zips for Sam's prod handoff (regenerate via npm run build)
+msi-prod-build*.zip
+
 # Logs
 *.log
 npm-debug.log*
