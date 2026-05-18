@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
+import NewsletterSignup from '../../components/sections/NewsletterSignup.jsx';
 import { EPISODES } from '../../api/data/episodes.js';
 
 function EpisodeTile({ episode }) {
@@ -95,6 +96,8 @@ export default function Podcast() {
           </div>
         </div>
       </section>
+
+      <NewsletterSignup />
     </>
   );
 }

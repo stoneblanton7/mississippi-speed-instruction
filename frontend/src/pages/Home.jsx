@@ -4,6 +4,7 @@ import Hero from '../components/sections/Hero.jsx';
 import TwoCampsSection from '../components/sections/TwoCampsSection.jsx';
 import TenElements from '../components/sections/TenElements.jsx';
 import MeetTheLeaders from '../components/sections/MeetTheLeaders.jsx';
+import NewsletterSignup from '../components/sections/NewsletterSignup.jsx';
 import SpeedCampFinal from '../components/sections/SpeedCampFinal.jsx';
 import StickyRegisterCTA from '../components/ui/StickyRegisterCTA.jsx';
 
@@ -27,6 +28,7 @@ export default function Home() {
       <TwoCampsSection />
       <TenElements />
       <MeetTheLeaders />
+      <NewsletterSignup />
       <SpeedCampFinal />
       <StickyRegisterCTA />
     </>
