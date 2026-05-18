@@ -9,6 +9,7 @@ import ElementDetail from './pages/Elements/[ElementSlug]/index.jsx';
 import AboutMike from './pages/About/MikeFrascogna/index.jsx';
 import AboutPhilip from './pages/About/PhilipShort/index.jsx';
 import Contact from './pages/Contact/index.jsx';
+import Podcast from './pages/Podcast/index.jsx';
 import Videos from './pages/Videos/index.jsx';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/camp/boys" element={<BoysCamp />} />
           <Route path="/camp/girls" element={<GirlsCamp />} />
+          <Route path="/podcast" element={<Podcast />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/film" element={<Navigate to="/videos" replace />} />
           <Route path="/elements" element={<Elements />} />
