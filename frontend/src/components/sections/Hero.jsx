@@ -76,9 +76,9 @@ export default function Hero() {
             <Button as="a" {...REGISTER_LINK_PROPS} variant="primary" size="lg" arrow>
               Register for Camp
             </Button>
-            <Button as={Link} to="/film" variant="ghost" size="lg">
+            <Button as={Link} to="/podcast" variant="ghost" size="lg">
               <Play size={16} strokeWidth={2.5} />
-              Watch the Film
+              Watch the Podcast
             </Button>
           </div>
         </div>
