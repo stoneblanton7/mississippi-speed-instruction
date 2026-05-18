@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Facebook, Instagram, Youtube, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
 import TikTokIcon from '../../components/ui/TikTokIcon.jsx';
+import NewsletterSignup from '../../components/sections/NewsletterSignup.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
-import { SOCIAL } from '../../config.js';
+import { SOCIAL, WEB3FORMS_ACCESS_KEY } from '../../config.js';
 
 const INPUT_BASE =
   'w-full bg-bg border border-border focus:border-text rounded-lg px-4 py-3 font-body text-base text-text placeholder:text-text-dim focus:outline-none transition-colors';
@@ -32,6 +33,8 @@ function Toast({ visible }) {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
@@ -43,10 +46,40 @@ export default function Contact() {
   const handleChange = (field) => (e) =>
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowToast(true);
-    setForm({ name: '', email: '', message: '' });
+    setError(null);
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `MSI contact form — ${form.name}`,
+          from_name: form.name,
+        }),
+      });
+
+      const result = await res.json();
+      if (!result.success) {
+        throw new Error(result.message || 'Submission failed.');
+      }
+
+      setForm({ name: '', email: '', message: '' });
+      setShowToast(true);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Try again in a moment.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -133,9 +166,24 @@ export default function Contact() {
                 className={`mt-2 ${INPUT_BASE} resize-y`}
               />
             </div>
+            {error && (
+              <p
+                role="alert"
+                className="font-body text-error text-sm leading-relaxed"
+              >
+                {error}
+              </p>
+            )}
             <div className="pt-2">
-              <Button type="submit" variant="primary" size="lg" arrow>
-                Send Message
+              <Button
+                type="submit"
+                variant="primary"
+                size="lg"
+                arrow={!submitting}
+                disabled={submitting}
+                className={submitting ? 'opacity-60 cursor-not-allowed' : ''}
+              >
+                {submitting ? 'Sending…' : 'Send Message'}
               </Button>
             </div>
           </form>
@@ -207,6 +255,8 @@ export default function Contact() {
           </aside>
         </div>
       </section>
+
+      <NewsletterSignup />
 
       <SpeedCampFinal />
 
