@@ -44,6 +44,8 @@ export const CAMPS = {
 export const SOCIAL = {
   facebook: 'https://www.facebook.com/profile.php?id=61564652301436',
   instagram: 'https://www.instagram.com/mississippispeed/',
+  youtube: 'https://www.youtube.com/@mississippispeed',
+  tiktok: 'https://www.tiktok.com/@mississippispeed',
 };
 
 export const ELEMENTS = [

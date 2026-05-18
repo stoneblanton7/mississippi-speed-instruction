@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Facebook, Instagram, MapPin, Check } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
+import TikTokIcon from '../../components/ui/TikTokIcon.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
 import { SOCIAL } from '../../config.js';
 
@@ -182,6 +183,24 @@ export default function Contact() {
                   className="inline-flex items-center justify-center h-12 w-12 rounded-lg border border-border-strong text-text-muted hover:text-text hover:border-text transition-colors"
                 >
                   <Instagram size={20} />
+                </a>
+                <a
+                  href={SOCIAL.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="inline-flex items-center justify-center h-12 w-12 rounded-lg border border-border-strong text-text-muted hover:text-text hover:border-text transition-colors"
+                >
+                  <Youtube size={20} />
+                </a>
+                <a
+                  href={SOCIAL.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className="inline-flex items-center justify-center h-12 w-12 rounded-lg border border-border-strong text-text-muted hover:text-text hover:border-text transition-colors"
+                >
+                  <TikTokIcon size={20} />
                 </a>
               </div>
             </div>

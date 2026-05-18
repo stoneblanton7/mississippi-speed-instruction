@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Youtube } from 'lucide-react';
+import TikTokIcon from '../ui/TikTokIcon.jsx';
 import { SOCIAL, REGISTER_LINK_PROPS } from '../../config.js';
 import logoWhite from '../../assets/logo-white.png';
 import thirtyYears from '../../assets/thirty-years-icon.png';
@@ -66,6 +67,24 @@ export default function Footer() {
               className="text-text-muted hover:text-accent transition-colors"
             >
               <Instagram size={20} />
+            </a>
+            <a
+              href={SOCIAL.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-text-muted hover:text-accent transition-colors"
+            >
+              <Youtube size={20} />
+            </a>
+            <a
+              href={SOCIAL.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-text-muted hover:text-accent transition-colors"
+            >
+              <TikTokIcon size={20} />
             </a>
           </div>
         </div>
