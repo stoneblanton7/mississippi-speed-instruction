@@ -1,0 +1,23 @@
+FROM node:20-alpine AS build
+WORKDIR /app
+
+COPY frontend/package*.json ./
+RUN npm ci
+
+COPY frontend/ ./
+RUN npm run build
+
+FROM node:20-alpine
+WORKDIR /app
+
+RUN npm install -g serve@14.2.4
+
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh \
+  && chmod +x /usr/local/bin/docker-entrypoint.sh
+COPY serve.json ./serve.json
+COPY --from=build /app/dist ./dist
+
+EXPOSE 80
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["serve", "-s", "dist", "-l", "80"]

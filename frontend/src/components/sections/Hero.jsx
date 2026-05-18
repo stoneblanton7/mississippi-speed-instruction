@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
 import Button from '../ui/Button.jsx';
@@ -6,6 +7,7 @@ import {
   REGISTER_LINK_PROPS,
   buildVimeoSrc,
 } from '../../config.js';
+import heroVideoPoster from '../../assets/hero-video-poster.webp';
 import thirtyYears from '../../assets/thirty-years-icon.png';
 
 const HERO_SRC = buildVimeoSrc(VIMEO.homeHero, {
@@ -17,26 +19,74 @@ const HERO_SRC = buildVimeoSrc(VIMEO.homeHero, {
   playsinline: 1,
 });
 
+const VIDEO_HANDOFF_DELAY_MS = 1200;
+
 export default function Hero() {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    let timer;
+
+    const queueVideo = () => {
+      timer = window.setTimeout(() => setShouldLoadVideo(true), 100);
+    };
+
+    if (document.readyState === 'complete') {
+      queueVideo();
+    } else {
+      window.addEventListener('load', queueVideo, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener('load', queueVideo);
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  const handleVideoLoad = () => {
+    window.setTimeout(() => setShowVideo(true), VIDEO_HANDOFF_DELAY_MS);
+  };
+
   return (
     <section
       className="relative w-full overflow-hidden bg-bg"
       style={{ height: '100vh', minHeight: '640px' }}
     >
-        {/* Vimeo background — full bleed cover */}
+        {/* Poster paints first; Vimeo is mounted after initial page load. */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <iframe
-            src={HERO_SRC}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          <img
+            src={heroVideoPoster}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+            className={`absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ease-linear ${
+              showVideo ? 'opacity-0' : 'opacity-100'
+            }`}
             style={{
               width: 'max(100vw, calc(100vh * 16 / 9))',
               height: 'max(100vh, calc(100vw * 9 / 16))',
+              objectFit: 'cover',
             }}
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            title="MSI hero loop"
-            aria-hidden="true"
           />
+          {shouldLoadVideo && (
+            <iframe
+              src={HERO_SRC}
+              className={`absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ease-linear ${
+                showVideo ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                width: 'max(100vw, calc(100vh * 16 / 9))',
+                height: 'max(100vh, calc(100vw * 9 / 16))',
+              }}
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              title="MSI hero loop"
+              aria-hidden="true"
+              onLoad={handleVideoLoad}
+            />
+          )}
         </div>
 
         {/* Dark gradient overlay — readable text */}

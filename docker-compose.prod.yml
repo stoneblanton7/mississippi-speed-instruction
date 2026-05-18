@@ -1,0 +1,8 @@
+services:
+  frontend:
+    image: 100.104.14.39:5000/mississippi-speed-instruction:latest
+    restart: unless-stopped
+    environment:
+      - N8N_CONTACT_WEBHOOK_URL=${N8N_CONTACT_WEBHOOK_URL:-}
+    ports:
+      - "5191:80"

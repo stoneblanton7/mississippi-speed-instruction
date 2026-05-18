@@ -8,3 +8,4 @@ services:
       - /app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - VITE_N8N_CONTACT_WEBHOOK_URL=${N8N_CONTACT_WEBHOOK_URL:-}

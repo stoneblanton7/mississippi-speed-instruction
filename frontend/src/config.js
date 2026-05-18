@@ -50,6 +50,16 @@ export const SOCIAL = {
   tiktok: 'https://www.tiktok.com/@mississippispeed',
 };
 
+const RUNTIME_CONFIG =
+  typeof window !== 'undefined' && window.__MSI_CONFIG__
+    ? window.__MSI_CONFIG__
+    : {};
+
+export const CONTACT_WEBHOOK_URL =
+  RUNTIME_CONFIG.N8N_CONTACT_WEBHOOK_URL ||
+  import.meta.env.VITE_N8N_CONTACT_WEBHOOK_URL ||
+  '';
+
 export const ELEMENTS = [
   { slug: 'acceleration', name: 'Acceleration' },
   { slug: 'balance-body-control', name: 'Balance & Body Control' },

@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Facebook, Instagram, Youtube, MapPin, Check } from 'lucide-react';
+import { AlertCircle, Facebook, Instagram, Youtube, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
 import TikTokIcon from '../../components/ui/TikTokIcon.jsx';
 import NewsletterSignup from '../../components/sections/NewsletterSignup.jsx';
 import SpeedCampFinal from '../../components/sections/SpeedCampFinal.jsx';
-import { SOCIAL, WEB3FORMS_ACCESS_KEY } from '../../config.js';
+import { CONTACT_WEBHOOK_URL, SOCIAL } from '../../config.js';
 
 const INPUT_BASE =
   'w-full bg-bg border border-border focus:border-text rounded-lg px-4 py-3 font-body text-base text-text placeholder:text-text-dim focus:outline-none transition-colors';
 
-function Toast({ visible }) {
+function Toast({ message, type }) {
+  const visible = Boolean(message);
+  const Icon = type === 'error' ? AlertCircle : Check;
+
   return (
     <AnimatePresence>
       {visible && (
@@ -23,8 +26,8 @@ function Toast({ visible }) {
           role="status"
           aria-live="polite"
         >
-          <Check size={16} strokeWidth={2.5} />
-          Message sent
+          <Icon size={16} strokeWidth={2.5} />
+          {message}
         </motion.div>
       )}
     </AnimatePresence>
@@ -33,52 +36,61 @@ function Toast({ visible }) {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(null);
-  const [showToast, setShowToast] = useState(false);
+  const [toast, setToast] = useState({ message: '', type: 'success' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    if (!showToast) return;
-    const t = setTimeout(() => setShowToast(false), 3000);
+    if (!toast.message) return;
+    const t = setTimeout(() => setToast({ message: '', type: 'success' }), 3000);
     return () => clearTimeout(t);
-  }, [showToast]);
+  }, [toast.message]);
 
   const handleChange = (field) => (e) =>
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
-    setSubmitting(true);
+
+    if (isSubmitting) return;
+
+    if (!CONTACT_WEBHOOK_URL) {
+      setToast({ message: 'Contact not configured', type: 'error' });
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const payload = {
+        form: 'contact',
+        source: 'mississippi-speed-instruction',
+        name: form.name.trim(),
+        email: form.email.trim(),
+        message: form.message.trim(),
+        submittedAt: new Date().toISOString(),
+        page: window.location.href,
+        userAgent: window.navigator.userAgent,
+      };
+
+      const response = await fetch(CONTACT_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          subject: `MSI contact form — ${form.name}`,
-          from_name: form.name,
-        }),
+        body: JSON.stringify(payload),
       });
 
-      const result = await res.json();
-      if (!result.success) {
-        throw new Error(result.message || 'Submission failed.');
+      if (!response.ok) {
+        throw new Error(`Webhook returned ${response.status}`);
       }
 
+      setToast({ message: 'Message sent', type: 'success' });
       setForm({ name: '', email: '', message: '' });
-      setShowToast(true);
-    } catch (err) {
-      setError(err.message || 'Something went wrong. Try again in a moment.');
+    } catch (error) {
+      console.error('Contact form submission failed', error);
+      setToast({ message: 'Message failed', type: 'error' });
     } finally {
-      setSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -166,24 +178,16 @@ export default function Contact() {
                 className={`mt-2 ${INPUT_BASE} resize-y`}
               />
             </div>
-            {error && (
-              <p
-                role="alert"
-                className="font-body text-error text-sm leading-relaxed"
-              >
-                {error}
-              </p>
-            )}
             <div className="pt-2">
               <Button
                 type="submit"
                 variant="primary"
                 size="lg"
-                arrow={!submitting}
-                disabled={submitting}
-                className={submitting ? 'opacity-60 cursor-not-allowed' : ''}
+                arrow={!isSubmitting}
+                disabled={isSubmitting}
+                className={isSubmitting ? 'opacity-70 cursor-wait' : ''}
               >
-                {submitting ? 'Sending…' : 'Send Message'}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </div>
           </form>
@@ -260,7 +264,7 @@ export default function Contact() {
 
       <SpeedCampFinal />
 
-      <Toast visible={showToast} />
+      <Toast message={toast.message} type={toast.type} />
     </>
   );
 }
