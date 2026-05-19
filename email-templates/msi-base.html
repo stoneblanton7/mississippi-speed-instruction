@@ -1,0 +1,219 @@
+<!--
+  Mississippi Speed Instruction — base email template
+
+  Import into Mailchimp:
+    1. Mailchimp → Content → Email templates → Create template → Code your own → Paste in code.
+    2. Paste this file. Save as "MSI Base".
+    3. New campaign → Template → Saved templates → MSI Base.
+    4. Drag-edit the regions marked mc:edit, then send.
+
+  Merge tags used (audience-level):
+    *|FNAME|*           — subscriber's first name (falls back to "there" via |DEFAULT)
+    *|UNSUB|*           — required unsubscribe link
+    *|UPDATE_PROFILE|*  — preference center link
+    *|LIST:ADDRESS|*    — physical address (set in Audience → Settings → Required Footer Content)
+    *|CURRENT_YEAR|*    — auto-fills current year in footer
+
+  Brand:
+    bg #0A0A0A · surface #141414 · accent #C6F73E · text #FFFFFF · muted #B8B8B8 · border #262626
+    headings: 'Arial Black' (heavy but not condensed — chosen over Impact, which crushed text together)
+    body:     Helvetica Neue / Arial stack (no web fonts — email clients drop them inconsistently)
+    shadow:   text-shadow: 0 1px 2px rgba(0,0,0,0.6) applied to small/colored text for crispness on dark
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <title>*|MC:SUBJECT|*</title>
+    <!--[if mso]>
+      <style type="text/css">
+        body, table, td, a { font-family: 'Helvetica Neue', Arial, sans-serif !important; }
+        .heading { font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif !important; }
+      </style>
+    <![endif]-->
+    <style type="text/css">
+      /* Reset */
+      body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+      img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+      body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #0A0A0A; }
+      a { color: #C6F73E; text-decoration: none; }
+      /* Mobile */
+      @media screen and (max-width: 600px) {
+        .container { width: 100% !important; }
+        .px-mobile { padding-left: 24px !important; padding-right: 24px !important; }
+        .h1-mobile { font-size: 34px !important; line-height: 42px !important; letter-spacing: 0.5px !important; }
+        .stack { display: block !important; width: 100% !important; }
+        .stack-img { width: 100% !important; height: auto !important; }
+      }
+    </style>
+  </head>
+  <body style="margin:0; padding:0; background-color:#0A0A0A;">
+    <!-- preheader (inbox preview text) -->
+    <div mc:edit="preheader" style="display:none; font-size:1px; color:#0A0A0A; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+      A quick note from MSI — what's new this week.
+    </div>
+
+    <!-- outer wrapper -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#0A0A0A;">
+      <tr>
+        <td align="center" style="padding: 32px 16px;">
+
+          <!-- main container -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="container" style="width:600px; max-width:600px; background-color:#141414; border:1px solid #262626;">
+
+            <!-- header -->
+            <tr>
+              <td class="px-mobile" style="padding: 28px 40px 24px 40px; border-bottom: 1px solid #262626;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td valign="middle" align="left">
+                      <span class="heading" style="display:inline-block; font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: 22px; line-height: 28px; letter-spacing: 1px; color: #FFFFFF; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
+                        Mississippi&nbsp;Speed
+                      </span>
+                    </td>
+                    <td valign="middle" align="right" style="font-family: 'Courier New', monospace; font-size: 11px; line-height: 14px; letter-spacing: 2px; color: #C6F73E; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                      Est.&nbsp;1993
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- hero -->
+            <tr>
+              <td class="px-mobile" style="padding: 48px 40px 24px 40px;">
+                <p mc:edit="eyebrow" style="margin: 0 0 18px 0; font-family: 'Courier New', monospace; font-size: 12px; line-height: 16px; letter-spacing: 3px; color: #C6F73E; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                  Camp Update — June 2026
+                </p>
+                <h1 mc:edit="headline" class="heading h1-mobile" style="margin: 0; font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: 44px; line-height: 54px; letter-spacing: 0.5px; color: #FFFFFF; text-transform: uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.6);">
+                  Speed&nbsp;is&nbsp;a&nbsp;skill.
+                </h1>
+              </td>
+            </tr>
+
+            <!-- body -->
+            <tr>
+              <td class="px-mobile" style="padding: 16px 40px 32px 40px;">
+                <p style="margin: 0 0 16px 0; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF;">
+                  Hey *|FNAME|DEFAULT:there|*,
+                </p>
+                <div mc:edit="body_copy" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF;">
+                  <p style="margin: 0 0 16px 0;">
+                    Quick update from the Mississippi Speed Instruction crew. Boys camp kicks off <strong style="color:#FFFFFF;">June 9&ndash;11</strong> and girls camp follows <strong style="color:#FFFFFF;">June 23&ndash;25</strong> at Madison Ridgeland Academy, 4:00&ndash;5:45&nbsp;PM.
+                  </p>
+                  <p style="margin: 0 0 16px 0; color: #C9C9C9; text-shadow: 0 1px 2px rgba(0,0,0,0.6);">
+                    Spots are capped at 50 per camp. Cost is $115 for all three days &mdash; acceleration, top speed, lateral, foot quickness, jumping, change of direction, the works. Coached by Mike Frascogna III and Philip Short.
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+            <!-- CTA button (bulletproof) -->
+            <tr>
+              <td class="px-mobile" style="padding: 0 40px 40px 40px;" align="left">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td mc:edit="cta_button" align="center" bgcolor="#C6F73E" style="border-radius: 4px;">
+                      <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://portal.campnetwork.com/Register/Register.php?camp_id=398473" style="height:48px;v-text-anchor:middle;width:220px;" arcsize="8%" stroke="f" fillcolor="#C6F73E">
+                        <w:anchorlock/>
+                        <center style="color:#0A0A0A;font-family:'Arial Black', 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;">Register Now</center>
+                      </v:roundrect>
+                      <![endif]-->
+                      <!--[if !mso]><!-- -->
+                      <a href="https://portal.campnetwork.com/Register/Register.php?camp_id=398473" target="_blank" style="display:inline-block; padding: 14px 32px; font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 14px; letter-spacing: 1.5px; color: #0A0A0A; text-transform: uppercase; text-decoration: none; background-color: #C6F73E; border-radius: 4px;">
+                        Register Now &nbsp;&rarr;
+                      </a>
+                      <!--<![endif]-->
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- divider -->
+            <tr>
+              <td class="px-mobile" style="padding: 0 40px;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr><td style="border-top: 1px solid #262626; line-height: 1px; height: 1px;">&nbsp;</td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- secondary content block (hideable / repeatable) -->
+            <tr mc:hideable mc:repeatable="secondary">
+              <td class="px-mobile" style="padding: 32px 40px;">
+                <p mc:edit="secondary_eyebrow" style="margin: 0 0 12px 0; font-family: 'Courier New', monospace; font-size: 12px; line-height: 16px; letter-spacing: 3px; color: #C6F73E; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                  Drill of the week
+                </p>
+                <h2 mc:edit="secondary_headline" class="heading" style="margin: 0 0 14px 0; font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: 26px; line-height: 34px; letter-spacing: 0.5px; color: #FFFFFF; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+                  The wall drill.
+                </h2>
+                <div mc:edit="secondary_body" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 24px; color: #C9C9C9;">
+                  <p style="margin: 0 0 14px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.6);">
+                    Two minutes against a wall teaches the shin angle that drives the first three steps of every sprint. Coach Philip walks you through the cue we use at camp.
+                  </p>
+                </div>
+                <p style="margin: 0;">
+                  <a mc:edit="secondary_link" href="https://mississippispeed.com/elements/acceleration" target="_blank" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 16px; letter-spacing: 1px; color: #C6F73E; text-transform: uppercase; text-decoration: none; text-shadow: 0 1px 2px rgba(0,0,0,0.6);">
+                    Watch the breakdown &rarr;
+                  </a>
+                </p>
+              </td>
+            </tr>
+
+            <!-- sign-off -->
+            <tr>
+              <td class="px-mobile" style="padding: 16px 40px 40px 40px; border-top: 1px solid #262626;">
+                <div mc:edit="signoff" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF;">
+                  <p style="margin: 0;">Train hard,</p>
+                  <p style="margin: 4px 0 0 0; font-weight: bold; color: #FFFFFF;">
+                    &mdash; Mike &amp; the MSI Crew
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+          <!-- /main container -->
+
+          <!-- footer (outside the dark card, on the page bg) -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="container" style="width:600px; max-width:600px;">
+            <tr>
+              <td class="px-mobile" align="center" style="padding: 28px 40px 8px 40px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 20px; color: #9A9A9A; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                <a href="https://www.instagram.com/mississippispeed/" style="color:#D0D0D0; text-decoration:none; padding: 0 8px;">Instagram</a>
+                &middot;
+                <a href="https://www.youtube.com/@mississippispeed" style="color:#D0D0D0; text-decoration:none; padding: 0 8px;">YouTube</a>
+                &middot;
+                <a href="https://www.tiktok.com/@mississippispeed" style="color:#D0D0D0; text-decoration:none; padding: 0 8px;">TikTok</a>
+                &middot;
+                <a href="https://mississippispeed.com" style="color:#D0D0D0; text-decoration:none; padding: 0 8px;">Website</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-mobile" align="center" style="padding: 8px 40px 4px 40px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; line-height: 18px; color: #9A9A9A; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                Mississippi Speed Instruction &middot; *|LIST:ADDRESS|*
+              </td>
+            </tr>
+            <tr>
+              <td class="px-mobile" align="center" style="padding: 4px 40px 32px 40px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; line-height: 18px; color: #9A9A9A; text-shadow: 0 1px 2px rgba(0,0,0,0.7);">
+                You're getting this because you signed up at mississippispeed.com or registered for a past camp.
+                <br />
+                <a href="*|UPDATE_PROFILE|*" style="color:#D0D0D0; text-decoration:underline;">Update preferences</a>
+                &nbsp;&middot;&nbsp;
+                <a href="*|UNSUB|*" style="color:#D0D0D0; text-decoration:underline;">Unsubscribe</a>
+                <br />
+                &copy; *|CURRENT_YEAR|* Mississippi Speed Instruction
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
