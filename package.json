@@ -1,0 +1,6 @@
+{
+  "name": "mike-website-root",
+  "private": true,
+  "type": "module",
+  "description": "Repo root — exists so Vercel parses api/*.js as ES modules. Frontend lives in frontend/."
+}

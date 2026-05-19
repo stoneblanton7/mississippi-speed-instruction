@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check } from 'lucide-react';
 import Button from '../ui/Button.jsx';
-import { WEB3FORMS_ACCESS_KEY } from '../../config.js';
 
 const INPUT_BASE =
   'w-full bg-bg border border-border focus:border-text rounded-lg px-4 py-3 font-body text-base text-text placeholder:text-text-dim focus:outline-none transition-colors';
 
-const INTERESTS = [
-  'Boys Camp 2026',
-  'Girls Camp 2026',
-  'General MSI updates',
+const PARENT_TYPES = [
+  { value: 'boys_parent', label: 'Boys Parent' },
+  { value: 'girls_parent', label: 'Girls Parent' },
+  { value: 'both_parent', label: 'Both' },
+  { value: 'future_parent', label: 'Future Parent' },
 ];
 
 function Toast({ visible, message }) {
@@ -36,9 +36,9 @@ function Toast({ visible, message }) {
 
 export default function NewsletterSignup() {
   const [form, setForm] = useState({
-    name: '',
+    first_name: '',
     email: '',
-    interest: 'Girls Camp 2026',
+    parent_type: 'boys_parent',
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
@@ -59,29 +59,26 @@ export default function NewsletterSignup() {
     setSubmitting(true);
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name: form.name || '(no name provided)',
           email: form.email,
-          interest: form.interest,
-          subject: `MSI newsletter signup — ${form.interest}`,
-          from_name: form.name || 'MSI website',
+          first_name: form.first_name,
+          parent_type: form.parent_type,
         }),
       });
 
       const result = await res.json();
-      if (!result.success) {
-        throw new Error(result.message || 'Submission failed.');
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || 'Submission failed.');
       }
 
-      setForm({ name: '', email: '', interest: 'Girls Camp 2026' });
-      setToast("Thanks! We'll be in touch.");
+      setForm({ first_name: '', email: '', parent_type: 'boys_parent' });
+      setToast("Thanks! You're on the list.");
     } catch (err) {
       setError(err.message || 'Something went wrong. Try again in a moment.');
     } finally {
@@ -119,18 +116,19 @@ export default function NewsletterSignup() {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label
-                  htmlFor="newsletter-name"
+                  htmlFor="newsletter-first-name"
                   className="font-mono text-[10px] text-text-muted uppercase tracking-widest"
                 >
-                  Name
+                  First Name <span className="text-accent">*</span>
                 </label>
                 <input
-                  id="newsletter-name"
+                  id="newsletter-first-name"
                   type="text"
-                  autoComplete="name"
-                  value={form.name}
-                  onChange={handleChange('name')}
-                  placeholder="Your name"
+                  required
+                  autoComplete="given-name"
+                  value={form.first_name}
+                  onChange={handleChange('first_name')}
+                  placeholder="Your first name"
                   className={`mt-2 ${INPUT_BASE}`}
                 />
               </div>
@@ -156,24 +154,25 @@ export default function NewsletterSignup() {
 
             <div>
               <label
-                htmlFor="newsletter-interest"
+                htmlFor="newsletter-parent-type"
                 className="font-mono text-[10px] text-text-muted uppercase tracking-widest"
               >
-                I'm most interested in
+                I'm a... <span className="text-accent">*</span>
               </label>
               <select
-                id="newsletter-interest"
-                value={form.interest}
-                onChange={handleChange('interest')}
+                id="newsletter-parent-type"
+                required
+                value={form.parent_type}
+                onChange={handleChange('parent_type')}
                 className={`mt-2 ${INPUT_BASE} appearance-none cursor-pointer pr-10 bg-[length:14px] bg-no-repeat bg-[right_1rem_center]`}
                 style={{
                   backgroundImage:
                     "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8B8B8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
                 }}
               >
-                {INTERESTS.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
+                {PARENT_TYPES.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
