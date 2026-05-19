@@ -1,11 +1,13 @@
 services:
   frontend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.local
     ports:
       - "5191:5191"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     environment:
-      - CHOKIDAR_USEPOLLING=true
-      - VITE_N8N_CONTACT_WEBHOOK_URL=${N8N_CONTACT_WEBHOOK_URL:-}
+      - PORT=5191
+      - N8N_CONTACT_WEBHOOK_URL=${N8N_CONTACT_WEBHOOK_URL:-}
+      - MAILCHIMP_API_KEY=${MAILCHIMP_API_KEY:-}
+      - MAILCHIMP_AUDIENCE_ID=${MAILCHIMP_AUDIENCE_ID:-}
+      - MAILCHIMP_SERVER_PREFIX=${MAILCHIMP_SERVER_PREFIX:-}

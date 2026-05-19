@@ -2,7 +2,7 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 COPY frontend/package*.json ./
-RUN npm ci
+RUN npm install
 
 COPY frontend/ ./
 RUN npm run build
@@ -13,5 +13,6 @@ WORKDIR /app
 COPY server.js ./server.js
 COPY --from=build /app/dist ./dist
 
-EXPOSE 80
+ENV PORT=5191
+EXPOSE 5191
 CMD ["node", "server.js"]
