@@ -1,0 +1,14 @@
+{
+  "name": "mike-website-e2e",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Isolated Playwright route smoke tests. Separate from frontend/ so the production build (npm ci in Dockerfile.prod) never installs Playwright or downloads browsers.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
