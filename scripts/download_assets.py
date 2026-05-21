@@ -24,7 +24,7 @@ for sport, levels in images["sport_meters"].items():
         ext = url.rsplit(".", 1)[-1]
         queue.append((f"meter-{sport}-{lvl}.{ext}", url))
 queue.append(("portrait-mike.jpg", images["portraits"]["mike_frascogna"]))
-queue.append(("portrait-philip.jpg", images["portraits"]["phillip_short"]))
+queue.append(("portrait-philip.jpg", images["portraits"]["philip_short"]))
 
 results = []
 for fname, url in queue:

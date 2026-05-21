@@ -148,7 +148,7 @@ def build_videos():
         },
         "home_featured": featured,
         "mike_bio_videos": mike_videos,
-        "phillip_bio_videos": phil_videos,
+        "philip_bio_videos": phil_videos,
         "skill_videos": skill_videos,
         "camp_videos": [],  # No camp videos found on the live site
     }
@@ -194,7 +194,7 @@ def build_images():
         "sport_meters": {},  # filled per-skill below
         "portraits": {
             "mike_frascogna": "",
-            "phillip_short": "",
+            "philip_short": "",
         },
         "camp_photos": [],
         "other": [],
@@ -228,7 +228,7 @@ def build_images():
         elif "about-mike-frascogna" in low:
             catalog["portraits"]["mike_frascogna"] = u
         elif "about-philip-short" in low:
-            catalog["portraits"]["phillip_short"] = u
+            catalog["portraits"]["philip_short"] = u
         elif "camp-photo" in low or "summer-speed-camp" in low:
             catalog["camp_photos"].append(u)
         elif (m := sport_meter_re.search(u)):
@@ -427,7 +427,7 @@ def build_copy_md():
     out.append("- Coach M4 Ball Drop Drill (drill)\n")
 
     out.append("\n## Philip Short Bio\n")
-    out.append("_(Note: live site spells the first name 'Philip' with one L — preserved verbatim. Original prompt referred to 'Phillip')_\n")
+    out.append("_(Note: the correct spelling is 'Philip' with one L, matching the live site.)_\n")
     out.append("### Headline\nPhilip Short — Quarterback Specialist\n")
     out.append("### Full Bio Copy\n")
     out.append(phil_bio + "\n")

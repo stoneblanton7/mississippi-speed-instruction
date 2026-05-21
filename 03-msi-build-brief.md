@@ -14,11 +14,11 @@ Read CLAUDE.md and all skills in .claude/skills/ before starting.
 **Client:** Mississippi Speed Instruction (MSI)
 **Business:** Youth speed training program — summer camps + year-round instruction
 **Founder:** Mike Frascogna III, est. 1993
-**Lead Coach:** Phillip Short (two Ls — live site has typo "Philip", fix on import)
+**Lead Coach:** Philip Short (one L — matches the live site; an earlier draft of this brief said two Ls, reversed per Stone)
 **Location:** Madison Ridgeland Academy, Madison, MS
 **Audience:** Parents (30-55, middle-to-upper-middle income, Mississippi) of young athletes ages 6-14 who want serious athletic development for their kid — NOT a fun summer camp
 **Primary CTA:** Register for Speed Camp (external URL — see below)
-**Pages:** Home, Camp (with /boys + /girls sub-pages), Elements (with /:slug detail pages), About (with /mike-frascogna + /phillip-short sub-pages), Contact
+**Pages:** Home, Camp (with /boys + /girls sub-pages), Elements (with /:slug detail pages), About (with /mike-frascogna + /philip-short sub-pages), Contact
 **Style:** Custom — "Cinematic Sports Editorial" (Nike/Jordan youth program aesthetic). Dark dominant, lime as a precision weapon. Reference Pinterest pins captured in conversation history: Players Academy, BARC running club, FFL Gym stat treatment, X-Fit dark + lime palette, Xeque Mate curriculum reveal.
 **Colors:** Black dominant (#0A0A0A), MSI lime as accent only (#C6F73E). See "Tokens" section below for full palette.
 **Fonts:** Anton (display headlines), Oswald Italic Semibold (ghosted hero word only), Inter (body), JetBrains Mono (stats/data). NOT a named pairing from one-shot's table.
@@ -40,9 +40,9 @@ Before running `build-site`, verify these exist in the project:
 - `/scrape-output/` — site-clone output from mississippispeed.com (15 pages, 27 Vimeo URLs, 32 brand assets)
 - `/scrape-output/copy.md` — all real copy from the existing site
 - `/scrape-output/videos.json` — all Vimeo IDs grouped by section
-- `/scrape-output/brand-assets/logo.svg` + `logo-white.png` + 10 skill icons + Mike's portrait + Phillip's portrait
+- `/scrape-output/brand-assets/logo.svg` + `logo-white.png` + 10 skill icons + Mike's portrait + Philip's portrait
 - `image-queue.json` at project root — Kie.ai prompts for 7 cinematic images (run separately via `image-gen` skill before Phase 3)
-- `/MSI-AMENDMENT.md` — project-specific corrections to apply throughout the build (camp dates, registration URL, Phillip spelling fix on imports, etc.)
+- `/MSI-AMENDMENT.md` — project-specific corrections to apply throughout the build (camp dates, registration URL, Philip spelling, etc.)
 
 If `/scrape-output/` doesn't exist, run `site-clone` skill on `https://mississippispeed.com/` first.
 
@@ -149,7 +149,7 @@ Pull final values from `/scrape-output/camps.json` if it exists — those overri
 | Social Proof | **Skip** — Mike has no testimonials yet. Add later when real quotes exist. |
 | Benefits | **Ten Elements** — sticky pinned scroll-reveal of all 10 elements with parent-outcome copy. Replaces standard benefits grid. Use Framer Motion `useScroll`. Use scraped skill icon PNGs from `/scrape-output/brand-assets/skill-icon-*.png`. |
 | How It Works | **Film Room** — three featured Vimeo videos as cards with play modal. Use top 3 from `videos.json` `home_featured`. |
-| Pricing | **Built By The Best** — editorial coach intro: Mike's portrait + bio pullquote + Phillip lead-in strip. Pricing handled inline within Two Camps cards. |
+| Pricing | **Built By The Best** — editorial coach intro: Mike's portrait + bio pullquote + Philip lead-in strip. Pricing handled inline within Two Camps cards. |
 | Final CTA | **Speed Camp Final Block** — headline `SPEED CAMP`, two CTAs (`REGISTER BOYS CAMP` + `REGISTER GIRLS CAMP`), both pointing to REGISTER_URL. |
 | FAQ | **Skip** — parents won't engage. Move to Contact page if Mike requests later. |
 
@@ -187,7 +187,7 @@ Add to Phase 6 polish: floating register button bottom-right, appears after scro
 /elements/:slug → Element detail (magazine layout)
 /about → About landing (with football scroll-pass animation)
 /about/mike-frascogna → Mike's full bio
-/about/phillip-short → Phillip's full bio
+/about/philip-short → Philip's full bio
 /contact → Contact form
 ```
 
@@ -204,7 +204,7 @@ In Phase 2, scaffold all 10 routes with placeholder pages. Phase 3 builds Home o
 - **Lime budget:** No more than 15 instances of accent color across the home page. Lime is for: register CTAs (4-5 instances), nav register button, hover states, single accent dividers (1 per section max), eyebrow text. NOT for stat numbers, NOT for icon backgrounds, NOT for card borders. Phase 6 audit enforces this with grep.
 - **No invented credentials:** When writing Mike's bio section, pull from scrape only. Do not invent CSCS, USA Weightlifting, or any cert Mike doesn't actually claim.
 - **No invented stats:** Hero stat row stats come from verifiable scraped copy. If a number can't be confirmed, remove it. 3 real stats > 4 fake stats.
-- **Phillip with two Ls everywhere:** Live site has typo "Philip". When importing copy from `copy.md`, replace `Philip` → `Phillip` (preserve case). Grep audit in Phase 6: `grep -rn "Philip[^l]" frontend/src/` returns zero hits.
+- **Philip with one L everywhere:** The correct spelling is "Philip" (one L), matching the live site. An earlier version of this brief called for two Ls and labeled the live spelling a typo — that was reversed per Stone. One L is correct in all display copy, slugs, folder names, component names, and asset filenames. Audit: `grep -rin "phillip" frontend/src/` returns zero hits.
 - **External register links:** Every register CTA on the site uses `target="_blank" rel="noopener noreferrer"` — parents don't lose their place on MSI when registering.
 
 ---
