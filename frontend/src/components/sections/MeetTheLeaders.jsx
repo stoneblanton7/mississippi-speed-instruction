@@ -15,9 +15,9 @@ function LeaderHalf({ to, src, alt, role, name }) {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-overlay-top group-hover:bg-transparent transition-colors duration-500"
+        className="absolute inset-0 bg-overlay-top transition-colors duration-500 md:group-hover:bg-transparent md:group-focus-visible:bg-transparent"
       />
-      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 transition-all duration-500 opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 md:group-focus-visible:opacity-100 md:group-focus-visible:translate-y-0">
         <p className="font-mono text-xs text-accent uppercase tracking-[0.4em] mb-2">
           {role}
         </p>

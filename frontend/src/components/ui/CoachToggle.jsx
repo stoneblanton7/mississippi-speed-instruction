@@ -9,8 +9,7 @@ export default function CoachToggle() {
   const { pathname } = useLocation();
 
   return (
-    <div
-      role="tablist"
+    <nav
       aria-label="Switch coach"
       className="bg-surface border border-border rounded-lg p-1 inline-flex"
     >
@@ -20,8 +19,7 @@ export default function CoachToggle() {
           <Link
             key={tab.to}
             to={tab.to}
-            role="tab"
-            aria-selected={active}
+            aria-current={active ? 'page' : undefined}
             className={
               'font-body text-sm font-semibold uppercase tracking-widest px-5 py-2.5 rounded-md transition-colors ' +
               (active
@@ -33,6 +31,6 @@ export default function CoachToggle() {
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 }

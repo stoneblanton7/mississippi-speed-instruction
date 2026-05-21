@@ -12,7 +12,8 @@ const INPUT_BASE =
 
 function Toast({ message, type }) {
   const visible = Boolean(message);
-  const Icon = type === 'error' ? AlertCircle : Check;
+  const isError = type === 'error';
+  const Icon = isError ? AlertCircle : Check;
 
   return (
     <AnimatePresence>
@@ -23,8 +24,8 @@ function Toast({ message, type }) {
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.3 }}
           className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-text text-text-inverted font-body text-sm font-semibold uppercase tracking-widest px-5 py-3 rounded-lg shadow-2xl shadow-black/50"
-          role="status"
-          aria-live="polite"
+          role={isError ? 'alert' : 'status'}
+          aria-live={isError ? 'assertive' : 'polite'}
         >
           <Icon size={16} strokeWidth={2.5} />
           {message}
