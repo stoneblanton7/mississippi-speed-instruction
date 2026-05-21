@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import ScrollToTop from './components/layout/ScrollToTop.jsx';
 import Home from './pages/Home.jsx';
+import Camp from './pages/Camp/index.jsx';
 import BoysCamp from './pages/Camp/BoysCamp/index.jsx';
 import GirlsCamp from './pages/Camp/GirlsCamp/index.jsx';
 import Elements from './pages/Elements/index.jsx';
@@ -12,6 +13,7 @@ import Contact from './pages/Contact/index.jsx';
 import Podcast from './pages/Podcast/index.jsx';
 import EpisodeDetail from './pages/Podcast/[Slug]/index.jsx';
 import Videos from './pages/Videos/index.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
@@ -20,6 +22,7 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/camp" element={<Camp />} />
           <Route path="/camp/boys" element={<BoysCamp />} />
           <Route path="/camp/girls" element={<GirlsCamp />} />
           <Route path="/podcast" element={<Podcast />} />
@@ -32,6 +35,7 @@ export default function App() {
           <Route path="/about/mike-frascogna" element={<AboutMike />} />
           <Route path="/about/philip-short" element={<AboutPhilip />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
