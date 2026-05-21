@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/sections/Hero.jsx';
 import TwoCampsSection from '../components/sections/TwoCampsSection.jsx';
+import PodcastSection from '../components/sections/PodcastSection.jsx';
 import TenElements from '../components/sections/TenElements.jsx';
 import MeetTheLeaders from '../components/sections/MeetTheLeaders.jsx';
 import NewsletterSignup from '../components/sections/NewsletterSignup.jsx';
@@ -26,6 +27,7 @@ export default function Home() {
     <>
       <Hero />
       <TwoCampsSection />
+      <PodcastSection />
       <TenElements />
       <MeetTheLeaders />
       <NewsletterSignup />
