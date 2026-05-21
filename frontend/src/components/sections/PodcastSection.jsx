@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import Button from '../ui/Button.jsx';
-import EpisodeCard from '../podcast/EpisodeCard.jsx';
 import { EPISODES } from '../../api/data/episodes.js';
 
 function FeaturedEpisode({ episode }) {
@@ -64,7 +63,6 @@ function FeaturedEpisode({ episode }) {
 export default function PodcastSection() {
   const sorted = [...EPISODES].sort((a, b) => b.number - a.number);
   const featured = sorted[0];
-  const rest = sorted.slice(1, 4);
 
   if (!featured) return null;
 
@@ -91,17 +89,9 @@ export default function PodcastSection() {
 
         <FeaturedEpisode episode={featured} />
 
-        {rest.length > 0 && (
-          <div className="grid gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((ep) => (
-              <EpisodeCard key={ep.slug} episode={ep} />
-            ))}
-          </div>
-        )}
-
         <div className="mt-12 lg:mt-16 flex justify-center">
           <Button as={Link} to="/podcast" variant="ghost" arrow>
-            See all episodes
+            See more episodes
           </Button>
         </div>
       </div>
