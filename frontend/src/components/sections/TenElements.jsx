@@ -1,29 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import iconAcceleration from '../../assets/skill-icon-acceleration.png';
-import iconBalance from '../../assets/skill-icon-balance-body-control.png';
-import iconCOD from '../../assets/skill-icon-change-of-direction.png';
-import iconCore from '../../assets/skill-icon-core-strength.png';
-import iconFlexibility from '../../assets/skill-icon-flexibility.png';
-import iconFootQuickness from '../../assets/skill-icon-foot-quickness.png';
-import iconJumping from '../../assets/skill-icon-jumping.png';
-import iconLateralSpeed from '../../assets/skill-icon-lateral-speed.png';
-import iconTopSpeed from '../../assets/skill-icon-top-speed.png';
-import iconVisualAcuity from '../../assets/skill-icon-visual-acuity.png';
+import { ELEMENTS } from '../../api/data/elements.js';
 
-const ELEMENTS = [
-  { slug: 'acceleration',         name: 'ACCELERATION',         outcome: 'The first three steps that separate starters from spectators.', icon: iconAcceleration },
-  { slug: 'balance-body-control', name: 'BALANCE & CONTROL',    outcome: 'Stability under load. Play the game, not the ground.',          icon: iconBalance },
-  { slug: 'change-of-direction',  name: 'CHANGE OF DIRECTION',  outcome: 'Stop-and-go that breaks defenders and creates daylight.',       icon: iconCOD },
-  { slug: 'core-strength',        name: 'CORE STRENGTH',        outcome: 'The engine room. Transfer power from ground to field.',         icon: iconCore },
-  { slug: 'flexibility',          name: 'FLEXIBILITY',          outcome: 'Range of motion that prevents injury and extends stride.',      icon: iconFlexibility },
-  { slug: 'foot-quickness',       name: 'FOOT QUICKNESS',       outcome: 'Feet that get there first and stay there longer.',              icon: iconFootQuickness },
-  { slug: 'jumping',              name: 'JUMPING',              outcome: 'Explosive power for headers, rebounds, and catches.',           icon: iconJumping },
-  { slug: 'lateral-speed',        name: 'LATERAL SPEED',        outcome: 'Sideways quickness that defines great defenders.',              icon: iconLateralSpeed },
-  { slug: 'top-speed',            name: 'TOP SPEED',            outcome: 'The velocity that leaves everyone else chasing.',               icon: iconTopSpeed },
-  { slug: 'visual-acuity',        name: 'VISUAL ACUITY',        outcome: 'Eyes that read the game a half-second before everyone else.',  icon: iconVisualAcuity },
-];
+// Home-ring display helpers: prefer the punchy home copy, fall back to canonical.
+const ringName = (el) => el.homeName || el.name.toUpperCase();
+const ringOutcome = (el) => el.homeOutcome || el.outcome;
 
 const RADIUS = 320;
 const ICON_SIZE = 110;
@@ -73,7 +55,7 @@ export default function TenElements() {
           </h2>
           <p className="font-body text-text-muted text-lg lg:text-xl mt-6 leading-relaxed max-w-2xl">
             Every drill, every session, every camp comes back to these ten
-            foundations of speed. Hover to explore, click to dive in.
+            foundations of speed. Tap any element to dive in — on desktop, hover to preview each one.
           </p>
         </div>
 
@@ -101,7 +83,7 @@ export default function TenElements() {
                     onFocus={() => setHoveredIndex(i)}
                     onBlur={() => setHoveredIndex(null)}
                     onClick={() => navigate(`/elements/${el.slug}`)}
-                    aria-label={`${el.name} — ${el.outcome}`}
+                    aria-label={`${ringName(el)} — ${ringOutcome(el)}`}
                     className={
                       'absolute flex items-center justify-center rounded-full bg-surface border-2 transition-[transform,border-color,box-shadow,opacity] duration-300 cursor-pointer animate-spin-reverse focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ' +
                       (isPaused ? 'paused ' : '') +
@@ -137,10 +119,10 @@ export default function TenElements() {
                     Element
                   </p>
                   <p className="font-heading text-text uppercase text-lg md:text-2xl leading-[1.0] mb-3">
-                    {hovered.name}
+                    {ringName(hovered)}
                   </p>
                   <p className="font-body text-text-muted text-xs md:text-sm leading-snug">
-                    {hovered.outcome}
+                    {ringOutcome(hovered)}
                   </p>
                 </div>
               ) : (

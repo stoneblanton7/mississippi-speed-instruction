@@ -5,6 +5,7 @@
     "name": "Acceleration",
     "iconKey": "acceleration",
     "outcome": "How fast they explode out of the first three steps.",
+    "homeOutcome": "The first three steps that separate starters from spectators.",
     "definition": [
       "Acceleration is how quickly an athlete moves from a stop to game speed — the explosive moment that separates getting to the ball from watching it pass. It happens in the first three to ten yards, and it's almost entirely trainable.",
       "We coach acceleration through resisted starts, falling-start drills, and mechanics work on body lean and arm drive. Athletes leave camp with a faster first step at every angle they need it."
@@ -21,8 +22,10 @@
     "slug": "balance-body-control",
     "number": "02",
     "name": "Balance & Body Control",
+    "homeName": "BALANCE & CONTROL",
     "iconKey": "balance-body-control",
     "outcome": "Stay on their feet when contact comes.",
+    "homeOutcome": "Stability under load. Play the game, not the ground.",
     "definition": [
       "Balance is the ability to keep the body's center of gravity in control while sprinting, cutting, jumping, and absorbing contact. It's what keeps athletes upright through the play instead of on the ground.",
       "We build it with single-leg work, unstable surfaces, and reactive drills that force athletes to find their feet under pressure."
@@ -41,6 +44,7 @@
     "name": "Change of Direction",
     "iconKey": "change-of-direction",
     "outcome": "Cut without losing speed — the difference at every level.",
+    "homeOutcome": "Stop-and-go that breaks defenders and creates daylight.",
     "definition": [
       "Change of direction is the difference between a defender who closes and one who chases. It's the ability to plant, redirect, and accelerate again without bleeding speed.",
       "We train it with cone work, mirror drills, and decision-based reactive cuts so athletes can change vectors at full game speed."
@@ -59,6 +63,7 @@
     "name": "Core Strength",
     "iconKey": "core-strength",
     "outcome": "Power transfers through a stable trunk. No exceptions.",
+    "homeOutcome": "The engine room. Transfer power from ground to field.",
     "definition": [
       "Power generated in the legs is wasted unless it travels through a stable trunk. Core strength means the muscles around the spine and pelvis can resist twist, hold posture, and deliver force from ground to fingertips.",
       "We train it with anti-rotation work, loaded carries, and dynamic stability drills — not crunches."
@@ -77,6 +82,7 @@
     "name": "Flexibility",
     "iconKey": "flexibility",
     "outcome": "Stay healthy through the whole season.",
+    "homeOutcome": "Range of motion that prevents injury and extends stride.",
     "definition": [
       "Flexibility lets athletes reach top positions — full stride length, deeper cuts, longer arm action — without their bodies fighting back. Inflexible athletes leave performance on the field and pile up soft-tissue injuries.",
       "We train it daily with dynamic warm-ups and end-of-session mobility work targeted to the joints athletes use most."
@@ -95,6 +101,7 @@
     "name": "Foot Quickness",
     "iconKey": "foot-quickness",
     "outcome": "First step in the box, in the paint, on the line.",
+    "homeOutcome": "Feet that get there first and stay there longer.",
     "definition": [
       "Foot quickness is the rate at which an athlete can put their feet in the right place. It shows up as the cleanest first step in football, the fastest hand in basketball, the quickest reset in volleyball.",
       "We train it with agility ladders, micro-step drills, and reaction starts."
@@ -113,6 +120,7 @@
     "name": "Jumping",
     "iconKey": "jumping",
     "outcome": "Explosive vertical and horizontal leap.",
+    "homeOutcome": "Explosive power for headers, rebounds, and catches.",
     "definition": [
       "Two kinds of explosion: vertical jump for rebounds, blocks, and headers; horizontal jump for sprint starts and broad-jump-style first steps. Both come from the same chain of force.",
       "We train them with plyometric progressions, depth drops, and bounding sequences."
@@ -131,6 +139,7 @@
     "name": "Lateral Speed",
     "iconKey": "lateral-speed",
     "outcome": "Closing speed when the play breaks down.",
+    "homeOutcome": "Sideways quickness that defines great defenders.",
     "definition": [
       "Lateral speed is how fast an athlete moves side-to-side without crossing their feet — the defensive shuffle, the slide step, the recovery angle. It's what closes a passing lane and beats a runner to the spot.",
       "We train it with lateral plyos, mirror drills, and high-speed shuffle progressions."
@@ -149,6 +158,7 @@
     "name": "Top Speed",
     "iconKey": "top-speed",
     "outcome": "Pure straight-line gear when the field opens up.",
+    "homeOutcome": "The velocity that leaves everyone else chasing.",
     "definition": [
       "Top speed is the maximum velocity an athlete can hit when the field opens up — the breakaway. Most athletes never reach it in a game; the ones who do, finish plays.",
       "We train it with sprint mechanics work, fly-in 10s, and overspeed protocols."
@@ -167,6 +177,7 @@
     "name": "Visual Acuity",
     "iconKey": "visual-acuity",
     "outcome": "Read the field, react before the ball.",
+    "homeOutcome": "Eyes that read the game a half-second before everyone else.",
     "definition": [
       "Visual acuity is the trained skill of seeing more, processing faster, and acting earlier than opponents. It's why some athletes always seem to be a step ahead — they're not faster, they're earlier.",
       "We train it with peripheral vision drills, ball-tracking work, and pattern-recognition reps that teach the eyes to lead the body."
