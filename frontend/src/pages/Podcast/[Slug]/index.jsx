@@ -27,12 +27,42 @@ function paragraphize(text, wordsPerPara = 140) {
   return paragraphs;
 }
 
+// Speaker-tagged transcripts use one "Name: text" turn per line. Untagged
+// transcripts fall back to plain auto-paragraphing.
+const SPEAKER_RE = /^([A-Z][A-Za-z.'’-]+(?:\s[A-Z][A-Za-z.'’-]+){0,2}):\s+(.+)$/;
+
+function parseTranscript(raw) {
+  const lines = raw
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l && !/^\d+:\d+$/.test(l));
+
+  const tagged = lines.some((l) => SPEAKER_RE.test(l));
+  if (!tagged) {
+    return { tagged: false, paragraphs: paragraphize(cleanTranscript(raw)) };
+  }
+
+  const segments = [];
+  let current = null;
+  for (const line of lines) {
+    const m = line.match(SPEAKER_RE);
+    if (m) {
+      if (current) segments.push(current);
+      current = { speaker: m[1], text: m[2] };
+    } else if (current) {
+      current.text += ' ' + line;
+    }
+  }
+  if (current) segments.push(current);
+  return { tagged: true, segments };
+}
+
 function useTranscript(path, enabled) {
-  const [paragraphs, setParagraphs] = useState(null);
+  const [transcript, setTranscript] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!enabled || paragraphs) return;
+    if (!enabled || transcript) return;
     let cancelled = false;
     fetch(path)
       .then((res) => {
@@ -41,7 +71,7 @@ function useTranscript(path, enabled) {
       })
       .then((raw) => {
         if (cancelled) return;
-        setParagraphs(paragraphize(cleanTranscript(raw)));
+        setTranscript(parseTranscript(raw));
       })
       .catch(() => {
         if (cancelled) return;
@@ -50,16 +80,16 @@ function useTranscript(path, enabled) {
     return () => {
       cancelled = true;
     };
-  }, [path, enabled, paragraphs]);
+  }, [path, enabled, transcript]);
 
-  return { paragraphs, error };
+  return { transcript, error };
 }
 
 export default function EpisodeDetail() {
   const { slug } = useParams();
   const episode = EPISODES_BY_SLUG[slug];
   const [transcriptOpen, setTranscriptOpen] = useState(false);
-  const { paragraphs, error } = useTranscript(
+  const { transcript, error } = useTranscript(
     episode?.transcriptPath,
     transcriptOpen,
   );
@@ -183,7 +213,7 @@ export default function EpisodeDetail() {
 
           {transcriptOpen && (
             <div className="mt-10 space-y-6 font-body text-text-muted text-base lg:text-lg leading-relaxed">
-              {!paragraphs && !error && (
+              {!transcript && !error && (
                 <p className="text-text-muted italic">Loading transcript…</p>
               )}
               {error && (
@@ -191,8 +221,17 @@ export default function EpisodeDetail() {
                   Transcript couldn't load. Try refreshing.
                 </p>
               )}
-              {paragraphs &&
-                paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+              {transcript && transcript.tagged
+                ? transcript.segments.map((seg, i) => (
+                    <div key={i}>
+                      <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                        {seg.speaker}
+                      </span>
+                      <p className="mt-1.5">{seg.text}</p>
+                    </div>
+                  ))
+                : transcript &&
+                  transcript.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
             </div>
           )}
         </div>
