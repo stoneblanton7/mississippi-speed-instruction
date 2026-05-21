@@ -141,6 +141,18 @@ mockOkFetch();
   check('first_name capped at 100 chars', (payload.merge_fields?.FNAME || '').length === 100);
 }
 
+// 3b. honeypot: a filled `website` field is silently accepted, never sent
+{
+  globalThis.fetch = async () => {
+    throw new Error('fetch must not be called when honeypot is tripped');
+  };
+  const res = await run({
+    method: 'POST',
+    body: { email: 'bot@example.com', website: 'http://spam.example' },
+  });
+  check('honeypot returns 200 without contacting Mailchimp', res.statusCode === 200 && res.body?.success === true);
+}
+
 // 4. non-JSON upstream response returns 502 instead of throwing
 {
   globalThis.fetch = async () => ({

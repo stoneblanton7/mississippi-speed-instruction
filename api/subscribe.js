@@ -28,6 +28,12 @@ export default async function handler(req, res) {
 
   const body = req.body || {};
 
+  // Honeypot: a real user never fills `website`. Silently accept (so bots
+  // think they succeeded) without touching Mailchimp.
+  if (typeof body.website === 'string' && body.website.trim() !== '') {
+    return res.status(200).json({ success: true });
+  }
+
   const email =
     typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
   const firstName =

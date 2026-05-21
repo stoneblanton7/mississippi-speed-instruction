@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { AlertCircle, Facebook, Instagram, Youtube, MapPin, Check } from 'lucide-react';
 import Button from '../../components/ui/Button.jsx';
@@ -36,9 +36,10 @@ function Toast({ message, type }) {
 }
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: '', website: '' });
   const [toast, setToast] = useState({ message: '', type: 'success' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const loadedAt = useRef(Date.now());
 
   useEffect(() => {
     if (!toast.message) return;
@@ -53,6 +54,13 @@ export default function Contact() {
     e.preventDefault();
 
     if (isSubmitting) return;
+
+    // Honeypot + timing: silently accept obvious bots without posting.
+    if (form.website || Date.now() - loadedAt.current < 1500) {
+      setToast({ message: 'Message sent', type: 'success' });
+      setForm({ name: '', email: '', message: '', website: '' });
+      return;
+    }
 
     if (!CONTACT_WEBHOOK_URL) {
       setToast({ message: 'Contact not configured', type: 'error' });
@@ -86,7 +94,7 @@ export default function Contact() {
       }
 
       setToast({ message: 'Message sent', type: 'success' });
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', message: '', website: '' });
     } catch (error) {
       console.error('Contact form submission failed', error);
       setToast({ message: 'Message failed', type: 'error' });
@@ -126,6 +134,19 @@ export default function Contact() {
             className="lg:col-span-7 flex flex-col gap-5"
             aria-label="Contact MSI"
           >
+            {/* Honeypot: hidden from real users; bots that fill it are dropped. */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+              <label htmlFor="contact-website">Website</label>
+              <input
+                id="contact-website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={handleChange('website')}
+              />
+            </div>
+
             <div>
               <label
                 htmlFor="contact-name"

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check } from 'lucide-react';
 import Button from '../ui/Button.jsx';
@@ -39,10 +39,12 @@ export default function NewsletterSignup() {
     first_name: '',
     email: '',
     parent_type: 'boys_parent',
+    website: '', // honeypot — real users never fill this
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [toast, setToast] = useState(null);
+  const loadedAt = useRef(Date.now());
 
   useEffect(() => {
     if (!toast) return;
@@ -56,6 +58,14 @@ export default function NewsletterSignup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+
+    // Honeypot + timing: silently accept obvious bots without sending.
+    if (form.website || Date.now() - loadedAt.current < 1500) {
+      setForm({ first_name: '', email: '', parent_type: 'boys_parent', website: '' });
+      setToast("Thanks! You're on the list.");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
@@ -69,6 +79,7 @@ export default function NewsletterSignup() {
           email: form.email,
           first_name: form.first_name,
           parent_type: form.parent_type,
+          website: form.website,
         }),
       });
 
@@ -77,7 +88,7 @@ export default function NewsletterSignup() {
         throw new Error(result.error || 'Submission failed.');
       }
 
-      setForm({ first_name: '', email: '', parent_type: 'boys_parent' });
+      setForm({ first_name: '', email: '', parent_type: 'boys_parent', website: '' });
       setToast("Thanks! You're on the list.");
     } catch (err) {
       setError(err.message || 'Something went wrong. Try again in a moment.');
@@ -113,6 +124,19 @@ export default function NewsletterSignup() {
             className="flex flex-col gap-5"
             aria-label="Newsletter signup"
           >
+            {/* Honeypot: hidden from real users; bots that fill it are dropped. */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+              <label htmlFor="newsletter-website">Website</label>
+              <input
+                id="newsletter-website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={handleChange('website')}
+              />
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label
