@@ -24,5 +24,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude Code machine-local settings (skills/ stays tracked)
+.claude/settings.local.json
+
 # Firecrawl raw outputs (large, can be regenerated)
 # (kept — scrape-output/ IS committed per workflow)
