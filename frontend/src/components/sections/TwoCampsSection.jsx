@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import Button from '../ui/Button.jsx';
 import { CAMPS, REGISTER_LINK_PROPS } from '../../config.js';
-import imgBoys from '../../assets/kids-camp (2).png';
+import imgBoys from '../../assets/camp-boys-card.webp';
 import imgGirls from '../../assets/kids-camp 6.jpg';
 
 const CARDS = [

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import Button from '../ui/Button.jsx';
 import { REGISTER_LINK_PROPS } from '../../config.js';
-import imgHurdles from '../../assets/kids-camp (2).png';
+import imgHurdles from '../../assets/camp-boys-card.webp';
 import imgParachute from '../../assets/kids-camp-4.jpg';
 import imgCoaching from '../../assets/kids-camp (3).jpg';
-import imgHuddle from '../../assets/kids-camp 9.png';
+import imgHuddle from '../../assets/camp-huddle.webp';
 
 export default function SpeedCampFinal() {
   return (

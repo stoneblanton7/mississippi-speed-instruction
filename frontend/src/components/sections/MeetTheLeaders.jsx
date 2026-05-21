@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import leaderMike from '../../assets/leader-mike.png';
-import leaderPhilip from '../../assets/leader-philip.png';
+import leaderMike from '../../assets/leader-mike.webp';
+import leaderPhilip from '../../assets/leader-philip.webp';
 
 function LeaderHalf({ to, src, alt, role, name }) {
   return (
