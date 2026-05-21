@@ -41,8 +41,6 @@ export const CAMPS = {
   },
 };
 
-export const WEB3FORMS_ACCESS_KEY = 'f8082bcb-0e40-4371-8cf0-bfaa738968f0';
-
 export const SOCIAL = {
   facebook: 'https://www.facebook.com/profile.php?id=61564652301436',
   instagram: 'https://www.instagram.com/mississippispeed/',
@@ -60,18 +58,7 @@ export const CONTACT_WEBHOOK_URL =
   import.meta.env.VITE_N8N_CONTACT_WEBHOOK_URL ||
   '';
 
-export const ELEMENTS = [
-  { slug: 'acceleration', name: 'Acceleration' },
-  { slug: 'balance-body-control', name: 'Balance & Body Control' },
-  { slug: 'change-of-direction', name: 'Change of Direction' },
-  { slug: 'core-strength', name: 'Core Strength' },
-  { slug: 'flexibility', name: 'Flexibility' },
-  { slug: 'foot-quickness', name: 'Foot Quickness' },
-  { slug: 'jumping', name: 'Jumping' },
-  { slug: 'lateral-speed', name: 'Lateral Speed' },
-  { slug: 'top-speed', name: 'Top Speed' },
-  { slug: 'visual-acuity', name: 'Visual Acuity' },
-];
+// Canonical elements data lives in src/api/data/elements.js — import from there.
 
 export const VIMEO = {
   homeHero: '1071529794',

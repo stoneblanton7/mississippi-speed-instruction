@@ -15,13 +15,6 @@ const ABOUT_ITEMS = [
   { label: 'Philip Short', path: '/about/philip-short' },
 ];
 
-const ROUTE_LINKS = [
-  { to: '/podcast', label: 'Podcast' },
-  { to: '/videos', label: 'Videos' },
-  { to: '/elements', label: 'Elements' },
-  { to: '/contact', label: 'Contact' },
-];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
