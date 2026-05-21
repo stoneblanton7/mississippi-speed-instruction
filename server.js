@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
-import { createReadStream, existsSync } from 'node:fs';
-import { readFile, writeFile } from 'node:fs/promises';
+import { createReadStream, existsSync, statSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -131,7 +131,7 @@ function serveFile(req, res) {
   const requestedPath = decodeURIComponent(url.pathname);
   const safePath = path.normalize(requestedPath).replace(/^([/\\])+/, '');
   const filePath = path.join(distDir, safePath || 'index.html');
-  const resolvedPath = existsSync(filePath) && !filePath.endsWith(path.sep)
+  const resolvedPath = existsSync(filePath) && statSync(filePath).isFile()
     ? filePath
     : path.join(distDir, 'index.html');
   const ext = path.extname(resolvedPath);
