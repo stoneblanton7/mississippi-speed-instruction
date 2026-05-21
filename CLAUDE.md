@@ -4,7 +4,11 @@
 Rebuild of mississippispeed.com (MSI) — Mike Frascogna III's youth speed-training brand, est. 1993. Audience is parents (30-55, Mississippi) of athletes ages 7-14 who want serious athletic development. Primary CTA: register for the summer 2026 Boys (June 9-11) or Girls (June 23-25) speed camps at Madison Ridgeland Academy.
 
 ## Status
-Scaffold complete (Phases 1-2 of build-site). Home page hero + content next.
+Site is built and substantially complete — all routes are live (home, camp landing + boys/girls
+detail, ten elements index + detail, both bios, podcast hub + episodes, video library, contact,
+404). Newsletter wired to Mailchimp via `/api/subscribe`; contact form posts to an n8n webhook.
+Remaining work is cleanup/hardening tracked in `WEBSITE_FIX_PLAN.md` (media optimization, a11y
+polish, form/API hardening, lint + smoke tests, deployment hygiene).
 
 ## Tech Stack
 - **Frontend:** React 18 (JSX, no TypeScript) + Vite + Tailwind CSS v3 + React Router v6
@@ -12,7 +16,8 @@ Scaffold complete (Phases 1-2 of build-site). Home page hero + content next.
 - **Icons:** lucide-react
 - **Port:** 5191
 - **Repo:** local only — GitHub remote not yet created
-- **Backend:** none — static marketing site, registration handled externally by campnetwork.com
+- **Backend:** one Vercel serverless function (`api/subscribe.js`) for Mailchimp newsletter
+  upserts; contact posts to an n8n webhook. Registration handled externally by campnetwork.com.
 
 ## Project Structure
 ```
@@ -74,16 +79,20 @@ mike-website/
 ## Pages / Routes
 | Route                        | Page          | Status     |
 |------------------------------|---------------|------------|
-| `/`                          | Home          | stub       |
-| `/camp`                      | Camp landing  | stub       |
-| `/camp/boys`                 | Boys Camp     | stub       |
-| `/camp/girls`                | Girls Camp    | stub       |
-| `/elements`                  | Elements grid | stub       |
-| `/elements/:slug`            | Element detail| stub       |
-| `/about`                     | About landing | stub       |
-| `/about/mike-frascogna`      | Mike's bio    | stub       |
-| `/about/philip-short`        | Philip's bio  | stub       |
-| `/contact`                   | Contact       | stub       |
+| `/`                          | Home          | built      |
+| `/camp`                      | Camp landing  | built      |
+| `/camp/boys`                 | Boys Camp     | built      |
+| `/camp/girls`                | Girls Camp    | built      |
+| `/elements`                  | Elements grid | built      |
+| `/elements/:slug`            | Element detail| built      |
+| `/about`                     | → redirects to `/about/mike-frascogna` | built |
+| `/about/mike-frascogna`      | Mike's bio    | built      |
+| `/about/philip-short`        | Philip's bio  | built      |
+| `/podcast`                   | Podcast hub   | built      |
+| `/podcast/:slug`             | Episode detail| built      |
+| `/videos` (`/film` redirect) | Video library | built      |
+| `/contact`                   | Contact       | built      |
+| `*`                          | 404 NotFound  | built      |
 
 ## What NOT To Break
 - `MSI-AMENDMENT.md` is the tiebreaker when brief / live site / scrape-output disagree.
@@ -105,6 +114,15 @@ mike-website/
 
 ## Lab Notes
 _Project-specific lessons learned. Add entries here when you discover and resolve an issue._
+
+- **Canonical elements data is `frontend/src/api/data/elements.js`.** The old `ELEMENTS` export in
+  `config.js` was dead (no importers) and was removed. Note: `components/sections/TenElements.jsx`
+  still defines its own local `ELEMENTS` array with home-specific copy — consolidating that into
+  `elements.js` (e.g. a `homeOutcome` field) is still pending per `WEBSITE_FIX_PLAN.md` §3.1.
+- **Camp data runtime source is `frontend/src/config.js`** (`CAMPS`). `scrape-output/camps.json` is
+  derived editorial data, not consumed at runtime — keep both in sync with `MSI-AMENDMENT.md`.
+- **Removed dead config:** `WEB3FORMS_ACCESS_KEY` (contact now uses n8n, newsletter uses Mailchimp)
+  and the unused `ROUTE_LINKS` constant in `Navbar.jsx`.
 
 ## User Preferences
 - **Dark only** — no light mode toggle. The same token values apply to `:root` and `.dark` so a stray class change doesn't break the site.
