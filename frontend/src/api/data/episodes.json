@@ -1,5 +1,66 @@
 [
   {
+    "slug": "episode-5-mcelroy-fitness-family",
+    "number": 5,
+    "title": "Raising Strong Kids — Fitness, Faith, and Family",
+    "shortTitle": "A Family in Fitness",
+    "guests": "Michael & Reagan McElroy",
+    "guestDetails": [
+      {
+        "name": "Michael McElroy",
+        "role": "Strength and athletic performance coach · former CrossFit Games competitor · trains athletes out of his home gym in Madison, MS"
+      },
+      {
+        "name": "Reagan McElroy",
+        "role": "Group fitness coach at Burn Boot Camp · RN · CrossFit and HYROX competitor"
+      }
+    ],
+    "youtubeId": "SMlNOLQSqy8",
+    "thumbnailKey": "ep5",
+    "publishedAt": "May 2026",
+    "hook": "A CrossFit-HYROX couple, four homeschooled kids, and a gym in their barn — how do you raise strong, healthy kids without burning them out?",
+    "description": "Stone Blanton sits down with Michael and Reagan McElroy — a husband-and-wife fitness team right here in Madison who built a gym in their barn and homeschool their four kids. They unpack how to raise active kids without forcing it, why structured training too early kills the joy, the case for loaded mobility and end-range strength as the real key to keeping athletes healthy, the danger of year-round single-sport specialization, screen time, and the family rule they live by: faith, family, fitness — in that order. A practical conversation for any parent trying to model the discipline they want their kids to inherit.",
+    "transcriptPath": "/podcast/ep_5_transcript.txt"
+  },
+  {
+    "slug": "episode-4-mike-frascogna-iii",
+    "number": 4,
+    "title": "How MSI Started — From a Backyard to Notre Dame",
+    "shortTitle": "How MSI Started",
+    "guests": "Mike Frascogna III",
+    "guestDetails": [
+      {
+        "name": "Mike Frascogna III",
+        "role": "Founder of Mississippi Speed Instruction (est. 1993) · former Notre Dame walk-on wide receiver under Lou Holtz · partner at Frascogna Law Group in Jackson, MS · MBA, Millsaps College · JD, Mississippi College School of Law"
+      }
+    ],
+    "youtubeId": "f6ZYcgZJ4qQ",
+    "thumbnailKey": "ep4",
+    "publishedAt": "May 2026",
+    "hook": "A tiny ad in the back of a coaching magazine, prototype speed gear in a garage, and a 5'8\" walk-on who shocked Notre Dame's strength coach.",
+    "description": "Coach Philip Short sits down with the founder of Mississippi Speed Instruction himself — Mike Frascogna III. The full origin story: a 1980s speed camp that almost didn't happen in Mississippi, prototype training equipment that sat in his parents' garage for years, the summer Mike trained alone behind his house six days a week, and the walk-on tryout at Notre Dame where his 40 time alone got him on the team. Plus Lou Holtz's three rules for life ('do what is right, do it to the best of your ability, show people you care'), how MSI started in 1993 while Mike was still a student, the Speed City video library (once the largest collection of SAQ training videos in the world), and how training his son Rocco's flag football team — the Raptors — brought him back to coaching the next generation.",
+    "transcriptPath": "/podcast/ep_4_transcript.txt"
+  },
+  {
+    "slug": "episode-3-stone-blanton",
+    "number": 3,
+    "title": "From MRA to the NFL — What It Actually Takes",
+    "shortTitle": "MRA to the NFL",
+    "guests": "Stone Blanton",
+    "guestDetails": [
+      {
+        "name": "Stone Blanton",
+        "role": "Linebacker · Madison Ridgeland Academy graduate · four-star recruit and Butkus Award semifinalist · South Carolina (2 seasons) → Mississippi State (125 tackles, 2nd in the SEC, all-SEC 2024) · signed with the San Francisco 49ers as an undrafted free agent (May 2025) · Tennessee Titans minicamp trial"
+      }
+    ],
+    "youtubeId": "xBHEFgZMFgc",
+    "thumbnailKey": "ep3",
+    "publishedAt": "May 2026",
+    "hook": "How a Madison kid took his speed all the way to the NFL — film, faith, and being where your feet are.",
+    "description": "Coach Philip Short sits down with Stone Blanton — Madison Ridgeland Academy graduate, four-star linebacker, and Butkus Award semifinalist. After two seasons at South Carolina, Stone came home to Mississippi State, where his 2024 season (125 tackles, second in the SEC, ninth in the nation, all-SEC honors) put him on the NFL radar. In May 2025 he signed with the San Francisco 49ers as an undrafted free agent. Stone and Philip dig into why playing every sport as a kid built the foundation, how the Coach Adams workouts at MRA prepared him for the SEC, the mental edge he built sleeping in the South Carolina facility for two weeks of fall camp, the brutal revolving door of NFL cuts, and the BCD rule he carries with him (no Blame, no Complaining, no Defending) — plus what it really means to 'be where your feet are.'",
+    "transcriptPath": "/podcast/ep_3_transcript.txt"
+  },
+  {
     "slug": "episode-2-george-adams",
     "number": 2,
     "title": "Only 6% of Kids Make It to College Sports — Here's What Most Parents Get Wrong",
