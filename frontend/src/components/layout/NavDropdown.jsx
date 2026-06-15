@@ -41,7 +41,7 @@ export default function NavDropdown({ label, items }) {
         aria-expanded={open}
         aria-haspopup="true"
         className={
-          'inline-flex items-center gap-1.5 font-body text-sm uppercase tracking-widest transition-colors ' +
+          'inline-flex items-center gap-1.5 font-body text-base uppercase tracking-widest transition-colors ' +
           (isActive ? 'text-accent' : 'text-text hover:text-accent')
         }
       >

@@ -36,17 +36,17 @@ export default function Navbar() {
 
   return (
     <header className={navClass}>
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <nav className="flex h-20 w-full items-center justify-between px-6 lg:px-12 xl:px-20 2xl:px-32">
         <Link to="/" className="flex items-center gap-2" aria-label="MSI home">
           <img src={logo} alt="Mississippi Speed Instruction" className="h-14 md:h-16 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           <NavDropdown label="Camp" items={CAMP_ITEMS} />
           <NavLink
             to="/podcast"
             className={({ isActive }) =>
-              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              'font-body text-base uppercase tracking-widest transition-colors ' +
               (isActive ? 'text-accent' : 'text-text hover:text-accent')
             }
           >
@@ -55,7 +55,7 @@ export default function Navbar() {
           <NavLink
             to="/videos"
             className={({ isActive }) =>
-              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              'font-body text-base uppercase tracking-widest transition-colors ' +
               (isActive ? 'text-accent' : 'text-text hover:text-accent')
             }
           >
@@ -64,7 +64,7 @@ export default function Navbar() {
           <NavLink
             to="/elements"
             className={({ isActive }) =>
-              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              'font-body text-base uppercase tracking-widest transition-colors ' +
               (isActive ? 'text-accent' : 'text-text hover:text-accent')
             }
           >
@@ -74,7 +74,7 @@ export default function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              'font-body text-sm uppercase tracking-widest transition-colors ' +
+              'font-body text-base uppercase tracking-widest transition-colors ' +
               (isActive ? 'text-accent' : 'text-text hover:text-accent')
             }
           >
@@ -82,7 +82,7 @@ export default function Navbar() {
           </NavLink>
           <a
             {...REGISTER_LINK_PROPS}
-            className="bg-accent text-text-inverted font-body text-sm font-semibold uppercase tracking-widest px-5 py-2.5 rounded-lg transition-colors hover:bg-accent-hover"
+            className="bg-accent text-text-inverted font-body text-base font-semibold uppercase tracking-widest px-6 py-3 rounded-lg transition-colors hover:bg-accent-hover"
           >
             Register
           </a>

@@ -104,7 +104,7 @@ export default function Hero() {
         />
 
         {/* Content — anchored bottom-left */}
-        <div className="relative z-20 mx-auto h-full max-w-7xl px-6 lg:px-10 flex flex-col justify-end pb-16 lg:pb-24">
+        <div className="relative z-20 h-full w-full px-6 lg:px-12 xl:px-20 2xl:px-32 flex flex-col justify-end pb-16 lg:pb-24">
           <p className="font-mono text-xs lg:text-sm text-accent uppercase tracking-[0.4em] mb-5 [text-shadow:0_2px_4px_rgba(0,0,0,1),0_4px_16px_rgba(0,0,0,0.9)]">
             Mississippi Speed Instruction · Est. 1993
           </p>
