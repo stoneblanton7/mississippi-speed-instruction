@@ -1,5 +1,24 @@
 [
   {
+    "slug": "episode-6-john-weaver",
+    "number": 6,
+    "title": "12 State Titles, One Secret — Building Teams Kids Never Want to Quit",
+    "shortTitle": "12 Titles, One Secret",
+    "guests": "John Weaver",
+    "guestDetails": [
+      {
+        "name": "John Weaver",
+        "role": "21-year high school coach — 9 state track titles, 3 straight football championships — Athletic Director at Madison-Ridgeland Academy"
+      }
+    ],
+    "youtubeId": "O4dA-0a_zz4",
+    "thumbnailKey": "ep6",
+    "publishedAt": "July 2026",
+    "hook": "Nine state track titles. Three straight football championships. Coach John Weaver says the secret behind all of it has nothing to do with talent.",
+    "description": "Coach Philip Short sits down with Coach John Weaver — a 21-year high school coach and the new athletic director at Madison-Ridgeland Academy — to break down what actually builds championship programs: recruiting the hallways instead of waiting on talent, the handwritten notes he gave players before every game, the undefeated COVID season built on brotherhood, and the one cue that won a state pole vault championship. Plus the stuff every parent needs to hear — the five words your child needs after every game, why kids quit sports that stop being fun, and how to avoid becoming a helicopter (or lawnmower) parent.",
+    "transcriptPath": "/podcast/ep_6_transcript.txt"
+  },
+  {
     "slug": "episode-5-mcelroy-fitness-family",
     "number": 5,
     "title": "Raising Strong Kids — Fitness, Faith, and Family",
