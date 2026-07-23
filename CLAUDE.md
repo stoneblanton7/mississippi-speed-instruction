@@ -15,7 +15,7 @@ polish, form/API hardening, lint + smoke tests, deployment hygiene).
 - **Animation:** motion (framer-motion successor — `import { motion } from 'motion/react'`)
 - **Icons:** lucide-react
 - **Port:** 5191
-- **Repo:** local only — GitHub remote not yet created
+- **Repo:** `github.com/stoneblanton7/mississippi-speed-instruction` (origin), working branch `stone-dev`
 - **Backend:** one Vercel serverless function (`api/subscribe.js`) for Mailchimp newsletter
   upserts; contact posts to an n8n webhook. Registration handled externally by campnetwork.com.
 
