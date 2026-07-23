@@ -100,6 +100,40 @@ mike-website/
 - Philip Short — **one L** in all display copy, slugs, file paths, and component names. Earlier guidance said two Ls; that was reversed per Stone's instruction. Vimeo asset titles also use one L. Audit: `grep -rin "phillip" frontend/src/` → zero hits.
 - Lime budget on the home page: ≤ 15 instances of accent color total.
 
+## Agent fleet (orchestration — mirrors the Warehouse Collective setup)
+
+The main session is the **coder**: talks to Stone, owns architecture decisions,
+git, and judgment calls. It delegates via the Agent tool to the in-repo fleet
+(`.claude/agents/`):
+
+- `executor` (Opus) — default implementation workhorse; ONE bounded task per
+  invocation with files, acceptance criteria, and which skills/conventions apply.
+- `executor-light` (Sonnet) — mechanical bulk work: renames, repeated patterns,
+  copy edits. Never for the `/api/subscribe` function, env/config, or data-file
+  sync work.
+- `reviewer` (Sonnet, read-only) — the tripwire gate. Run it BEFORE committing
+  anything touching: secrets/env/config (Mailchimp key, n8n webhook URL —
+  server-side only, never `VITE_*`), `api/subscribe.js` or the contact-form
+  webhook post, `frontend/src/config.js` (REGISTER_URL single-source, CAMPS vs
+  MSI-AMENDMENT.md), display copy (Philip — one L), the home page (lime budget
+  ≤ 15), or any large diff. HARD findings must be fixed before commit.
+- `doc-keeper` (Haiku, docs only) — fire after any milestone that changes what
+  the docs describe — feature shipped, architecture/deploy/env change, decision
+  made, lesson learned; docs only, never product code, never secrets.
+
+Delegation policy: mechanical → executor-light; normal build tasks → executor;
+hardest reasoning/debugging → coder does it itself. Cheap models on purpose.
+Agents never run git; the coder commits after the gate. Receipts rule: every
+delegation is a visible task block in the transcript — a claim of review with
+no reviewer block above it didn't happen.
+
+ERD gate (mandatory, not judgment): any change to a data shape — `config.js`
+constants (CAMPS, VIMEO, REGISTER_URL), `frontend/src/api/data/*.js`,
+`scrape-output/*.json`, form payloads, or the `/api/subscribe` contract — fires
+doc-keeper to update `.opencode/docs/architecture/data-model.md` BEFORE the
+work is reported done. The data-model doc is the content↔component contract; a
+data-shape change without an update there is a defect.
+
 ## Key Data Files
 - `frontend/src/config.js` — runtime constants (REGISTER_URL, CAMPS, ELEMENTS, VIMEO)
 - `scrape-output/copy.md` — body copy, camps section corrected
