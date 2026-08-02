@@ -5,6 +5,7 @@ import ep3Thumb from '../../assets/podcast/ep3_stone.jpg';
 import ep4Thumb from '../../assets/podcast/ep4_mike.jpg';
 import ep5Thumb from '../../assets/podcast/ep5_mcelroy.jpg';
 import ep6Thumb from '../../assets/podcast/ep6_weaver.jpg';
+import ep7Thumb from '../../assets/podcast/ep7_bowman.jpg';
 
 const THUMBNAILS = {
   ep1: ep1Thumb,
@@ -13,6 +14,7 @@ const THUMBNAILS = {
   ep4: ep4Thumb,
   ep5: ep5Thumb,
   ep6: ep6Thumb,
+  ep7: ep7Thumb,
 };
 
 export const EPISODES = data.map((ep) => ({

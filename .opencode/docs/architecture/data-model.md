@@ -31,7 +31,7 @@ reported done.** See [[architecture-summary]] for where each piece runs.
   consolidation pending (WEBSITE_FIX_PLAN §3.1).
 - `episodes.js` — maps `episodes.json` (podcast episodes with speaker-tagged
   transcripts under `frontend/public/podcast/ep_N_transcript.txt`) and attaches
-  thumbnails by `thumbnailKey` (ep1-ep6). Consumers sort by `number`, so the
+  thumbnails by `thumbnailKey` (ep1-ep7). Consumers sort by `number`, so the
   highest-numbered episode is automatically "latest" on home and the hub.
 - `videos.js` — `VIDEO_CATEGORIES` (`coaches`, `promo`) and `VIDEOS`:
   `{ id, hash, title, coach, category }` per Vimeo video.

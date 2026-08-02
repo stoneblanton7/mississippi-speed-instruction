@@ -1,5 +1,24 @@
 [
   {
+    "slug": "episode-7-craig-bowman",
+    "number": 7,
+    "title": "From the Speed City Warehouse to Back-to-Back State Titles",
+    "shortTitle": "From Trainee to Champion",
+    "guests": "Craig Bowman",
+    "guestDetails": [
+      {
+        "name": "Craig Bowman",
+        "role": "Head Football Coach, Hartfield Academy — back-to-back state championships (2023, 2024) — trained under MSI at Millsaps and built equipment in the Speed City warehouse"
+      }
+    ],
+    "youtubeId": "DuD5Bq6LEsk",
+    "thumbnailKey": "ep7",
+    "publishedAt": "August 2026",
+    "hook": "Before he built one of the fastest-rising programs in the state, Craig Bowman trained under MSI — and hand-built its equipment in the Speed City warehouse.",
+    "description": "Coach Philip Short sits down with Coach Craig Bowman — head football coach at Hartfield Academy and back-to-back state champion in 2023 and 2024 — whose MSI story starts long before the titles: training under Mike Frascogna at Millsaps, instructing at MSI summer camps, and building training equipment by hand in the Speed City warehouse. They get into the culture flip at Hartfield, locking the weight-room doors to change a mindset, why what's boring on Monday is super exciting on Friday, turning D players into B players, and why he protects the multisport path for his own two sons.",
+    "transcriptPath": "/podcast/ep_7_transcript.txt"
+  },
+  {
     "slug": "episode-6-john-weaver",
     "number": 6,
     "title": "12 State Titles, One Secret — Building Teams Kids Never Want to Quit",
