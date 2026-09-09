@@ -4,7 +4,7 @@
 
 services:
   frontend:
-    image: git.synaptix-lab.com/serveradmin/mississippi-speed-instruction:1600138434e9
+    image: git.synaptix-lab.com/serveradmin/mississippi-speed-instruction:32693ce3ff40
     restart: unless-stopped
     security_opt:
       - apparmor=unconfined
