@@ -1,0 +1,25 @@
+# Mississippi Speed Instruction production compose for Dokploy.
+# Deploy this repository as a Dokploy Compose service using this file.
+# Runtime secrets are configured in Dokploy's Environment tab.
+
+services:
+  frontend:
+    image: git.synaptix-lab.com/serveradmin/mississippi-speed-instruction:1600138434e9
+    restart: unless-stopped
+    security_opt:
+      - apparmor=unconfined
+    environment:
+      N8N_CONTACT_WEBHOOK_URL: ${N8N_CONTACT_WEBHOOK_URL:?N8N_CONTACT_WEBHOOK_URL is required}
+      MAILCHIMP_API_KEY: ${MAILCHIMP_API_KEY:?MAILCHIMP_API_KEY is required}
+      MAILCHIMP_AUDIENCE_ID: ${MAILCHIMP_AUDIENCE_ID:?MAILCHIMP_AUDIENCE_ID is required}
+      MAILCHIMP_SERVER_PREFIX: ${MAILCHIMP_SERVER_PREFIX:?MAILCHIMP_SERVER_PREFIX is required}
+    expose:
+      - "80"
+    # Dokploy supplies the Traefik router labels for this service.
+    networks:
+      - dokploy-network
+      - default
+
+networks:
+  dokploy-network:
+    external: true

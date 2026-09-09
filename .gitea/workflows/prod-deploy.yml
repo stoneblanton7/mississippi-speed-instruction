@@ -1,0 +1,100 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - stone-dev
+    paths-ignore:
+      - deploy/compose.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency:
+  group: mississippi-speed-instruction-production
+  cancel-in-progress: false
+
+env:
+  REGISTRY_PUSH_HOST: 10.1.0.50:3000
+  REGISTRY_OWNER: serveradmin
+  IMAGE_NAME: mississippi-speed-instruction
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restrict production runs to stone-dev
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/stone-dev" ]; then
+            echo "::error::Production deployment must run from stone-dev (got $GITHUB_REF)."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Lint frontend
+        working-directory: frontend
+        run: npm run lint
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.tag.outputs.IMAGE_TAG }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: tag
+        shell: bash
+        run: echo "IMAGE_TAG=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: [validate, prepare]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY_PUSH_HOST }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Build and push production image
+        shell: bash
+        run: |
+          TAG=${{ needs.prepare.outputs.image_tag }}
+          IMAGE=$REGISTRY_PUSH_HOST/$REGISTRY_OWNER/$IMAGE_NAME:$TAG
+          docker build -t "$IMAGE" -f Dockerfile.prod .
+          docker push "$IMAGE"
+
+  promote:
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Promote image in Dokploy compose file
+        shell: bash
+        run: |
+          TAG=${{ needs.prepare.outputs.image_tag }}
+          sed -i -E "s#(serveradmin/mississippi-speed-instruction):(latest|[a-f0-9]{12})#\1:${TAG}#g" deploy/compose.yaml
+          git config user.name "msi-deploy-bot"
+          git config user.email "deploy-bot@synaptix-lab.com"
+          git add deploy/compose.yaml
+          if git diff --cached --quiet; then
+            echo "No compose change to promote."
+          else
+            git commit -m "deploy: promote ${TAG} [skip ci]"
+            git pull --rebase origin stone-dev
+            git push origin HEAD:stone-dev
+          fi
